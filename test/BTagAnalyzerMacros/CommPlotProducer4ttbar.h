@@ -27,7 +27,7 @@
  
 // Header file for the classes stored in the TTree if any.
 
-
+ 
 class CommPlotProducer4ttbar 
 {
 public :
@@ -681,18 +681,18 @@ public :
    virtual void     Init(TChain *tree);
    virtual void     Loop(int datatype, TString outputname, TH1F* wgtcounter, TString syst);
    virtual Bool_t   Notify();
+
    virtual void     Show(Long64_t entry = -1);
-   virtual void     AddHisto(TString name, TString title,  int nbins, float min, float max, TString syst);
-   virtual void     AddHistottbar(TString name, TString title,  int nbins, float min, float max);
-   virtual void     AddHisto2D(TString name,TString title,int nbins,float min,float max,int nbins2,float min2,float max2, TString syst);   
-   virtual void     FillHisto_int(int flavour, bool isGS, int number, int value, double weight);
-   virtual void     FillHisto_float(int flavour, bool isGS, int number, float value, double weight);
-   virtual void     FillHisto_floatFromMap(TString name, int flavour, bool isGS, float value, double weight);
-   virtual void     FillHistottbar_intFromMap(TString name, int value, double weight=1);
-   virtual void     FillHistottbar_floatFromMap(TString name, float value, double weight=1);
-   virtual void     FillHisto_intFromMap(TString name, int flavour, bool isGS, int value, double weight);
-   virtual void     FillHisto2D_int_floatFromMap(TString name, int flavour, bool isGS, int value, float value2, double weight);
-   virtual void     FillHisto2D_float_floatFromMap(TString name, int flavour, bool isGS, float value, float value2, double weight);
+   virtual void     AddHistoBtag(TString name, TString title,  int nbins, float min, float max, TString syst);
+   virtual void     AddHistoTTbar(TString name, TString title,  int nbins, float min, float max);
+   virtual void     AddHisto2D(TString name,TString title,int nbins,float min,float max,int nbins2,float min2,float max2, TString syst);  
+ 
+   template<typename varType>
+    void     FillHistoTTbar(TString name, varType value, double weight=1);
+   template<typename varType>
+    void     FillHistoBtag(TString name, int flavour, bool isGS, varType value, double weight=1);
+   template<typename varType1, typename varType2>
+    void     FillHisto2D(TString name, int flavour, bool isGS, varType1 value1, varType2 value2, double weight=1);
 
 //private :
    TGraph *puWgtGr_,*puWgtDownGr_,*puWgtUpGr_;
@@ -701,6 +701,7 @@ public :
 #endif
 
 #ifdef CommPlotProducer4ttbar_cxx
+ 
 CommPlotProducer4ttbar::CommPlotProducer4ttbar(TChain *superTree, bool infotree1, bool infotree2, bool infotreeCTag)
 {  
 
@@ -719,18 +720,22 @@ CommPlotProducer4ttbar::CommPlotProducer4ttbar(TChain *superTree, bool infotree1
    Init(superTree);
 }
 
+ 
 CommPlotProducer4ttbar::~CommPlotProducer4ttbar()
 {
    if (!fChain) return;
    delete fChain->GetCurrentFile();
 }
 
+ 
 Int_t CommPlotProducer4ttbar::GetEntry(Long64_t entry)
 {
 // Read contents of entry.
    if (!fChain) return 0;
    return fChain->GetEntry(entry);
 }
+
+ 
 Long64_t CommPlotProducer4ttbar::LoadTree(Long64_t entry)
 {
 // Set the environment to read one entry
@@ -748,6 +753,7 @@ Long64_t CommPlotProducer4ttbar::LoadTree(Long64_t entry)
    return centry;
 }
 
+ 
 void CommPlotProducer4ttbar::Init(TChain *tree)
 {
    // The Init() function is called when the selector needs to initialize

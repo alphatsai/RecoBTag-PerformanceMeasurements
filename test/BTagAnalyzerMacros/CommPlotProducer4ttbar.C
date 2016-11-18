@@ -84,380 +84,380 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
   
   // --------------------------------------Histograms declaration -----------------------------------------//
   if(!produceCTagTree){ 
-  AddHistottbar("nPV",            "number of PV",               50,-0.5,49.5);
-  AddHistottbar("nPV_unweighted", "unweighted number of PV",    50,-0.5,49.5);
-  AddHistottbar("met",            "MET",                        30,  0.,300.);
-  AddHistottbar("mll",            "M_{ll}",                     60,  0.,300.);
-  AddHistottbar("njet",           "number of jets",	        10,-0.5, 9.5);
-  AddHistottbar("njet_pt30",      "number of jets pt30",        10,-0.5, 9.5);
-  AddHistottbar("pt_e",           "P_{T}^{e}",                  50,  0.,200.);
-  AddHistottbar("pt_mu",          "P_{T}^{#mu}",                50,  0.,200.);
-  AddHistottbar("pt_jet",         "P_{T}^{leading jet}",        50,  0.,400.);
+  AddHistoTTbar("nPV",            "number of PV",               50,-0.5,49.5);
+  AddHistoTTbar("nPV_unweighted", "unweighted number of PV",    50,-0.5,49.5);
+  AddHistoTTbar("met",            "MET",                        30,  0.,300.);
+  AddHistoTTbar("mll",            "M_{ll}",                     60,  0.,300.);
+  AddHistoTTbar("njet",           "number of jets",	        10,-0.5, 9.5);
+  AddHistoTTbar("njet_pt30",      "number of jets pt30",        10,-0.5, 9.5);
+  AddHistoTTbar("pt_e",           "P_{T}^{e}",                  50,  0.,200.);
+  AddHistoTTbar("pt_mu",          "P_{T}^{#mu}",                50,  0.,200.);
+  AddHistoTTbar("pt_jet",         "P_{T}^{leading jet}",        50,  0.,400.);
 
   // HIP check (as function of run range for Run2016B)
-  AddHistottbar("nEvt_run",          "number of evt VS run",                  20,  0,  20);
-  AddHistottbar("nEvt_run_CSVv2L",   "number of evt VS run(b-jet csvl)",      20,  0,  20);
-  AddHistottbar("nEvt_run_CSVv2M",   "number of evt VS run(b-jet csvm)",      20,  0,  20);
-  AddHistottbar("nEvt_run_CSVv2T",   "number of evt VS run(b-jet csvt)",      20,  0,  20);
+  AddHistoTTbar("nEvt_run",          "number of evt VS run",                  20,  0,  20);
+  AddHistoTTbar("nEvt_run_CSVv2L",   "number of evt VS run(b-jet csvl)",      20,  0,  20);
+  AddHistoTTbar("nEvt_run_CSVv2M",   "number of evt VS run(b-jet csvm)",      20,  0,  20);
+  AddHistoTTbar("nEvt_run_CSVv2T",   "number of evt VS run(b-jet csvt)",      20,  0,  20);
 
-  AddHistottbar("nbtag_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
 
    
-  AddHistottbar("nbtag_all_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
     
-  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
       
-  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
  
 
   
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2M_SFapplied","number of btag jets (medium WP)",  	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_afterJetSel_CSVv2M_SFapplied","number of btag jets (medium WP)",  	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_all_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
  
-  AddHistottbar("nbtag_2b_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
-
-  
-  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
-
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
-
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
-
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
+  AddHistoTTbar("nbtag_2b_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2b_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
   
-  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
+  AddHistoTTbar("nbtag_1b1c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
+  AddHistoTTbar("nbtag_1b1c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
+  AddHistoTTbar("nbtag_1b1c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
+
+  
+  AddHistoTTbar("nbtag_1b1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+
+  AddHistoTTbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+
+  AddHistoTTbar("nbtag_1b1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1b1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
+
+  AddHistoTTbar("nbtag_1b1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
+  AddHistoTTbar("nbtag_1b1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
+  AddHistoTTbar("nbtag_1b1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
 
 
-  AddHistottbar("nbtag_2c_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
     
-  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
+  AddHistoTTbar("nbtag_1c1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
+  AddHistoTTbar("nbtag_1c1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
+  AddHistoTTbar("nbtag_1c1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
+  AddHistoTTbar("nbtag_1c1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
 
 
-  AddHistottbar("nbtag_2l_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5); 
+  AddHistoTTbar("nbtag_2l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistoTTbar("nbtag_2l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5); 
 
   
-  AddHisto("sv_deltaR_jet",      "sv_deltaR_jet",                                       50,0.,0.5  , syst  );
-  AddHisto("sv_deltaR_sumJet",   "SVvtxSumJetDeltaR",                                   50,0.,0.5 , syst   );
-  AddHisto("sv_deltaR_sumDir",   "SVvtxSumVtxDirDeltaR",                                50,0.,0.5 , syst   );
-  AddHisto("sv_en_ratio",        "Fractional energy",                                   50,0.,1.  , syst   );  
-  AddHisto("sv_pt",              "Vtx p_{T}",                                           50,0.,100. , syst  );
-  AddHisto("sv_eta",             "Vtx #eta",                                            50, -2.5, 2.5, syst);
-  AddHisto("sv_phi",             "Vtx #phi",                                            40, -1.*pi,pi, syst);
-  AddHisto("sv_flightSig2D",     "Flight distance significance 2D",                     50,0.,80.   , syst );
-  AddHisto("sv_flight2D",        "Flight distance 2D",                                  50,0.,2.5   , syst );
-  AddHisto("sv_flight3D",        "Flight distance 3D",                                  50,0.,15.   , syst );  
-  AddHisto("sv_flight3DSig" ,    "flight distance significance 3D",	                50,0.,80.   , syst );
-  AddHisto("sv_multi_0"	  ,      "number of secondary vertex",                          6,-0.5,5.5  , syst );
-  AddHisto("sv_multi"	  ,      "number of secondary vertex",                          6,-0.5,5.5  , syst );
-  AddHisto("sv_mass"	  ,      "invariant mass of the secondary vertex",              50,0.,8.    , syst );
-  AddHisto("sv_chi2norm"  ,      "normalized chi2 of the secondary vertex",             50,0.,10.   , syst );
-  AddHisto("sv_tot_charge",      "Total charge",                                                        21,-10.5,10.5, syst );
-  AddHisto("svnTrk",	         "Track multiplicity : SVnVertexTracks (centered)",                     13, -0.5,12.5, syst );
-  AddHisto("sv_flight3Derr",     "Flight distance error 3D",                                            50,   0.,0.2 , syst );
-  AddHisto("sv_flight2Derr",     "Flight distance error 2D",                                            50,   0.,0.05, syst );
-  AddHisto("sv_mass_3trk"	,"invariant mass of the secondary vertex with at least 3 SV tracks",    50,   0.,8.  , syst );
+  AddHistoBtag("sv_deltaR_jet",      "sv_deltaR_jet",                                       50,0.,0.5  , syst  );
+  AddHistoBtag("sv_deltaR_sumJet",   "SVvtxSumJetDeltaR",                                   50,0.,0.5 , syst   );
+  AddHistoBtag("sv_deltaR_sumDir",   "SVvtxSumVtxDirDeltaR",                                50,0.,0.5 , syst   );
+  AddHistoBtag("sv_en_ratio",        "Fractional energy",                                   50,0.,1.  , syst   );  
+  AddHistoBtag("sv_pt",              "Vtx p_{T}",                                           50,0.,100. , syst  );
+  AddHistoBtag("sv_eta",             "Vtx #eta",                                            50, -2.5, 2.5, syst);
+  AddHistoBtag("sv_phi",             "Vtx #phi",                                            40, -1.*pi,pi, syst);
+  AddHistoBtag("sv_flightSig2D",     "Flight distance significance 2D",                     50,0.,80.   , syst );
+  AddHistoBtag("sv_flight2D",        "Flight distance 2D",                                  50,0.,2.5   , syst );
+  AddHistoBtag("sv_flight3D",        "Flight distance 3D",                                  50,0.,15.   , syst );  
+  AddHistoBtag("sv_flight3DSig" ,    "flight distance significance 3D",	                50,0.,80.   , syst );
+  AddHistoBtag("sv_multi_0"	  ,      "number of secondary vertex",                          6,-0.5,5.5  , syst );
+  AddHistoBtag("sv_multi"	  ,      "number of secondary vertex",                          6,-0.5,5.5  , syst );
+  AddHistoBtag("sv_mass"	  ,      "invariant mass of the secondary vertex",              50,0.,8.    , syst );
+  AddHistoBtag("sv_chi2norm"  ,      "normalized chi2 of the secondary vertex",             50,0.,10.   , syst );
+  AddHistoBtag("sv_tot_charge",      "Total charge",                                                        21,-10.5,10.5, syst );
+  AddHistoBtag("svnTrk",	         "Track multiplicity : SVnVertexTracks (centered)",                     13, -0.5,12.5, syst );
+  AddHistoBtag("sv_flight3Derr",     "Flight distance error 3D",                                            50,   0.,0.2 , syst );
+  AddHistoBtag("sv_flight2Derr",     "Flight distance error 2D",                                            50,   0.,0.05, syst );
+  AddHistoBtag("sv_mass_3trk"	,"invariant mass of the secondary vertex with at least 3 SV tracks",    50,   0.,8.  , syst );
   
-  AddHisto("track_multi"  ,      "number of tracks in the jets",                40,-0.5,39.5 , syst );
-  AddHisto("trk_multi_sel"  ,    "number of selected tracks in the jets",       40,-0.5,39.5 , syst );
-  AddHisto("track_chi2"   ,      "normalized chi2 of the tracks",               100,0.,30.   , syst );
-  AddHisto("track_nHit" ,        "number of hits ",               35,-0.5, 34.5 , syst);
-  AddHisto("track_HPix"   ,      "number of hits in the Pixel",                 10,-0.5, 9.5 , syst );
+  AddHistoBtag("track_multi"  ,      "number of tracks in the jets",                40,-0.5,39.5 , syst );
+  AddHistoBtag("trk_multi_sel"  ,    "number of selected tracks in the jets",       40,-0.5,39.5 , syst );
+  AddHistoBtag("track_chi2"   ,      "normalized chi2 of the tracks",               100,0.,30.   , syst );
+  AddHistoBtag("track_nHit" ,        "number of hits ",               35,-0.5, 34.5 , syst);
+  AddHistoBtag("track_HPix"   ,      "number of hits in the Pixel",                 10,-0.5, 9.5 , syst );
   
-  AddHisto("track_IPs"    ,      "3D IP significance of all tracks",	        100,-35.,35. , syst );
-  AddHisto("track_IPs1tr" ,      "3D IP significance of the first track",       100,-35.,35. , syst );
-  AddHisto("track_IPs2tr" ,      "3D IP significance of the second track",      100,-35.,35. , syst );
-  AddHisto("track_IP"     ,      "3D IP of all tracks",	                        100,-0.1,0.1 , syst );
-  AddHisto("track_IP1tr"  ,      "3D IP of the first track",                    100,-0.1,0.1 , syst );
-  AddHisto("track_IP2tr"  ,      "3D IP of the second track",                   100,-0.1,0.1 , syst ); 
-  AddHisto("track_IP2Ds"    ,    "2D IP significance of all tracks",	        100,-35.,35. , syst );
-  AddHisto("track_IP2Ds1tr" ,    "2D IP significance of the first track",       100,-35.,35. , syst );
-  AddHisto("track_IP2Ds2tr" ,    "2D IP significance of the second track",      100,-35.,35. , syst );
-  AddHisto("track_IP2D"    ,     "2D IP of all tracks",	                        100,-0.1,0.1 , syst );
-  AddHisto("track_IP2D1tr" ,     "2D IP of the first track",                    100,-0.1,0.1 , syst );
-  AddHisto("track_IP2D2tr" ,     "2D IP of the second track",                   100,-0.1,0.1 , syst );
-  AddHisto("track_IP2Derr1tr" ,  "2D IP error of the first track",              100,0,0.1    , syst );    
-  AddHisto("track_IPerr1tr"   ,  "3D IP error of the first track",              100,0,0.1    , syst );  
-  AddHisto("track_IP2Derr2tr" ,  "2D IP error of the second track",             100,0,0.1    , syst );    
-  AddHisto("track_IPerr2tr"   ,  "3D IP error of the second track",             100,0,0.1    , syst ); 
-  AddHisto("track_IP2Derr" ,     "2D IP error",                                 100,0,0.1    , syst );    
-  AddHisto("track_IPerr"   ,     "3D IP error",                                 100,0,0.1    , syst ); 
-  AddHisto("track_IPs3tr" ,      "3D IP significance of the third track",       100,-35.,35. , syst );
-  AddHisto("track_IP3tr"  ,      "3D IP of the third track",                    100,-0.1,0.1 , syst );
-  AddHisto("track_IPerr3tr"   ,  "3D IP error of the third track",              100,0,0.1    , syst ); 
-  AddHisto("track_IP2Ds3tr" ,    "2D IP significance of the second track",      100,-35.,35. , syst );
-  AddHisto("track_IP2D3tr" ,     "2D IP of the third track",                    100,-0.1,0.1 , syst );
-  AddHisto("track_IP2Derr3tr" ,  "2D IP error of the third track",              100,0,0.1    , syst );   
+  AddHistoBtag("track_IPs"    ,      "3D IP significance of all tracks",	        100,-35.,35. , syst );
+  AddHistoBtag("track_IPs1tr" ,      "3D IP significance of the first track",       100,-35.,35. , syst );
+  AddHistoBtag("track_IPs2tr" ,      "3D IP significance of the second track",      100,-35.,35. , syst );
+  AddHistoBtag("track_IP"     ,      "3D IP of all tracks",	                        100,-0.1,0.1 , syst );
+  AddHistoBtag("track_IP1tr"  ,      "3D IP of the first track",                    100,-0.1,0.1 , syst );
+  AddHistoBtag("track_IP2tr"  ,      "3D IP of the second track",                   100,-0.1,0.1 , syst ); 
+  AddHistoBtag("track_IP2Ds"    ,    "2D IP significance of all tracks",	        100,-35.,35. , syst );
+  AddHistoBtag("track_IP2Ds1tr" ,    "2D IP significance of the first track",       100,-35.,35. , syst );
+  AddHistoBtag("track_IP2Ds2tr" ,    "2D IP significance of the second track",      100,-35.,35. , syst );
+  AddHistoBtag("track_IP2D"    ,     "2D IP of all tracks",	                        100,-0.1,0.1 , syst );
+  AddHistoBtag("track_IP2D1tr" ,     "2D IP of the first track",                    100,-0.1,0.1 , syst );
+  AddHistoBtag("track_IP2D2tr" ,     "2D IP of the second track",                   100,-0.1,0.1 , syst );
+  AddHistoBtag("track_IP2Derr1tr" ,  "2D IP error of the first track",              100,0,0.1    , syst );    
+  AddHistoBtag("track_IPerr1tr"   ,  "3D IP error of the first track",              100,0,0.1    , syst );  
+  AddHistoBtag("track_IP2Derr2tr" ,  "2D IP error of the second track",             100,0,0.1    , syst );    
+  AddHistoBtag("track_IPerr2tr"   ,  "3D IP error of the second track",             100,0,0.1    , syst ); 
+  AddHistoBtag("track_IP2Derr" ,     "2D IP error",                                 100,0,0.1    , syst );    
+  AddHistoBtag("track_IPerr"   ,     "3D IP error",                                 100,0,0.1    , syst ); 
+  AddHistoBtag("track_IPs3tr" ,      "3D IP significance of the third track",       100,-35.,35. , syst );
+  AddHistoBtag("track_IP3tr"  ,      "3D IP of the third track",                    100,-0.1,0.1 , syst );
+  AddHistoBtag("track_IPerr3tr"   ,  "3D IP error of the third track",              100,0,0.1    , syst ); 
+  AddHistoBtag("track_IP2Ds3tr" ,    "2D IP significance of the second track",      100,-35.,35. , syst );
+  AddHistoBtag("track_IP2D3tr" ,     "2D IP of the third track",                    100,-0.1,0.1 , syst );
+  AddHistoBtag("track_IP2Derr3tr" ,  "2D IP error of the third track",              100,0,0.1    , syst );   
    
-  AddHisto("track_len"     ,     "decay length",		                100,0,25.    , syst );
-  AddHisto("track_dist"    ,     "distance to the jet axis",                    100,0.,0.3   , syst );
-  AddHisto("track_dz"     ,      "transverse IP",                               100,-20.,20. , syst );  
-  AddHisto("track_isfromSV",     "Track is from SV",                            2,-0.5, 1.5  , syst );  
-  AddHisto("track_pt"	  ,      "pT of all the tracks",	                80,0.,200.   , syst );
-  AddHisto("track_chi2_cut"     ,"normalized chi2 ",  	                        100,0.,30.   , syst );
-  AddHisto("track_nHit_cut"     ,"number of hits  ",                            35,-0.5, 34.5, syst );
-  AddHisto("track_HPix_cut"     ,"number of hits in the Pixel ",                10,-0.5, 9.5 , syst );
-  AddHisto("track_len_cut"      ,"decay length ",		                100,0,25.    , syst );
-  AddHisto("track_dist_cut"     ,"distance to the jet axis ",                   100,0.,0.3   , syst );
-  AddHisto("track_dz_cut"       ,"transverse IP ",		                100,-20., 20., syst );  
-  AddHisto("track_pt_cut"       ,"pT ",	                                        80,0.,200.   , syst );
-  AddHisto("track_IP2D_cut"     ,"IP2D ",	                                100,-0.1,0.1 , syst );
+  AddHistoBtag("track_len"     ,     "decay length",		                100,0,25.    , syst );
+  AddHistoBtag("track_dist"    ,     "distance to the jet axis",                    100,0.,0.3   , syst );
+  AddHistoBtag("track_dz"     ,      "transverse IP",                               100,-20.,20. , syst );  
+  AddHistoBtag("track_isfromSV",     "Track is from SV",                            2,-0.5, 1.5  , syst );  
+  AddHistoBtag("track_pt"	  ,      "pT of all the tracks",	                80,0.,200.   , syst );
+  AddHistoBtag("track_chi2_cut"     ,"normalized chi2 ",  	                        100,0.,30.   , syst );
+  AddHistoBtag("track_nHit_cut"     ,"number of hits  ",                            35,-0.5, 34.5, syst );
+  AddHistoBtag("track_HPix_cut"     ,"number of hits in the Pixel ",                10,-0.5, 9.5 , syst );
+  AddHistoBtag("track_len_cut"      ,"decay length ",		                100,0,25.    , syst );
+  AddHistoBtag("track_dist_cut"     ,"distance to the jet axis ",                   100,0.,0.3   , syst );
+  AddHistoBtag("track_dz_cut"       ,"transverse IP ",		                100,-20., 20., syst );  
+  AddHistoBtag("track_pt_cut"       ,"pT ",	                                        80,0.,200.   , syst );
+  AddHistoBtag("track_IP2D_cut"     ,"IP2D ",	                                100,-0.1,0.1 , syst );
    
-  AddHisto("TCHE_extended1"	  ,"TCHE_extended1",				70, -30.,30. , syst );
-  AddHisto("TCHP_extended1"	  ,"TCHP_extended1",				70, -30.,30. , syst );
-  AddHisto("TCHE_extended2"	  ,"TCHE_extended2",				100,-30.,30. , syst );
-  AddHisto("TCHP_extended2"	  ,"TCHP_extended2",				100,-30.,30. , syst );
-  AddHisto("discri_ssche0",	   "SSVHE Discriminator",                       80, -1., 7.  , syst ); 
-  AddHisto("discri_sschp0",	   "SSVHP Discriminator",                       80, -1., 7.  , syst ); 
+  AddHistoBtag("TCHE_extended1"	  ,"TCHE_extended1",				70, -30.,30. , syst );
+  AddHistoBtag("TCHP_extended1"	  ,"TCHP_extended1",				70, -30.,30. , syst );
+  AddHistoBtag("TCHE_extended2"	  ,"TCHE_extended2",				100,-30.,30. , syst );
+  AddHistoBtag("TCHP_extended2"	  ,"TCHP_extended2",				100,-30.,30. , syst );
+  AddHistoBtag("discri_ssche0",	   "SSVHE Discriminator",                       80, -1., 7.  , syst ); 
+  AddHistoBtag("discri_sschp0",	   "SSVHP Discriminator",                       80, -1., 7.  , syst ); 
    
-  AddHisto("TCHE"	  ,"TCHE",				     50,0.,30. , syst);
-  AddHisto("TCHP"	  ,"TCHP",				     50,0.,30. , syst);  
-  AddHisto("JP" 	  ,"JP",				     30,0.,1.5 , syst);
-  AddHisto("JBP"	  ,"JBP",				     25,0.,4.  , syst);
-  AddHisto("SSV"	  ,"SSVHE",				     70,0.,7.  , syst);
-  AddHisto("SSVHP"	  ,"SSVHP",				     70,0.,7.  , syst);
-  AddHisto("CSV"	  ,"CSV",				     50,0.,1.  , syst);
-  AddHisto("CSVv2"	  ,"CSVv2",				     50,0.,1.  , syst);
-  AddHisto("CSVv2_pu"	  ,"CSVv2_pu",				     50,0.,1.  , syst);
-  AddHisto("cMVAv2"	  ,"cMVAv2",				     50,-1.,1. , syst);
-  AddHisto("CvsB"     ,"CvsB",                                       50,-1.,1. , syst);
-  AddHisto("CvsL"     ,"CvsL",                                       50,-1.,1. , syst);
+  AddHistoBtag("TCHE"	  ,"TCHE",				     50,0.,30. , syst);
+  AddHistoBtag("TCHP"	  ,"TCHP",				     50,0.,30. , syst);  
+  AddHistoBtag("JP" 	  ,"JP",				     30,0.,1.5 , syst);
+  AddHistoBtag("JBP"	  ,"JBP",				     25,0.,4.  , syst);
+  AddHistoBtag("SSV"	  ,"SSVHE",				     70,0.,7.  , syst);
+  AddHistoBtag("SSVHP"	  ,"SSVHP",				     70,0.,7.  , syst);
+  AddHistoBtag("CSV"	  ,"CSV",				     50,0.,1.  , syst);
+  AddHistoBtag("CSVv2"	  ,"CSVv2",				     50,0.,1.  , syst);
+  AddHistoBtag("CSVv2_pu"	  ,"CSVv2_pu",				     50,0.,1.  , syst);
+  AddHistoBtag("cMVAv2"	  ,"cMVAv2",				     50,-1.,1. , syst);
+  AddHistoBtag("CvsB"     ,"CvsB",                                       50,-1.,1. , syst);
+  AddHistoBtag("CvsL"     ,"CvsL",                                       50,-1.,1. , syst);
 
-  AddHisto("SoftMu"       ,"SoftMu",                                 50,0.,1.  , syst);
-  AddHisto("SoftEl"       ,"SoftEl",                                 50,0.,1.  , syst);
+  AddHistoBtag("SoftMu"       ,"SoftMu",                                 50,0.,1.  , syst);
+  AddHistoBtag("SoftEl"       ,"SoftEl",                                 50,0.,1.  , syst);
   
-  AddHisto("pfmuon_multi",      "number of pfmuons",	        7,    -0.5, 6.5, syst );
-  AddHisto("pfmuon_goodquality","quality of pfmuons",           3,    -0.5, 2.5, syst );
-  AddHisto("pfmuon_pt",		"pfmuon p_{T}",  	        50,      0, 100, syst );
-  AddHisto("pfmuon_eta",   	"pfmuon #eta",  	        50,   -2.5, 2.5, syst );  
-  AddHisto("pfmuon_phi",        "pfmuon #phi",                  40, -1.*pi,  pi, syst );
-  AddHisto("pfmuon_Sip",	"3D IP significance of pfmuon", 50,    -35,  35, syst );
-  AddHisto("pfmuon_ptrel",      "pT rel. of the muon",	        50,      0,   5, syst );
-  AddHisto("pfmuon_ratio",      "ratio of pfmuon",              50,      0,   2, syst );  
-  AddHisto("pfmuon_ratiorel",   "ratioRel of pfmuon",           50,      0,0.05, syst );  
-  AddHisto("pfmuon_deltar",	"#DeltaR(pfmuon,jet)",          50,      0, 0.5, syst );
+  AddHistoBtag("pfmuon_multi",      "number of pfmuons",	        7,    -0.5, 6.5, syst );
+  AddHistoBtag("pfmuon_goodquality","quality of pfmuons",           3,    -0.5, 2.5, syst );
+  AddHistoBtag("pfmuon_pt",		"pfmuon p_{T}",  	        50,      0, 100, syst );
+  AddHistoBtag("pfmuon_eta",   	"pfmuon #eta",  	        50,   -2.5, 2.5, syst );  
+  AddHistoBtag("pfmuon_phi",        "pfmuon #phi",                  40, -1.*pi,  pi, syst );
+  AddHistoBtag("pfmuon_Sip",	"3D IP significance of pfmuon", 50,    -35,  35, syst );
+  AddHistoBtag("pfmuon_ptrel",      "pT rel. of the muon",	        50,      0,   5, syst );
+  AddHistoBtag("pfmuon_ratio",      "ratio of pfmuon",              50,      0,   2, syst );  
+  AddHistoBtag("pfmuon_ratiorel",   "ratioRel of pfmuon",           50,      0,0.05, syst );  
+  AddHistoBtag("pfmuon_deltar",	"#DeltaR(pfmuon,jet)",          50,      0, 0.5, syst );
   
-  AddHisto("pfelectron_multi",  "number of pfelectron",	        7,    -0.5, 6.5, syst );
-  AddHisto("pfelectron_pt",	"pfelectron p_{T}",  	        50,      0, 100, syst );
-  AddHisto("pfelectron_eta",   	"pfelectron #eta",  	        50,   -2.5, 2.5, syst );  
-  AddHisto("pfelectron_phi",    "pfelectron #phi",              40, -1.*pi,  pi, syst );
-  AddHisto("pfelectron_ptrel",  "pT rel. of the pfelectron",	50,      0,   5, syst );
-  AddHisto("pfelectron_ratio",  "ratio of pfelectron",          50,      0,   2, syst );  
-  AddHisto("pfelectron_ratiorel","ratioRel of pfelectron",      50,      0,0.05, syst );  
-  AddHisto("pfelectron_deltar",	"#DeltaR(pfelectron,jet)",      50,      0, 0.5, syst );  
+  AddHistoBtag("pfelectron_multi",  "number of pfelectron",	        7,    -0.5, 6.5, syst );
+  AddHistoBtag("pfelectron_pt",	"pfelectron p_{T}",  	        50,      0, 100, syst );
+  AddHistoBtag("pfelectron_eta",   	"pfelectron #eta",  	        50,   -2.5, 2.5, syst );  
+  AddHistoBtag("pfelectron_phi",    "pfelectron #phi",              40, -1.*pi,  pi, syst );
+  AddHistoBtag("pfelectron_ptrel",  "pT rel. of the pfelectron",	50,      0,   5, syst );
+  AddHistoBtag("pfelectron_ratio",  "ratio of pfelectron",          50,      0,   2, syst );  
+  AddHistoBtag("pfelectron_ratiorel","ratioRel of pfelectron",      50,      0,0.05, syst );  
+  AddHistoBtag("pfelectron_deltar",	"#DeltaR(pfelectron,jet)",      50,      0, 0.5, syst );  
 
   
   AddHisto2D("seltrack_vs_jetpt", "sel track multiplicity vs jet pt",         30,60,1000, 100,-0.5,99.5,syst );
@@ -467,99 +467,99 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
   AddHisto2D("sv_deltar_sum_jet_vs_jetpt","SVvtxSumJetDeltaR vs jet pt",      25,60,300, 50,0.,0.5,     syst );
   AddHisto2D("sv_deltar_sum_dir_vs_jetpt","SVvtxSumVtxDirDeltaR vs jet pt",   25,60,300, 50,0.,0.5,     syst ); 
 
-  AddHisto("tagvarCSV_vertexCategory",          "vertex category",                      3, -0.5, 2.5, syst );
-  AddHisto("tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm",       nSVbins, -35.,35. , syst );
-  AddHisto("tagvarCSV_trackEtaRel",             "Track etaRel",                        40,   0.,8.  , syst );
-  AddHisto("tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio",              40,   0.,1.5 , syst );
-  AddHisto("tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r",               40,   0.,0.5 , syst );
+  AddHistoBtag("tagvarCSV_vertexCategory",          "vertex category",                      3, -0.5, 2.5, syst );
+  AddHistoBtag("tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm",       nSVbins, -35.,35. , syst );
+  AddHistoBtag("tagvarCSV_trackEtaRel",             "Track etaRel",                        40,   0.,8.  , syst );
+  AddHistoBtag("tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio",              40,   0.,1.5 , syst );
+  AddHistoBtag("tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r",               40,   0.,0.5 , syst );
 
-  AddHisto("tagvarCSV_vertexmass_cat0",         "SV mass",                        nSVbins,   0.,8.  , syst );
-  AddHisto("tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks)", nSVbins,   0.,8.  , syst );
-  AddHisto("tagvarCSV_vertexNTracks_cat0",      "# SV tracks",                         13, -0.5,12.5, syst );
-  AddHisto("tagvarCSV_energyratio",             "Fractional energy",              nSVbins,   0.,1.  , syst );
-  AddHisto("tagvarCSV_trackSip3dSig",           "3D IP significance",          nTrackbins, -35.,35. , syst );
-  AddHisto("tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D",nSVbins,   0.,80. , syst );
-  AddHisto("tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) ",                nSVbins,   0.,0.4 , syst );
+  AddHistoBtag("tagvarCSV_vertexmass_cat0",         "SV mass",                        nSVbins,   0.,8.  , syst );
+  AddHistoBtag("tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks)", nSVbins,   0.,8.  , syst );
+  AddHistoBtag("tagvarCSV_vertexNTracks_cat0",      "# SV tracks",                         13, -0.5,12.5, syst );
+  AddHistoBtag("tagvarCSV_energyratio",             "Fractional energy",              nSVbins,   0.,1.  , syst );
+  AddHistoBtag("tagvarCSV_trackSip3dSig",           "3D IP significance",          nTrackbins, -35.,35. , syst );
+  AddHistoBtag("tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D",nSVbins,   0.,80. , syst );
+  AddHistoBtag("tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) ",                nSVbins,   0.,0.4 , syst );
   } //end !produceCTagTree
  
-  AddHisto("jet_multi"    ,"number of jets",                 20,        0,      20,   syst);
-  AddHisto("jet_pt_all"   ,"pT of all jets",                 50,  0,    500, syst);
-  AddHisto("genjet_pt_all"        ,"genpT of all jets",         50     ,  -0.5,    49.5,syst);
-  AddHisto("jet_pt_sv"    ,"pT of jets containing a SV",     50,  0,    500, syst);
-  AddHisto("jet_eta"      ,"eta of all jets",                50,        -2.5,   2.5,  syst);
-  AddHisto("jet_phi"      ,"phi of all jets",                40,        -1.*pi, pi,   syst);
+  AddHistoBtag("jet_multi"    ,"number of jets",                 20,        0,      20,   syst);
+  AddHistoBtag("jet_pt_all"   ,"pT of all jets",                 50,  0,    500, syst);
+  AddHistoBtag("genjet_pt_all"        ,"genpT of all jets",         50     ,  -0.5,    49.5,syst);
+  AddHistoBtag("jet_pt_sv"    ,"pT of jets containing a SV",     50,  0,    500, syst);
+  AddHistoBtag("jet_eta"      ,"eta of all jets",                50,        -2.5,   2.5,  syst);
+  AddHistoBtag("jet_phi"      ,"phi of all jets",                40,        -1.*pi, pi,   syst);
 
   //CTag Comm//
   if(produceCTagTree){
-  AddHisto("CTag_tagvarCSV_vertexCategory",          "vertex category CSV",                      3, -0.5, 2.5, syst );
-  AddHisto("CTag_tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm CSV",       nSVbins, -35.,35. , syst );
-  AddHisto("CTag_tagvarCSV_trackEtaRel",             "Track etaRel CSV",                        40,   0.,8.  , syst );
-  AddHisto("CTag_tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio CSV",              40,   0.,1.5 , syst );
-  AddHisto("CTag_tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r CSV",               40,   0.,0.5 , syst );
+  AddHistoBtag("CTag_tagvarCSV_vertexCategory",          "vertex category CSV",                      3, -0.5, 2.5, syst );
+  AddHistoBtag("CTag_tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm CSV",       nSVbins, -35.,35. , syst );
+  AddHistoBtag("CTag_tagvarCSV_trackEtaRel",             "Track etaRel CSV",                        40,   0.,8.  , syst );
+  AddHistoBtag("CTag_tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio CSV",              40,   0.,1.5 , syst );
+  AddHistoBtag("CTag_tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r CSV",               40,   0.,0.5 , syst );
 
-  AddHisto("CTag_tagvarCSV_vertexmass_cat0",         "SV mass CSV",                        nSVbins,   0.,8.  , syst );
-  AddHisto("CTag_tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks) CSV", nSVbins,   0.,8.  , syst );
-  AddHisto("CTag_tagvarCSV_vertexNTracks_cat0",      "# SV tracks CSV",                         13, -0.5,12.5, syst );
-  AddHisto("CTag_tagvarCSV_energyratio",             "Fractional energy CSV",              nSVbins,   0.,1.  , syst );
-  AddHisto("CTag_tagvarCSV_trackSip3dSig",           "3D IP significance CSV",          nTrackbins, -35.,35. , syst );
-  AddHisto("CTag_tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D CSV",nSVbins,   0.,80. , syst );
-  AddHisto("CTag_tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) CSV",                nSVbins,   0.,0.4 , syst );
+  AddHistoBtag("CTag_tagvarCSV_vertexmass_cat0",         "SV mass CSV",                        nSVbins,   0.,8.  , syst );
+  AddHistoBtag("CTag_tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks) CSV", nSVbins,   0.,8.  , syst );
+  AddHistoBtag("CTag_tagvarCSV_vertexNTracks_cat0",      "# SV tracks CSV",                         13, -0.5,12.5, syst );
+  AddHistoBtag("CTag_tagvarCSV_energyratio",             "Fractional energy CSV",              nSVbins,   0.,1.  , syst );
+  AddHistoBtag("CTag_tagvarCSV_trackSip3dSig",           "3D IP significance CSV",          nTrackbins, -35.,35. , syst );
+  AddHistoBtag("CTag_tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D CSV",nSVbins,   0.,80. , syst );
+  AddHistoBtag("CTag_tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) CSV",                nSVbins,   0.,0.4 , syst );
 
-  AddHisto("JP"           ,"JP",                                     30,0.,1.5 , syst);
-  AddHisto("CSVv2"        ,"CSVv2",                                  50,0.,1.  , syst);
-  AddHisto("CSVv2_pu"     ,"CSVv2_pu",                               50,0.,1.  , syst);
-  AddHisto("cMVAv2"       ,"cMVAv2",                                 50,-1.,1. , syst);
+  AddHistoBtag("JP"           ,"JP",                                     30,0.,1.5 , syst);
+  AddHistoBtag("CSVv2"        ,"CSVv2",                                  50,0.,1.  , syst);
+  AddHistoBtag("CSVv2_pu"     ,"CSVv2_pu",                               50,0.,1.  , syst);
+  AddHistoBtag("cMVAv2"       ,"cMVAv2",                                 50,-1.,1. , syst);
 
-  AddHisto("CvsB"         ,"CvsB",                                   50,-1.,1. , syst);
-  AddHisto("CvsBN"        ,"CvsBN",                                  50,-1.,1. , syst);
-  AddHisto("CvsBP"        ,"CvsBP",                                  50,-1.,1. , syst);
-  AddHisto("CvsL"         ,"CvsL",                                   50,-1.,1. , syst);
-  AddHisto("CvsLN"        ,"CvsLN",                                  50,-1.,1. , syst);
-  AddHisto("CvsLP"        ,"CvsLP",                                  50,-1.,1. , syst);
-  AddHisto("CTag_jetNTracks"	        ,"CTag_jetNTracks",	 	40,-0.5,39.5 , syst );
-  AddHisto("CTag_jetNTracksEtaRel"      ,"CTag_jetNTracksEtaRel",	40,-0.5,39.5 , syst );
-  AddHisto("CTag_jetNLeptons"           ,"CTag_jetNLeptons",		7,-0.5, 6.5, syst );
-  AddHisto("CTag_trackSumJetEtRatio"    ,"CTag_trackSumJetEtRatio",     40,   0.,1.5 , syst );
-  AddHisto("CTag_trackSumJetDeltaR"     ,"CTag_trackSumJetDeltaR",	40,   0.,0.3 , syst );
-  AddHisto("CTag_trackSip2dSigAboveCharm","CTag_trackSip2dSigAboveCharm",50, -35,35, syst );
-  AddHisto("CTag_trackSip3dSigAboveCharm","CTag_trackSip3dSigAboveCharm",50, -35,35, syst );
-  AddHisto("CTag_vertexCategory"	,"CTag_vertexCategory",		3, -0.5, 2.5, syst );
-  AddHisto("CTag_jetNSecondaryVertices" ,"CTag_jetNSecondaryVertices",	6,-0.5,5.5  , syst );
-  AddHisto("CTag_vertexMass"		,"CTag_vertexMass",		nSVbins,   0.,8.  , syst );
-  AddHisto("CTag_vertexNTracks"		,"CTag_vertexNTracks",		13, -0.5,12.5, syst );
-  AddHisto("CTag_vertexEnergyRatio"	,"CTag_vertexEnergyRatio",	nSVbins,   0.,1.  , syst );
-  AddHisto("CTag_vertexJetDeltaR"	,"CTag_vertexJetDeltaR",	nSVbins,   0.,0.4 , syst );
-  AddHisto("CTag_flightDistance2dSig"   ,"CTag_flightDistance2dSig",	nSVbins,   0.,80. , syst );
-  AddHisto("CTag_flightDistance3dSig"   ,"CTag_flightDistance3dSig",    nSVbins,   0.,80. , syst );
-  AddHisto("CTag_massVertexEnergyFraction","CTag_massVertexEnergyFraction", 50, 0, 1, syst );  
-  AddHisto("CTag_vertexBoostOverSqrtJetPt","CTag_vertexBoostOverSqrtJetPt", 50, 0, 1, syst );
-  AddHisto("CTag_vertexLeptonCategory"  ,"CTag_vertexLeptonCategory",   7,-0.5, 6.5, syst );
-  AddHisto("CTag_trackPtRel"  ,"CTag_trackPtRel", 40, 0 ,10  , syst );
-  AddHisto("CTag_trackPPar"  ,"CTag_trackPPar", 40, 0, 200  , syst );
-  AddHisto("CTag_trackDeltaR"  ,"CTag_trackDeltaR", 40, 0, 0.4  , syst );
-  AddHisto("CTag_trackPtRatio"  ,"CTag_trackPtRatio", 30, 0, 0.3  , syst );
-  AddHisto("CTag_trackPParRatio"  ,"CTag_trackPParRatio", 40, 0.95, 1  , syst );
-  AddHisto("CTag_trackSip2dSig"  ,"CTag_trackSip2dSig", 40, -30, 30  , syst );
-  AddHisto("CTag_trackSip3dSig"  ,"CTag_trackSip3dSig", 40, -30, 30  , syst );
-  AddHisto("CTag_trackDecayLenVal"  ,"CTag_trackDecayLenVal", 40, 0, 5  , syst );
-  AddHisto("CTag_trackJetDistVal"  ,"CTag_trackJetDistVal", 40, -0.07, 0  , syst );
-  AddHisto("CTag_trackEtaRel"  ,"CTag_trackEtaRel", 40, 0, 8  , syst );
-  AddHisto("CTag_leptonPtRel"  ,"CTag_leptonPtRel", 40, 0 ,6  , syst );
-  AddHisto("CTag_leptonSip3d"  ,"CTag_leptonSip3d", 50, -1, 1  , syst );
-  AddHisto("CTag_leptonDeltaR"  ,"CTag_leptonDeltaR", 40 , 0, 0.4  , syst );
-  AddHisto("CTag_leptonRatioRel"  ,"CTag_leptonRatioRel", 40, 0 , 0.02  , syst );
-  AddHisto("CTag_leptonEtaRel"  ,"CTag_leptonEtaRel", 40, 0 , 0.1  , syst );
-  AddHisto("CTag_leptonRatio"  ,"CTag_leptonRatio", 40 , 0 ,1  , syst );
+  AddHistoBtag("CvsB"         ,"CvsB",                                   50,-1.,1. , syst);
+  AddHistoBtag("CvsBN"        ,"CvsBN",                                  50,-1.,1. , syst);
+  AddHistoBtag("CvsBP"        ,"CvsBP",                                  50,-1.,1. , syst);
+  AddHistoBtag("CvsL"         ,"CvsL",                                   50,-1.,1. , syst);
+  AddHistoBtag("CvsLN"        ,"CvsLN",                                  50,-1.,1. , syst);
+  AddHistoBtag("CvsLP"        ,"CvsLP",                                  50,-1.,1. , syst);
+  AddHistoBtag("CTag_jetNTracks"	        ,"CTag_jetNTracks",	 	40,-0.5,39.5 , syst );
+  AddHistoBtag("CTag_jetNTracksEtaRel"      ,"CTag_jetNTracksEtaRel",	40,-0.5,39.5 , syst );
+  AddHistoBtag("CTag_jetNLeptons"           ,"CTag_jetNLeptons",		7,-0.5, 6.5, syst );
+  AddHistoBtag("CTag_trackSumJetEtRatio"    ,"CTag_trackSumJetEtRatio",     40,   0.,1.5 , syst );
+  AddHistoBtag("CTag_trackSumJetDeltaR"     ,"CTag_trackSumJetDeltaR",	40,   0.,0.3 , syst );
+  AddHistoBtag("CTag_trackSip2dSigAboveCharm","CTag_trackSip2dSigAboveCharm",50, -35,35, syst );
+  AddHistoBtag("CTag_trackSip3dSigAboveCharm","CTag_trackSip3dSigAboveCharm",50, -35,35, syst );
+  AddHistoBtag("CTag_vertexCategory"	,"CTag_vertexCategory",		3, -0.5, 2.5, syst );
+  AddHistoBtag("CTag_jetNSecondaryVertices" ,"CTag_jetNSecondaryVertices",	6,-0.5,5.5  , syst );
+  AddHistoBtag("CTag_vertexMass"		,"CTag_vertexMass",		nSVbins,   0.,8.  , syst );
+  AddHistoBtag("CTag_vertexNTracks"		,"CTag_vertexNTracks",		13, -0.5,12.5, syst );
+  AddHistoBtag("CTag_vertexEnergyRatio"	,"CTag_vertexEnergyRatio",	nSVbins,   0.,1.  , syst );
+  AddHistoBtag("CTag_vertexJetDeltaR"	,"CTag_vertexJetDeltaR",	nSVbins,   0.,0.4 , syst );
+  AddHistoBtag("CTag_flightDistance2dSig"   ,"CTag_flightDistance2dSig",	nSVbins,   0.,80. , syst );
+  AddHistoBtag("CTag_flightDistance3dSig"   ,"CTag_flightDistance3dSig",    nSVbins,   0.,80. , syst );
+  AddHistoBtag("CTag_massVertexEnergyFraction","CTag_massVertexEnergyFraction", 50, 0, 1, syst );  
+  AddHistoBtag("CTag_vertexBoostOverSqrtJetPt","CTag_vertexBoostOverSqrtJetPt", 50, 0, 1, syst );
+  AddHistoBtag("CTag_vertexLeptonCategory"  ,"CTag_vertexLeptonCategory",   7,-0.5, 6.5, syst );
+  AddHistoBtag("CTag_trackPtRel"  ,"CTag_trackPtRel", 40, 0 ,10  , syst );
+  AddHistoBtag("CTag_trackPPar"  ,"CTag_trackPPar", 40, 0, 200  , syst );
+  AddHistoBtag("CTag_trackDeltaR"  ,"CTag_trackDeltaR", 40, 0, 0.4  , syst );
+  AddHistoBtag("CTag_trackPtRatio"  ,"CTag_trackPtRatio", 30, 0, 0.3  , syst );
+  AddHistoBtag("CTag_trackPParRatio"  ,"CTag_trackPParRatio", 40, 0.95, 1  , syst );
+  AddHistoBtag("CTag_trackSip2dSig"  ,"CTag_trackSip2dSig", 40, -30, 30  , syst );
+  AddHistoBtag("CTag_trackSip3dSig"  ,"CTag_trackSip3dSig", 40, -30, 30  , syst );
+  AddHistoBtag("CTag_trackDecayLenVal"  ,"CTag_trackDecayLenVal", 40, 0, 5  , syst );
+  AddHistoBtag("CTag_trackJetDistVal"  ,"CTag_trackJetDistVal", 40, -0.07, 0  , syst );
+  AddHistoBtag("CTag_trackEtaRel"  ,"CTag_trackEtaRel", 40, 0, 8  , syst );
+  AddHistoBtag("CTag_leptonPtRel"  ,"CTag_leptonPtRel", 40, 0 ,6  , syst );
+  AddHistoBtag("CTag_leptonSip3d"  ,"CTag_leptonSip3d", 50, -1, 1  , syst );
+  AddHistoBtag("CTag_leptonDeltaR"  ,"CTag_leptonDeltaR", 40 , 0, 0.4  , syst );
+  AddHistoBtag("CTag_leptonRatioRel"  ,"CTag_leptonRatioRel", 40, 0 , 0.02  , syst );
+  AddHistoBtag("CTag_leptonEtaRel"  ,"CTag_leptonEtaRel", 40, 0 , 0.1  , syst );
+  AddHistoBtag("CTag_leptonRatio"  ,"CTag_leptonRatio", 40 , 0 ,1  , syst );
   //With CTag_vertexCategory==0 //
-  AddHisto("CTag_jetNSecondaryVertices_Vcat0" ,"CTag_jetNSecondaryVertices_Vcat0",  6,-0.5,5.5  , syst );
-  AddHisto("CTag_vertexMass_Vcat0"            ,"CTag_vertexMass_Vcat0",             nSVbins,   0.,8.  , syst );
-  AddHisto("CTag_vertexNTracks_Vcat0"         ,"CTag_vertexNTracks_Vcat0",          13, -0.5,12.5, syst );
-  AddHisto("CTag_vertexEnergyRatio_Vcat0"     ,"CTag_vertexEnergyRatio_Vcat0",      nSVbins,   0.,1.  , syst );
-  AddHisto("CTag_vertexJetDeltaR_Vcat0"       ,"CTag_vertexJetDeltaR_Vcat0",        nSVbins,   0.,0.4 , syst );
-  AddHisto("CTag_flightDistance2dSig_Vcat0"   ,"CTag_flightDistance2dSig_Vcat0",    nSVbins,   0.,80. , syst );
-  AddHisto("CTag_flightDistance3dSig_Vcat0"   ,"CTag_flightDistance3dSig_Vcat0",    nSVbins,   0.,80. , syst );
-  AddHisto("CTag_massVertexEnergyFraction_Vcat0","CTag_massVertexEnergyFraction_Vcat0", 50, 0, 1, syst );
-  AddHisto("CTag_vertexBoostOverSqrtJetPt_Vcat0","CTag_vertexBoostOverSqrtJetPt_Vcat0", 50, 0, 1, syst );
+  AddHistoBtag("CTag_jetNSecondaryVertices_Vcat0" ,"CTag_jetNSecondaryVertices_Vcat0",  6,-0.5,5.5  , syst );
+  AddHistoBtag("CTag_vertexMass_Vcat0"            ,"CTag_vertexMass_Vcat0",             nSVbins,   0.,8.  , syst );
+  AddHistoBtag("CTag_vertexNTracks_Vcat0"         ,"CTag_vertexNTracks_Vcat0",          13, -0.5,12.5, syst );
+  AddHistoBtag("CTag_vertexEnergyRatio_Vcat0"     ,"CTag_vertexEnergyRatio_Vcat0",      nSVbins,   0.,1.  , syst );
+  AddHistoBtag("CTag_vertexJetDeltaR_Vcat0"       ,"CTag_vertexJetDeltaR_Vcat0",        nSVbins,   0.,0.4 , syst );
+  AddHistoBtag("CTag_flightDistance2dSig_Vcat0"   ,"CTag_flightDistance2dSig_Vcat0",    nSVbins,   0.,80. , syst );
+  AddHistoBtag("CTag_flightDistance3dSig_Vcat0"   ,"CTag_flightDistance3dSig_Vcat0",    nSVbins,   0.,80. , syst );
+  AddHistoBtag("CTag_massVertexEnergyFraction_Vcat0","CTag_massVertexEnergyFraction_Vcat0", 50, 0, 1, syst );
+  AddHistoBtag("CTag_vertexBoostOverSqrtJetPt_Vcat0","CTag_vertexBoostOverSqrtJetPt_Vcat0", 50, 0, 1, syst );
   }
 
  
@@ -710,12 +710,12 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
                 nPV_mc         ->Fill(nPV,ww);
         }
         if(!produceCTagTree){
-        FillHistottbar_intFromMap("nPV",                nPV                                ,ww);
-        FillHistottbar_intFromMap("nPV_unweighted",     nPV                                 ,1);
-        FillHistottbar_floatFromMap("met",              thettbarselector_.met_             ,ww);
-        FillHistottbar_floatFromMap("mll",              thettbarselector_.mll_             ,ww);
-        FillHistottbar_floatFromMap("pt_e",             thettbarselector_.lept1_.Pt()      ,ww);
-        FillHistottbar_floatFromMap("pt_mu",            thettbarselector_.lept2_.Pt()      ,ww);
+        FillHistoTTbar("nPV",                nPV                                ,ww);
+        FillHistoTTbar("nPV_unweighted",     nPV                                 ,1);
+        FillHistoTTbar("met",              thettbarselector_.met_             ,ww);
+        FillHistoTTbar("mll",              thettbarselector_.mll_             ,ww);
+        FillHistoTTbar("pt_e",             thettbarselector_.lept1_.Pt()      ,ww);
+        FillHistoTTbar("pt_mu",            thettbarselector_.lept2_.Pt()      ,ww);
         }
     }
 
@@ -882,17 +882,17 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
 
         //if(output_name == "output_dy1") cout << "csvv2 = " << csv_v2 << "ptjet= " << ptjet << endl;
       
-        FillHisto_floatFromMap("jet_multi",                  flav, isPU ,thettbarselector_.theSelJetColl.size() , ww);
-        FillHisto_floatFromMap("jet_pt_all",                 flav, isPU ,ptjet                                  , ww);
-        FillHisto_floatFromMap("genjet_pt_all",              flav, isPU ,Jet_genpt[newJetIndex]                 , ww);
+        FillHistoBtag("jet_multi",                  flav, isPU ,thettbarselector_.theSelJetColl.size() , ww);
+        FillHistoBtag("jet_pt_all",                 flav, isPU ,ptjet                                  , ww);
+        FillHistoBtag("genjet_pt_all",              flav, isPU ,Jet_genpt[newJetIndex]                 , ww);
         
-        if(isPU) FillHisto_floatFromMap("CSVv2_pu",          flav, isPU ,csv_v2                                 , ww);
+        if(isPU) FillHistoBtag("CSVv2_pu",          flav, isPU ,csv_v2                                 , ww);
         if(!produceCTagTree){
-        if (nSV > 0)FillHisto_floatFromMap("jet_pt_sv",      flav, isPU ,ptjet                                  , ww);
+        if (nSV > 0)FillHistoBtag("jet_pt_sv",      flav, isPU ,ptjet                                  , ww);
         }
-        FillHisto_floatFromMap("jet_eta",     flav, isPU ,etajet   , ww);
-        FillHisto_floatFromMap("jet_phi",     flav, isPU ,phijet   , ww);
-        FillHisto_intFromMap(  "track_multi", flav, isPU ,ntrkjet  , ww);
+        FillHistoBtag("jet_eta",     flav, isPU ,etajet   , ww);
+        FillHistoBtag("jet_phi",     flav, isPU ,phijet   , ww);
+        FillHistoBtag(  "track_multi", flav, isPU ,ntrkjet  , ww);
 
       }
       
@@ -943,55 +943,55 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
 	    
 	    if (passNhit && passPix && passIPz && passPt && passnormchi2 && passtrkdist && passTrackIP2D)
             {
-	      FillHisto_floatFromMap("track_len_cut",   flav, isPU ,Track_length[itrk]          , ww);
+	      FillHistoBtag("track_len_cut",   flav, isPU ,Track_length[itrk]          , ww);
 	    }
 	    if (passNhit && passPix && passIPz && passPt && passnormchi2 && passtrklen && passTrackIP2D)
             {
-	      FillHisto_floatFromMap("track_dist_cut",  flav, isPU ,fabs(Track_dist[itrk])      , ww);
+	      FillHistoBtag("track_dist_cut",  flav, isPU ,fabs(Track_dist[itrk])      , ww);
 	    }	    
 	    if (passNhit && passPix && passIPz && passPt && passtrkdist && passtrklen && passTrackIP2D)
             {
-	      FillHisto_floatFromMap("track_chi2_cut",  flav, isPU ,Track_chi2[itrk]	        , ww);
+	      FillHistoBtag("track_chi2_cut",  flav, isPU ,Track_chi2[itrk]	        , ww);
 	    }	    
 	    if (passNhit && passPix && passIPz && passnormchi2 && passtrkdist && passtrklen && passTrackIP2D)
             {
-	      FillHisto_floatFromMap("track_pt_cut",    flav, isPU ,Track_pt[itrk]              , ww);
+	      FillHistoBtag("track_pt_cut",    flav, isPU ,Track_pt[itrk]              , ww);
 	    }	    
 	    if (passNhit && passPix && passPt && passnormchi2 && passtrkdist && passtrklen){
             
-	      FillHisto_floatFromMap("track_dz_cut",    flav, isPU ,Track_dz[itrk]              , ww);
+	      FillHistoBtag("track_dz_cut",    flav, isPU ,Track_dz[itrk]              , ww);
 	    }
 	    if (passNhit && passIPz && passPt && passnormchi2 && passtrkdist && passtrklen && passTrackIP2D)
             {
-	      FillHisto_intFromMap(  "track_HPix_cut",  flav, isPU ,Track_nHitPixel[itrk]       , ww);
+	      FillHistoBtag(  "track_HPix_cut",  flav, isPU ,Track_nHitPixel[itrk]       , ww);
 	    }	
 	    if (passPix && passIPz && passPt && passnormchi2 && passtrkdist && passtrklen && passTrackIP2D)
             {
-	      FillHisto_intFromMap(  "track_nHit_cut",  flav, isPU ,Track_nHitAll[itrk]         , ww);	  
+	      FillHistoBtag(  "track_nHit_cut",  flav, isPU ,Track_nHitAll[itrk]         , ww);	  
 	    }
 	    if (passNhit && passPix && passIPz && passPt && passnormchi2 && passtrkdist && passtrklen )
             {
-	      FillHisto_intFromMap(  "track_IP2D_cut",  flav, isPU ,Track_IP2D[itrk]            , ww);	  
+	      FillHistoBtag(  "track_IP2D_cut",  flav, isPU ,Track_IP2D[itrk]            , ww);	  
 	    }	    
 	  }
 	  
           if (passNhit && passPix && passIPz && passPt && passnormchi2 && passtrkdist && passtrklen && passTrackIP2D)
           {
 	    ntracksel++;
-	    FillHisto_floatFromMap("track_chi2",    flav, isPU ,Track_chi2[itrk]	,ww);
-	    FillHisto_intFromMap(  "track_nHit",    flav, isPU ,Track_nHitAll[itrk]     ,ww);
-	    FillHisto_intFromMap(  "track_HPix",    flav, isPU ,Track_nHitPixel[itrk]   ,ww);
-	    FillHisto_floatFromMap("track_IPs",     flav, isPU ,Track_IPsig[itrk]       ,ww);
-	    FillHisto_floatFromMap("track_IP",      flav, isPU ,Track_IP[itrk]          ,ww);
-	    FillHisto_floatFromMap("track_IP2Ds",   flav, isPU ,Track_IP2Dsig[itrk]     ,ww);
-	    FillHisto_floatFromMap("track_IP2D",    flav, isPU ,Track_IP2D[itrk]        ,ww);
-	    FillHisto_floatFromMap("track_IP2Derr", flav, isPU ,Track_IP2Derr[itrk]     ,ww);	  
-	    FillHisto_floatFromMap("track_IPerr",   flav, isPU ,Track_IPerr[itrk]       ,ww);	  	  
-	    FillHisto_floatFromMap("track_dz",      flav, isPU ,Track_dz[itrk]          ,ww);	  
-	    FillHisto_intFromMap(  "track_isfromSV",flav, isPU ,Track_isfromSV[itrk]    ,ww);	  
-	    FillHisto_floatFromMap("track_len",     flav, isPU ,Track_length[itrk]      ,ww);
-	    FillHisto_floatFromMap("track_dist",    flav, isPU ,fabs(Track_dist[itrk])  ,ww);
-	    FillHisto_floatFromMap("track_pt",      flav, isPU ,Track_pt[itrk]          ,ww);	  
+	    FillHistoBtag("track_chi2",    flav, isPU ,Track_chi2[itrk]	,ww);
+	    FillHistoBtag(  "track_nHit",    flav, isPU ,Track_nHitAll[itrk]     ,ww);
+	    FillHistoBtag(  "track_HPix",    flav, isPU ,Track_nHitPixel[itrk]   ,ww);
+	    FillHistoBtag("track_IPs",     flav, isPU ,Track_IPsig[itrk]       ,ww);
+	    FillHistoBtag("track_IP",      flav, isPU ,Track_IP[itrk]          ,ww);
+	    FillHistoBtag("track_IP2Ds",   flav, isPU ,Track_IP2Dsig[itrk]     ,ww);
+	    FillHistoBtag("track_IP2D",    flav, isPU ,Track_IP2D[itrk]        ,ww);
+	    FillHistoBtag("track_IP2Derr", flav, isPU ,Track_IP2Derr[itrk]     ,ww);	  
+	    FillHistoBtag("track_IPerr",   flav, isPU ,Track_IPerr[itrk]       ,ww);	  	  
+	    FillHistoBtag("track_dz",      flav, isPU ,Track_dz[itrk]          ,ww);	  
+	    FillHistoBtag(  "track_isfromSV",flav, isPU ,Track_isfromSV[itrk]    ,ww);	  
+	    FillHistoBtag("track_len",     flav, isPU ,Track_length[itrk]      ,ww);
+	    FillHistoBtag("track_dist",    flav, isPU ,fabs(Track_dist[itrk])  ,ww);
+	    FillHistoBtag("track_pt",      flav, isPU ,Track_pt[itrk]          ,ww);	  
 	    
 	  
             //Tracks sorted by IP
@@ -1032,64 +1032,64 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
 
 	if (n1_ip>-1)  
         {
-	  FillHisto_floatFromMap("track_IPs1tr",    flav, isPU ,sig1_ip               , ww);
-	  FillHisto_floatFromMap("track_IP1tr",     flav, isPU ,Track_IP[n1_ip]       , ww);
-	  FillHisto_floatFromMap("track_IPerr1tr",  flav, isPU ,Track_IPerr[n1_ip]    , ww);
-	  FillHisto_floatFromMap("track_IP2Ds1tr",  flav, isPU ,sig12D_ip             , ww);
-	  FillHisto_floatFromMap("track_IP2D1tr",   flav, isPU ,Track_IP2D[n1_ip]     , ww);
-	  FillHisto_floatFromMap("track_IP2Derr1tr",flav, isPU ,Track_IP2Derr[n1_ip]  , ww);		  
+	  FillHistoBtag("track_IPs1tr",    flav, isPU ,sig1_ip               , ww);
+	  FillHistoBtag("track_IP1tr",     flav, isPU ,Track_IP[n1_ip]       , ww);
+	  FillHistoBtag("track_IPerr1tr",  flav, isPU ,Track_IPerr[n1_ip]    , ww);
+	  FillHistoBtag("track_IP2Ds1tr",  flav, isPU ,sig12D_ip             , ww);
+	  FillHistoBtag("track_IP2D1tr",   flav, isPU ,Track_IP2D[n1_ip]     , ww);
+	  FillHistoBtag("track_IP2Derr1tr",flav, isPU ,Track_IP2Derr[n1_ip]  , ww);		  
 	}
 
 	if (n2_ip>-1) 
         {
-	  FillHisto_floatFromMap("track_IPs2tr",    flav, isPU ,sig2_ip               , ww);
-	  FillHisto_floatFromMap("track_IP2tr",     flav, isPU ,Track_IP[n2_ip]       , ww);
-	  FillHisto_floatFromMap("track_IPerr2tr",  flav, isPU ,Track_IPerr[n2_ip]    , ww);	
-	  FillHisto_floatFromMap("track_IP2Ds2tr",  flav, isPU ,sig22D_ip             , ww);
-	  FillHisto_floatFromMap("track_IP2D2tr",   flav, isPU ,Track_IP2D[n2_ip]     , ww);
-	  FillHisto_floatFromMap("track_IP2Derr2tr",flav, isPU ,Track_IP2Derr[n2_ip]  , ww);
+	  FillHistoBtag("track_IPs2tr",    flav, isPU ,sig2_ip               , ww);
+	  FillHistoBtag("track_IP2tr",     flav, isPU ,Track_IP[n2_ip]       , ww);
+	  FillHistoBtag("track_IPerr2tr",  flav, isPU ,Track_IPerr[n2_ip]    , ww);	
+	  FillHistoBtag("track_IP2Ds2tr",  flav, isPU ,sig22D_ip             , ww);
+	  FillHistoBtag("track_IP2D2tr",   flav, isPU ,Track_IP2D[n2_ip]     , ww);
+	  FillHistoBtag("track_IP2Derr2tr",flav, isPU ,Track_IP2Derr[n2_ip]  , ww);
 	}
                 
 	if (n3_ip>-1) 
         {
-	  FillHisto_floatFromMap("track_IPs3tr",    flav, isPU ,sig3_ip               , ww);
-	  FillHisto_floatFromMap("track_IP3tr",     flav, isPU ,Track_IP[n3_ip]       , ww);
-	  FillHisto_floatFromMap("track_IPerr3tr",  flav, isPU ,Track_IPerr[n3_ip]    , ww);	
-	  FillHisto_floatFromMap("track_IP2Ds3tr",  flav, isPU ,sig32D_ip             , ww);
-	  FillHisto_floatFromMap("track_IP2D3tr",   flav, isPU ,Track_IP2D[n3_ip]     , ww);
-	  FillHisto_floatFromMap("track_IP2Derr3tr",flav, isPU ,Track_IP2Derr[n3_ip]  , ww);
+	  FillHistoBtag("track_IPs3tr",    flav, isPU ,sig3_ip               , ww);
+	  FillHistoBtag("track_IP3tr",     flav, isPU ,Track_IP[n3_ip]       , ww);
+	  FillHistoBtag("track_IPerr3tr",  flav, isPU ,Track_IPerr[n3_ip]    , ww);	
+	  FillHistoBtag("track_IP2Ds3tr",  flav, isPU ,sig32D_ip             , ww);
+	  FillHistoBtag("track_IP2D3tr",   flav, isPU ,Track_IP2D[n3_ip]     , ww);
+	  FillHistoBtag("track_IP2Derr3tr",flav, isPU ,Track_IP2Derr[n3_ip]  , ww);
 	}
 
-	FillHisto_intFromMap(        "trk_multi_sel",     flav, isPU ,ntracksel	         , ww);  
-	FillHisto2D_int_floatFromMap("seltrack_vs_jetpt", flav, isPU ,ptjet ,  ntracksel , ww);
+	FillHistoBtag(        "trk_multi_sel",     flav, isPU ,ntracksel	         , ww);  
+	FillHisto2D("seltrack_vs_jetpt", flav, isPU ,ptjet ,  ntracksel , ww);
 
 
-        FillHisto_floatFromMap("tagvarCSV_vertexCategory",      flav, isPU, TagVarCSV_vertexCategory[newJetIndex],              ww);
-        FillHisto_floatFromMap("tagvarCSV_Sig2dAboveCharm",     flav, isPU, TagVarCSV_trackSip2dSigAboveCharm[newJetIndex],     ww);
-        FillHisto_floatFromMap("tagvarCSV_trackSumJetEtRatio",  flav, isPU, TagVarCSV_trackSumJetEtRatio[newJetIndex],          ww);
-        FillHisto_floatFromMap("tagvarCSV_trackSumJetDeltaR",   flav, isPU, TagVarCSV_trackSumJetDeltaR[newJetIndex],           ww);
+        FillHistoBtag("tagvarCSV_vertexCategory",      flav, isPU, TagVarCSV_vertexCategory[newJetIndex],              ww);
+        FillHistoBtag("tagvarCSV_Sig2dAboveCharm",     flav, isPU, TagVarCSV_trackSip2dSigAboveCharm[newJetIndex],     ww);
+        FillHistoBtag("tagvarCSV_trackSumJetEtRatio",  flav, isPU, TagVarCSV_trackSumJetEtRatio[newJetIndex],          ww);
+        FillHistoBtag("tagvarCSV_trackSumJetDeltaR",   flav, isPU, TagVarCSV_trackSumJetDeltaR[newJetIndex],           ww);
 
         for (int inrel=Jet_nFirstTrkEtaRelTagVarCSV[newJetIndex]; inrel<Jet_nLastTrkEtaRelTagVarCSV[newJetIndex]; inrel++) 
         {
-           FillHisto_floatFromMap("tagvarCSV_trackEtaRel",      flav, isPU, TagVarCSV_trackEtaRel[inrel],                       ww);
+           FillHistoBtag("tagvarCSV_trackEtaRel",      flav, isPU, TagVarCSV_trackEtaRel[inrel],                       ww);
         }
         
-        FillHisto_floatFromMap("tagvarCSV_energyratio",         flav, isPU, TagVarCSV_vertexEnergyRatio[newJetIndex],           ww);
+        FillHistoBtag("tagvarCSV_energyratio",         flav, isPU, TagVarCSV_vertexEnergyRatio[newJetIndex],           ww);
 
         for (int inrel=Jet_nFirstTrkTagVarCSV[newJetIndex]; inrel<Jet_nLastTrkTagVarCSV[newJetIndex]; inrel++) 
         {
-           FillHisto_floatFromMap("tagvarCSV_trackSip3dSig",    flav, isPU, TagVarCSV_trackSip3dSig[inrel],                     ww);
+           FillHistoBtag("tagvarCSV_trackSip3dSig",    flav, isPU, TagVarCSV_trackSip3dSig[inrel],                     ww);
         }
         if (TagVarCSV_vertexCategory[newJetIndex]==0) 
         {
-          FillHisto_floatFromMap("tagvarCSV_vertexmass_cat0",   flav, isPU, TagVarCSV_vertexMass[newJetIndex],                  ww);
+          FillHistoBtag("tagvarCSV_vertexmass_cat0",   flav, isPU, TagVarCSV_vertexMass[newJetIndex],                  ww);
           if (TagVarCSV_vertexNTracks[newJetIndex]>=3) 
           {
-                FillHisto_floatFromMap("tagvarCSV_vertexmass3trk_cat0",     flav, isPU, TagVarCSV_vertexMass[newJetIndex],      ww);
+                FillHistoBtag("tagvarCSV_vertexmass3trk_cat0",     flav, isPU, TagVarCSV_vertexMass[newJetIndex],      ww);
           }
-          FillHisto_floatFromMap("tagvarCSV_vertexNTracks_cat0",   flav, isPU, TagVarCSV_vertexNTracks[newJetIndex],            ww);
-          FillHisto_floatFromMap("tagvarCSV_2DsigFlightDist_cat0", flav, isPU, TagVarCSV_flightDistance2dSig[newJetIndex],      ww);
-          FillHisto_floatFromMap("tagvarCSV_vertexJetDeltaR_cat0", flav, isPU, TagVarCSV_vertexJetDeltaR[newJetIndex],          ww);
+          FillHistoBtag("tagvarCSV_vertexNTracks_cat0",   flav, isPU, TagVarCSV_vertexNTracks[newJetIndex],            ww);
+          FillHistoBtag("tagvarCSV_2DsigFlightDist_cat0", flav, isPU, TagVarCSV_flightDistance2dSig[newJetIndex],      ww);
+          FillHistoBtag("tagvarCSV_vertexJetDeltaR_cat0", flav, isPU, TagVarCSV_vertexJetDeltaR[newJetIndex],          ww);
         }
 
 	
@@ -1097,7 +1097,7 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
 	//fill information related to SV
 	//---------------------------------
 	n_sv           = Jet_SV_multi[newJetIndex];	  
-	FillHisto_intFromMap(  "sv_multi_0",      flav, isPU ,n_sv      ,ww);
+	FillHistoBtag(  "sv_multi_0",      flav, isPU ,n_sv      ,ww);
 
 	if (n_sv>0)
         {  
@@ -1122,32 +1122,32 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
           //-------------------------//
 	  //-----SV histograms-------//
           //-------------------------//   
-	  FillHisto_intFromMap(  "sv_multi",        flav, isPU ,n_sv               , ww);
-	  FillHisto_floatFromMap("sv_chi2norm",     flav, isPU ,chi2norm_sv        , ww);
-	  FillHisto_floatFromMap("sv_mass",         flav, isPU ,mass_sv            , ww);
-	  FillHisto_floatFromMap("sv_deltaR_jet",   flav, isPU ,sv_dR_jet          , ww);
-	  FillHisto_floatFromMap("sv_deltaR_sumJet",flav, isPU ,sv_dR_dir_sum      , ww);
-	  FillHisto_floatFromMap("sv_deltaR_sumDir",flav, isPU ,sv_dR_jet_sum      , ww);
-	  FillHisto_floatFromMap("sv_en_ratio",     flav, isPU ,sv_en_rat          , ww);
-	  FillHisto_floatFromMap("sv_pt",           flav, isPU ,sv_pt              , ww);
-	  FillHisto_floatFromMap("sv_flight2D",     flav, isPU ,sv_flight2D        , ww);
-	  FillHisto_floatFromMap("sv_flight2Derr",  flav, isPU ,sv_flight2Derr     , ww);
-	  FillHisto_floatFromMap("sv_flightSig2D",  flav, isPU ,flight2DSig_sv     , ww);
-	  FillHisto_intFromMap("sv_tot_charge",     flav, isPU ,sv_totchar         , ww);
-	  FillHisto_intFromMap(  "svnTrk",          flav, isPU ,sv_nTrk            , ww);
-	  FillHisto_floatFromMap("sv_eta",          flav, isPU ,sveta              , ww);
-	  FillHisto_floatFromMap("sv_phi",          flav, isPU ,svphi              , ww);	
-	  FillHisto_floatFromMap("sv_flight3D",     flav, isPU ,sv_flight3D        , ww);
-	  FillHisto_floatFromMap("sv_flight3Derr",  flav, isPU ,sv_flight3Derr     , ww);
-	  FillHisto_floatFromMap("sv_flight3DSig",  flav, isPU ,flightSig_sv       , ww);
+	  FillHistoBtag(  "sv_multi",        flav, isPU ,n_sv               , ww);
+	  FillHistoBtag("sv_chi2norm",     flav, isPU ,chi2norm_sv        , ww);
+	  FillHistoBtag("sv_mass",         flav, isPU ,mass_sv            , ww);
+	  FillHistoBtag("sv_deltaR_jet",   flav, isPU ,sv_dR_jet          , ww);
+	  FillHistoBtag("sv_deltaR_sumJet",flav, isPU ,sv_dR_dir_sum      , ww);
+	  FillHistoBtag("sv_deltaR_sumDir",flav, isPU ,sv_dR_jet_sum      , ww);
+	  FillHistoBtag("sv_en_ratio",     flav, isPU ,sv_en_rat          , ww);
+	  FillHistoBtag("sv_pt",           flav, isPU ,sv_pt              , ww);
+	  FillHistoBtag("sv_flight2D",     flav, isPU ,sv_flight2D        , ww);
+	  FillHistoBtag("sv_flight2Derr",  flav, isPU ,sv_flight2Derr     , ww);
+	  FillHistoBtag("sv_flightSig2D",  flav, isPU ,flight2DSig_sv     , ww);
+	  FillHistoBtag("sv_tot_charge",     flav, isPU ,sv_totchar         , ww);
+	  FillHistoBtag(  "svnTrk",          flav, isPU ,sv_nTrk            , ww);
+	  FillHistoBtag("sv_eta",          flav, isPU ,sveta              , ww);
+	  FillHistoBtag("sv_phi",          flav, isPU ,svphi              , ww);	
+	  FillHistoBtag("sv_flight3D",     flav, isPU ,sv_flight3D        , ww);
+	  FillHistoBtag("sv_flight3Derr",  flav, isPU ,sv_flight3Derr     , ww);
+	  FillHistoBtag("sv_flight3DSig",  flav, isPU ,flightSig_sv       , ww);
 	
-	  if (sv_nTrk >2)FillHisto_floatFromMap("sv_mass_3trk", flav, isPU ,mass_sv, ww);
+	  if (sv_nTrk >2)FillHistoBtag("sv_mass_3trk", flav, isPU ,mass_sv, ww);
 	
-	  FillHisto2D_float_floatFromMap("sv_mass_vs_flightDist3D"     ,flav,isPU ,sv_flight3D,mass_sv  , ww);	
-	  FillHisto2D_float_floatFromMap("avg_sv_mass_vs_jetpt"        ,flav,isPU ,ptjet,mass_sv        , ww);
-	  FillHisto2D_float_floatFromMap("sv_deltar_jet_vs_jetpt"      ,flav,isPU ,ptjet,sv_dR_jet      , ww);
-	  FillHisto2D_float_floatFromMap("sv_deltar_sum_jet_vs_jetpt"  ,flav,isPU ,ptjet,sv_dR_dir_sum  , ww);
-	  FillHisto2D_float_floatFromMap("sv_deltar_sum_dir_vs_jetpt"  ,flav,isPU ,ptjet,sv_dR_jet_sum  , ww);	    
+	  FillHisto2D("sv_mass_vs_flightDist3D"     ,flav,isPU ,sv_flight3D,mass_sv  , ww);	
+	  FillHisto2D("avg_sv_mass_vs_jetpt"        ,flav,isPU ,ptjet,mass_sv        , ww);
+	  FillHisto2D("sv_deltar_jet_vs_jetpt"      ,flav,isPU ,ptjet,sv_dR_jet      , ww);
+	  FillHisto2D("sv_deltar_sum_jet_vs_jetpt"  ,flav,isPU ,ptjet,sv_dR_dir_sum  , ww);
+	  FillHisto2D("sv_deltar_sum_dir_vs_jetpt"  ,flav,isPU ,ptjet,sv_dR_jet_sum  , ww);	    
 	    
 	}//end n_sv > 0 condition
 
@@ -1158,17 +1158,17 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
       {
 
         //Taggers
-        FillHisto_floatFromMap("TCHE",  flav, isPU, tche	, ww);
-        FillHisto_floatFromMap("TCHP",  flav, isPU, tchp	, ww);
-        FillHisto_floatFromMap("JP",    flav, isPU, jetproba    , ww);
-        FillHisto_floatFromMap("JBP",   flav, isPU, jetbproba   , ww);
-        FillHisto_floatFromMap("SSV",   flav, isPU, ssvhe	, ww);
-        FillHisto_floatFromMap("SSVHP", flav, isPU, ssvhp	, ww);
-        FillHisto_floatFromMap("CSV",   flav, isPU, csv	        , ww);
-        FillHisto_floatFromMap("CSVv2", flav, isPU, csv_v2      , ww);
-        FillHisto_floatFromMap("cMVAv2",flav, isPU, cmva_v2     , ww);
-        FillHisto_floatFromMap("CvsB",  flav, isPU, cvsB        , ww);
-        FillHisto_floatFromMap("CvsL",  flav, isPU, cvsL        , ww);
+        FillHistoBtag("TCHE",  flav, isPU, tche	, ww);
+        FillHistoBtag("TCHP",  flav, isPU, tchp	, ww);
+        FillHistoBtag("JP",    flav, isPU, jetproba    , ww);
+        FillHistoBtag("JBP",   flav, isPU, jetbproba   , ww);
+        FillHistoBtag("SSV",   flav, isPU, ssvhe	, ww);
+        FillHistoBtag("SSVHP", flav, isPU, ssvhp	, ww);
+        FillHistoBtag("CSV",   flav, isPU, csv	        , ww);
+        FillHistoBtag("CSVv2", flav, isPU, csv_v2      , ww);
+        FillHistoBtag("cMVAv2",flav, isPU, cmva_v2     , ww);
+        FillHistoBtag("CvsB",  flav, isPU, cvsB        , ww);
+        FillHistoBtag("CvsL",  flav, isPU, cvsL        , ww);
       }
 
       if (fillCommissioningHistograms && produceNewAlgoTree) 
@@ -1176,20 +1176,20 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         float softmu            = Jet_SoftMu[newJetIndex]  ;
         float solfel            = Jet_SoftEl[newJetIndex];
 
-        FillHisto_floatFromMap("SoftMu",      flav, isPU, softmu        , ww);
-        FillHisto_floatFromMap("SoftEl",      flav, isPU, solfel        , ww);
+        FillHistoBtag("SoftMu",      flav, isPU, softmu        , ww);
+        FillHistoBtag("SoftEl",      flav, isPU, solfel        , ww);
 
       }
 
       if( fillCommissioningHistograms)
       {
         //Taggers
-        FillHisto_floatFromMap("TCHE_extended1",  flav, isPU, tche  , ww);
-        FillHisto_floatFromMap("TCHP_extended1",  flav, isPU, tchp  , ww);
-        FillHisto_floatFromMap("TCHE_extended2",  flav, isPU, tche  , ww);
-        FillHisto_floatFromMap("TCHP_extended2",  flav, isPU, tchp  , ww);
-        FillHisto_floatFromMap("discri_ssche0",   flav, isPU, ssvhe , ww);
-        FillHisto_floatFromMap("discri_sschp0",   flav, isPU, ssvhp , ww);
+        FillHistoBtag("TCHE_extended1",  flav, isPU, tche  , ww);
+        FillHistoBtag("TCHP_extended1",  flav, isPU, tchp  , ww);
+        FillHistoBtag("TCHE_extended2",  flav, isPU, tche  , ww);
+        FillHistoBtag("TCHP_extended2",  flav, isPU, tchp  , ww);
+        FillHistoBtag("discri_ssche0",   flav, isPU, ssvhe , ww);
+        FillHistoBtag("discri_sschp0",   flav, isPU, ssvhp , ww);
       
       } // end of fillCommissioningHistograms     
 
@@ -1223,19 +1223,19 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         }
 
 
-        FillHisto_intFromMap(  "pfmuon_multi",  flav, isPU , npfmu   ,ww);
+        FillHistoBtag(  "pfmuon_multi",  flav, isPU , npfmu   ,ww);
         
         if (indpfmu>-1)
         {
-          FillHisto_intFromMap(  "pfmuon_goodquality", flav, isPU, PFMuon_GoodQuality[indpfmu]       , ww);
-          FillHisto_floatFromMap("pfmuon_pt",          flav, isPU, PFMuon_pt[indpfmu]                , ww);
-          FillHisto_floatFromMap("pfmuon_eta",         flav, isPU, PFMuon_eta[indpfmu]               , ww);
-          FillHisto_floatFromMap("pfmuon_phi",         flav, isPU, PFMuon_phi[indpfmu]               , ww);
-          FillHisto_floatFromMap("pfmuon_Sip",         flav, isPU, PFMuon_IPsig[indpfmu]             , ww);
-          FillHisto_floatFromMap("pfmuon_ptrel",       flav, isPU, PFMuon_ptrel[indpfmu]             , ww);
-          FillHisto_floatFromMap("pfmuon_ratio",       flav, isPU, PFMuon_ratio[indpfmu]             , ww);
-          FillHisto_floatFromMap("pfmuon_ratiorel",    flav, isPU, PFMuon_ratioRel[indpfmu]          , ww);
-          FillHisto_floatFromMap("pfmuon_deltar",      flav, isPU, PFMuon_deltaR[indpfmu]            , ww);
+          FillHistoBtag(  "pfmuon_goodquality", flav, isPU, PFMuon_GoodQuality[indpfmu]       , ww);
+          FillHistoBtag("pfmuon_pt",          flav, isPU, PFMuon_pt[indpfmu]                , ww);
+          FillHistoBtag("pfmuon_eta",         flav, isPU, PFMuon_eta[indpfmu]               , ww);
+          FillHistoBtag("pfmuon_phi",         flav, isPU, PFMuon_phi[indpfmu]               , ww);
+          FillHistoBtag("pfmuon_Sip",         flav, isPU, PFMuon_IPsig[indpfmu]             , ww);
+          FillHistoBtag("pfmuon_ptrel",       flav, isPU, PFMuon_ptrel[indpfmu]             , ww);
+          FillHistoBtag("pfmuon_ratio",       flav, isPU, PFMuon_ratio[indpfmu]             , ww);
+          FillHistoBtag("pfmuon_ratiorel",    flav, isPU, PFMuon_ratioRel[indpfmu]          , ww);
+          FillHistoBtag("pfmuon_deltar",      flav, isPU, PFMuon_deltaR[indpfmu]            , ww);
         }
 
         //PFElectron
@@ -1262,136 +1262,136 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         }
 
 
-        FillHisto_intFromMap(  "pfelectron_multi",  flav, isPU , npfel   ,ww);
+        FillHistoBtag(  "pfelectron_multi",  flav, isPU , npfel   ,ww);
 
         if (indpfel>-1)
         {
-          FillHisto_floatFromMap("pfelectron_pt",        flav, isPU, PFElectron_pt[indpfel]           , ww);
-          FillHisto_floatFromMap("pfelectron_eta",       flav, isPU, PFElectron_eta[indpfel]          , ww);
-          FillHisto_floatFromMap("pfelectron_phi",       flav, isPU, PFElectron_phi[indpfel]          , ww);
-          FillHisto_floatFromMap("pfelectron_ptrel",     flav, isPU, PFElectron_ptrel[indpfel]        , ww);
-          FillHisto_floatFromMap("pfelectron_ratio",     flav, isPU, PFElectron_ratio[indpfel]        , ww);
-          FillHisto_floatFromMap("pfelectron_ratiorel",  flav, isPU, PFElectron_ratioRel[indpfel]     , ww);
-          FillHisto_floatFromMap("pfelectron_deltar",    flav, isPU, PFElectron_deltaR[indpfel]       , ww);
+          FillHistoBtag("pfelectron_pt",        flav, isPU, PFElectron_pt[indpfel]           , ww);
+          FillHistoBtag("pfelectron_eta",       flav, isPU, PFElectron_eta[indpfel]          , ww);
+          FillHistoBtag("pfelectron_phi",       flav, isPU, PFElectron_phi[indpfel]          , ww);
+          FillHistoBtag("pfelectron_ptrel",     flav, isPU, PFElectron_ptrel[indpfel]        , ww);
+          FillHistoBtag("pfelectron_ratio",     flav, isPU, PFElectron_ratio[indpfel]        , ww);
+          FillHistoBtag("pfelectron_ratiorel",  flav, isPU, PFElectron_ratioRel[indpfel]     , ww);
+          FillHistoBtag("pfelectron_deltar",    flav, isPU, PFElectron_deltaR[indpfel]       , ww);
         } 
 
 
       }// end produceNewAlgoTree and fillCommissioningHistograms
 
       if ( fillCommissioningHistograms && produceCTagTree ){
-        FillHisto_floatFromMap("CTag_tagvarCSV_vertexCategory",      flav, isPU, TagVarCSV_vertexCategory[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_tagvarCSV_Sig2dAboveCharm",     flav, isPU, TagVarCSV_trackSip2dSigAboveCharm[newJetIndex],     ww);
-        FillHisto_floatFromMap("CTag_tagvarCSV_trackSumJetEtRatio",  flav, isPU, TagVarCSV_trackSumJetEtRatio[newJetIndex],          ww);
-        FillHisto_floatFromMap("CTag_tagvarCSV_trackSumJetDeltaR",   flav, isPU, TagVarCSV_trackSumJetDeltaR[newJetIndex],           ww);
+        FillHistoBtag("CTag_tagvarCSV_vertexCategory",      flav, isPU, TagVarCSV_vertexCategory[newJetIndex],              ww);
+        FillHistoBtag("CTag_tagvarCSV_Sig2dAboveCharm",     flav, isPU, TagVarCSV_trackSip2dSigAboveCharm[newJetIndex],     ww);
+        FillHistoBtag("CTag_tagvarCSV_trackSumJetEtRatio",  flav, isPU, TagVarCSV_trackSumJetEtRatio[newJetIndex],          ww);
+        FillHistoBtag("CTag_tagvarCSV_trackSumJetDeltaR",   flav, isPU, TagVarCSV_trackSumJetDeltaR[newJetIndex],           ww);
 
         for (int inrel=Jet_nFirstTrkEtaRelTagVarCSV[newJetIndex]; inrel<Jet_nLastTrkEtaRelTagVarCSV[newJetIndex]; inrel++)
         {
-           FillHisto_floatFromMap("CTag_tagvarCSV_trackEtaRel",      flav, isPU, TagVarCSV_trackEtaRel[inrel],                       ww);
+           FillHistoBtag("CTag_tagvarCSV_trackEtaRel",      flav, isPU, TagVarCSV_trackEtaRel[inrel],                       ww);
         }
 
-        FillHisto_floatFromMap("CTag_tagvarCSV_energyratio",         flav, isPU, TagVarCSV_vertexEnergyRatio[newJetIndex],           ww);
+        FillHistoBtag("CTag_tagvarCSV_energyratio",         flav, isPU, TagVarCSV_vertexEnergyRatio[newJetIndex],           ww);
 
         for (int inrel=Jet_nFirstTrkTagVarCSV[newJetIndex]; inrel<Jet_nLastTrkTagVarCSV[newJetIndex]; inrel++)
         {
-           FillHisto_floatFromMap("CTag_tagvarCSV_trackSip3dSig",    flav, isPU, TagVarCSV_trackSip3dSig[inrel],                     ww);
+           FillHistoBtag("CTag_tagvarCSV_trackSip3dSig",    flav, isPU, TagVarCSV_trackSip3dSig[inrel],                     ww);
         }
         if (TagVarCSV_vertexCategory[newJetIndex]==0)
         {
-          FillHisto_floatFromMap("CTag_tagvarCSV_vertexmass_cat0",   flav, isPU, TagVarCSV_vertexMass[newJetIndex],                  ww);
+          FillHistoBtag("CTag_tagvarCSV_vertexmass_cat0",   flav, isPU, TagVarCSV_vertexMass[newJetIndex],                  ww);
           if (TagVarCSV_vertexNTracks[newJetIndex]>=3)
           {
-                FillHisto_floatFromMap("CTag_tagvarCSV_vertexmass3trk_cat0",     flav, isPU, TagVarCSV_vertexMass[newJetIndex],      ww);
+                FillHistoBtag("CTag_tagvarCSV_vertexmass3trk_cat0",     flav, isPU, TagVarCSV_vertexMass[newJetIndex],      ww);
           }
-          FillHisto_floatFromMap("CTag_tagvarCSV_vertexNTracks_cat0",   flav, isPU, TagVarCSV_vertexNTracks[newJetIndex],            ww);
-          FillHisto_floatFromMap("CTag_tagvarCSV_2DsigFlightDist_cat0", flav, isPU, TagVarCSV_flightDistance2dSig[newJetIndex],      ww);
-          FillHisto_floatFromMap("CTag_tagvarCSV_vertexJetDeltaR_cat0", flav, isPU, TagVarCSV_vertexJetDeltaR[newJetIndex],          ww);
+          FillHistoBtag("CTag_tagvarCSV_vertexNTracks_cat0",   flav, isPU, TagVarCSV_vertexNTracks[newJetIndex],            ww);
+          FillHistoBtag("CTag_tagvarCSV_2DsigFlightDist_cat0", flav, isPU, TagVarCSV_flightDistance2dSig[newJetIndex],      ww);
+          FillHistoBtag("CTag_tagvarCSV_vertexJetDeltaR_cat0", flav, isPU, TagVarCSV_vertexJetDeltaR[newJetIndex],          ww);
         }
         
-        FillHisto_floatFromMap("CTag_jetNTracks",               flav, isPU ,CTag_jetNTracks[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_jetNTracksEtaRel",         flav, isPU ,CTag_jetNTracksEtaRel[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_jetNLeptons",              flav, isPU ,CTag_jetNLeptons[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_trackSumJetEtRatio",       flav, isPU ,CTag_trackSumJetEtRatio[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_trackSumJetDeltaR",        flav, isPU ,CTag_trackSumJetDeltaR[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_trackSip2dSigAboveCharm",  flav, isPU ,CTag_trackSip2dSigAboveCharm[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_trackSip3dSigAboveCharm",  flav, isPU ,CTag_trackSip3dSigAboveCharm[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_vertexCategory",           flav, isPU ,CTag_vertexCategory[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_jetNSecondaryVertices",    flav, isPU ,CTag_jetNSecondaryVertices[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_vertexMass",               flav, isPU ,CTag_vertexMass[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_vertexNTracks",            flav, isPU ,CTag_vertexNTracks[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_vertexEnergyRatio",        flav, isPU ,CTag_vertexEnergyRatio[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_vertexJetDeltaR",          flav, isPU ,CTag_vertexJetDeltaR[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_flightDistance2dSig",      flav, isPU ,CTag_flightDistance2dSig[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_flightDistance3dSig",      flav, isPU ,CTag_flightDistance3dSig[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_massVertexEnergyFraction", flav, isPU ,CTag_massVertexEnergyFraction[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_vertexBoostOverSqrtJetPt", flav, isPU ,CTag_vertexBoostOverSqrtJetPt[newJetIndex],              ww);
-        FillHisto_floatFromMap("CTag_vertexLeptonCategory",     flav, isPU ,CTag_vertexLeptonCategory[newJetIndex],              ww);
+        FillHistoBtag("CTag_jetNTracks",               flav, isPU ,CTag_jetNTracks[newJetIndex],              ww);
+        FillHistoBtag("CTag_jetNTracksEtaRel",         flav, isPU ,CTag_jetNTracksEtaRel[newJetIndex],              ww);
+        FillHistoBtag("CTag_jetNLeptons",              flav, isPU ,CTag_jetNLeptons[newJetIndex],              ww);
+        FillHistoBtag("CTag_trackSumJetEtRatio",       flav, isPU ,CTag_trackSumJetEtRatio[newJetIndex],              ww);
+        FillHistoBtag("CTag_trackSumJetDeltaR",        flav, isPU ,CTag_trackSumJetDeltaR[newJetIndex],              ww);
+        FillHistoBtag("CTag_trackSip2dSigAboveCharm",  flav, isPU ,CTag_trackSip2dSigAboveCharm[newJetIndex],              ww);
+        FillHistoBtag("CTag_trackSip3dSigAboveCharm",  flav, isPU ,CTag_trackSip3dSigAboveCharm[newJetIndex],              ww);
+        FillHistoBtag("CTag_vertexCategory",           flav, isPU ,CTag_vertexCategory[newJetIndex],              ww);
+        FillHistoBtag("CTag_jetNSecondaryVertices",    flav, isPU ,CTag_jetNSecondaryVertices[newJetIndex],              ww);
+        FillHistoBtag("CTag_vertexMass",               flav, isPU ,CTag_vertexMass[newJetIndex],              ww);
+        FillHistoBtag("CTag_vertexNTracks",            flav, isPU ,CTag_vertexNTracks[newJetIndex],              ww);
+        FillHistoBtag("CTag_vertexEnergyRatio",        flav, isPU ,CTag_vertexEnergyRatio[newJetIndex],              ww);
+        FillHistoBtag("CTag_vertexJetDeltaR",          flav, isPU ,CTag_vertexJetDeltaR[newJetIndex],              ww);
+        FillHistoBtag("CTag_flightDistance2dSig",      flav, isPU ,CTag_flightDistance2dSig[newJetIndex],              ww);
+        FillHistoBtag("CTag_flightDistance3dSig",      flav, isPU ,CTag_flightDistance3dSig[newJetIndex],              ww);
+        FillHistoBtag("CTag_massVertexEnergyFraction", flav, isPU ,CTag_massVertexEnergyFraction[newJetIndex],              ww);
+        FillHistoBtag("CTag_vertexBoostOverSqrtJetPt", flav, isPU ,CTag_vertexBoostOverSqrtJetPt[newJetIndex],              ww);
+        FillHistoBtag("CTag_vertexLeptonCategory",     flav, isPU ,CTag_vertexLeptonCategory[newJetIndex],              ww);
 
         if (CTag_vertexCategory[newJetIndex]==0){
-          FillHisto_floatFromMap("CTag_jetNSecondaryVertices_Vcat0",    flav, isPU ,CTag_jetNSecondaryVertices[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_vertexMass_Vcat0",               flav, isPU ,CTag_vertexMass[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_vertexNTracks_Vcat0",            flav, isPU ,CTag_vertexNTracks[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_vertexEnergyRatio_Vcat0",        flav, isPU ,CTag_vertexEnergyRatio[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_vertexJetDeltaR_Vcat0",          flav, isPU ,CTag_vertexJetDeltaR[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_flightDistance2dSig_Vcat0",      flav, isPU ,CTag_flightDistance2dSig[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_flightDistance3dSig_Vcat0",      flav, isPU ,CTag_flightDistance3dSig[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_massVertexEnergyFraction_Vcat0", flav, isPU ,CTag_massVertexEnergyFraction[newJetIndex],              ww);
-          FillHisto_floatFromMap("CTag_vertexBoostOverSqrtJetPt_Vcat0", flav, isPU ,CTag_vertexBoostOverSqrtJetPt[newJetIndex],              ww);
+          FillHistoBtag("CTag_jetNSecondaryVertices_Vcat0",    flav, isPU ,CTag_jetNSecondaryVertices[newJetIndex],              ww);
+          FillHistoBtag("CTag_vertexMass_Vcat0",               flav, isPU ,CTag_vertexMass[newJetIndex],              ww);
+          FillHistoBtag("CTag_vertexNTracks_Vcat0",            flav, isPU ,CTag_vertexNTracks[newJetIndex],              ww);
+          FillHistoBtag("CTag_vertexEnergyRatio_Vcat0",        flav, isPU ,CTag_vertexEnergyRatio[newJetIndex],              ww);
+          FillHistoBtag("CTag_vertexJetDeltaR_Vcat0",          flav, isPU ,CTag_vertexJetDeltaR[newJetIndex],              ww);
+          FillHistoBtag("CTag_flightDistance2dSig_Vcat0",      flav, isPU ,CTag_flightDistance2dSig[newJetIndex],              ww);
+          FillHistoBtag("CTag_flightDistance3dSig_Vcat0",      flav, isPU ,CTag_flightDistance3dSig[newJetIndex],              ww);
+          FillHistoBtag("CTag_massVertexEnergyFraction_Vcat0", flav, isPU ,CTag_massVertexEnergyFraction[newJetIndex],              ww);
+          FillHistoBtag("CTag_vertexBoostOverSqrtJetPt_Vcat0", flav, isPU ,CTag_vertexBoostOverSqrtJetPt[newJetIndex],              ww);
         }
          
         for (int inrel=Jet_nFirstTrkCTagVar[newJetIndex]; inrel<Jet_nLastTrkCTagVar[newJetIndex]; inrel++)
         {
-           FillHisto_floatFromMap("CTag_trackPtRel",    flav, isPU, CTag_trackPtRel[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackPPar",    flav, isPU, CTag_trackPPar[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackDeltaR",    flav, isPU, CTag_trackDeltaR[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackPtRatio",    flav, isPU, CTag_trackPtRatio[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackPParRatio",    flav, isPU, CTag_trackPParRatio[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackSip2dSig",    flav, isPU, CTag_trackSip2dSig[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackSip3dSig",    flav, isPU, CTag_trackSip3dSig[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackDecayLenVal",    flav, isPU, CTag_trackDecayLenVal[inrel],                     ww);
-           FillHisto_floatFromMap("CTag_trackJetDistVal",    flav, isPU, CTag_trackJetDistVal[inrel],                     ww);
+           FillHistoBtag("CTag_trackPtRel",    flav, isPU, CTag_trackPtRel[inrel],                     ww);
+           FillHistoBtag("CTag_trackPPar",    flav, isPU, CTag_trackPPar[inrel],                     ww);
+           FillHistoBtag("CTag_trackDeltaR",    flav, isPU, CTag_trackDeltaR[inrel],                     ww);
+           FillHistoBtag("CTag_trackPtRatio",    flav, isPU, CTag_trackPtRatio[inrel],                     ww);
+           FillHistoBtag("CTag_trackPParRatio",    flav, isPU, CTag_trackPParRatio[inrel],                     ww);
+           FillHistoBtag("CTag_trackSip2dSig",    flav, isPU, CTag_trackSip2dSig[inrel],                     ww);
+           FillHistoBtag("CTag_trackSip3dSig",    flav, isPU, CTag_trackSip3dSig[inrel],                     ww);
+           FillHistoBtag("CTag_trackDecayLenVal",    flav, isPU, CTag_trackDecayLenVal[inrel],                     ww);
+           FillHistoBtag("CTag_trackJetDistVal",    flav, isPU, CTag_trackJetDistVal[inrel],                     ww);
         }
         for (int inrel=Jet_nFirstTrkEtaRelCTagVar[newJetIndex]; inrel<Jet_nLastTrkEtaRelCTagVar[newJetIndex]; inrel++)
         {
-           FillHisto_floatFromMap("CTag_trackEtaRel",      flav, isPU, CTag_trackEtaRel[inrel],                       ww);
+           FillHistoBtag("CTag_trackEtaRel",      flav, isPU, CTag_trackEtaRel[inrel],                       ww);
         }
         for (int inrel=Jet_nFirstLepCTagVar[newJetIndex]; inrel<Jet_nLastLepCTagVar[newJetIndex]; inrel++)
         {
-           FillHisto_floatFromMap("CTag_leptonPtRel",      flav, isPU, CTag_leptonPtRel[inrel],                       ww);
-           FillHisto_floatFromMap("CTag_leptonSip3d",      flav, isPU, CTag_leptonSip3d[inrel],                       ww);
-           FillHisto_floatFromMap("CTag_leptonDeltaR",      flav, isPU, CTag_leptonDeltaR[inrel],                       ww);
-           FillHisto_floatFromMap("CTag_leptonRatioRel",      flav, isPU, CTag_leptonRatioRel[inrel],                       ww);
-           FillHisto_floatFromMap("CTag_leptonEtaRel",      flav, isPU, CTag_leptonEtaRel[inrel],                       ww);
-           FillHisto_floatFromMap("CTag_leptonRatio",      flav, isPU, CTag_leptonRatio[inrel],                       ww);
+           FillHistoBtag("CTag_leptonPtRel",      flav, isPU, CTag_leptonPtRel[inrel],                       ww);
+           FillHistoBtag("CTag_leptonSip3d",      flav, isPU, CTag_leptonSip3d[inrel],                       ww);
+           FillHistoBtag("CTag_leptonDeltaR",      flav, isPU, CTag_leptonDeltaR[inrel],                       ww);
+           FillHistoBtag("CTag_leptonRatioRel",      flav, isPU, CTag_leptonRatioRel[inrel],                       ww);
+           FillHistoBtag("CTag_leptonEtaRel",      flav, isPU, CTag_leptonEtaRel[inrel],                       ww);
+           FillHistoBtag("CTag_leptonRatio",      flav, isPU, CTag_leptonRatio[inrel],                       ww);
         }
 
-        FillHisto_floatFromMap("JP",    flav, isPU, jetproba    , ww);
-        FillHisto_floatFromMap("CSVv2", flav, isPU, csv_v2      , ww);
-        FillHisto_floatFromMap("cMVAv2",flav, isPU, cmva_v2     , ww);
+        FillHistoBtag("JP",    flav, isPU, jetproba    , ww);
+        FillHistoBtag("CSVv2", flav, isPU, csv_v2      , ww);
+        FillHistoBtag("cMVAv2",flav, isPU, cmva_v2     , ww);
 
-        FillHisto_floatFromMap("CvsB",  flav, isPU, CvsB        ,ww);
-        FillHisto_floatFromMap("CvsBN", flav, isPU, CvsBN       ,ww);
-        FillHisto_floatFromMap("CvsBP", flav, isPU, CvsBP       ,ww);
-        FillHisto_floatFromMap("CvsL",  flav, isPU, CvsL        ,ww);
-        FillHisto_floatFromMap("CvsLN", flav, isPU, CvsLN       ,ww);
-        FillHisto_floatFromMap("CvsLP", flav, isPU, CvsLP       ,ww);   
+        FillHistoBtag("CvsB",  flav, isPU, CvsB        ,ww);
+        FillHistoBtag("CvsBN", flav, isPU, CvsBN       ,ww);
+        FillHistoBtag("CvsBP", flav, isPU, CvsBP       ,ww);
+        FillHistoBtag("CvsL",  flav, isPU, CvsL        ,ww);
+        FillHistoBtag("CvsLN", flav, isPU, CvsLN       ,ww);
+        FillHistoBtag("CvsLP", flav, isPU, CvsLP       ,ww);   
 
    }// End of fillCommissioningHistograms && produceCTagTree      
 
     } // End Loop on Jets
 
     if(!produceCTagTree){
-    if( nJets_pt30 >= 2 ) FillHistottbar_intFromMap("njet_pt30", nJets_pt30  , ww);
+    if( nJets_pt30 >= 2 ) FillHistoTTbar("njet_pt30", nJets_pt30  , ww);
  
     if(fillCommissioningHistograms)
     {
-        FillHistottbar_intFromMap("njet",           thettbarselector_.theSelJetColl.size()  , ww);
-        FillHistottbar_intFromMap("nbtag_CSVv2T",   nbjet_ttbar_CSVv2_TWP                   , ww);
-        FillHistottbar_intFromMap("nbtag_CSVv2M",   nbjet_ttbar_CSVv2_MWP                   , ww);
-        FillHistottbar_intFromMap("nbtag_CSVv2L",   nbjet_ttbar_CSVv2_LWP                   , ww);
-        FillHistottbar_intFromMap("nbtag_cMVAv2T",  nbjet_ttbar_cMVAv2_TWP                  , ww);
-        FillHistottbar_intFromMap("nbtag_cMVAv2M",  nbjet_ttbar_cMVAv2_MWP                  , ww);
-        FillHistottbar_intFromMap("nbtag_cMVAv2L",  nbjet_ttbar_cMVAv2_LWP                  , ww);
-        FillHistottbar_floatFromMap("pt_jet",       ptjet_ttbar                             , ww);
+        FillHistoTTbar("njet",           thettbarselector_.theSelJetColl.size()  , ww);
+        FillHistoTTbar("nbtag_CSVv2T",   nbjet_ttbar_CSVv2_TWP                   , ww);
+        FillHistoTTbar("nbtag_CSVv2M",   nbjet_ttbar_CSVv2_MWP                   , ww);
+        FillHistoTTbar("nbtag_CSVv2L",   nbjet_ttbar_CSVv2_LWP                   , ww);
+        FillHistoTTbar("nbtag_cMVAv2T",  nbjet_ttbar_cMVAv2_TWP                  , ww);
+        FillHistoTTbar("nbtag_cMVAv2M",  nbjet_ttbar_cMVAv2_MWP                  , ww);
+        FillHistoTTbar("nbtag_cMVAv2L",  nbjet_ttbar_cMVAv2_LWP                  , ww);
+        FillHistoTTbar("pt_jet",       ptjet_ttbar                             , ww);
 
         // HIP check (as function of run range for Run2016B)
         if( isData && thettbarselector_.theSelJetColl.size() == 2 )//ALPHA
@@ -1417,10 +1417,10 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
             else if( Run < 275657 ) cat=17;
             else                    cat=18; // fill events for later run ranges
 
-            FillHistottbar_intFromMap("nEvt_run", cat, 1);
-            if ( nbjet_ttbar_CSVv2_LWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2L", cat, 1); 
-            if ( nbjet_ttbar_CSVv2_MWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2M", cat, 1);
-            if ( nbjet_ttbar_CSVv2_TWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2T", cat, 1);
+            FillHistoTTbar("nEvt_run", cat, 1);
+            if ( nbjet_ttbar_CSVv2_LWP >= 2 ) FillHistoTTbar("nEvt_run_CSVv2L", cat, 1); 
+            if ( nbjet_ttbar_CSVv2_MWP >= 2 ) FillHistoTTbar("nEvt_run_CSVv2M", cat, 1);
+            if ( nbjet_ttbar_CSVv2_TWP >= 2 ) FillHistoTTbar("nEvt_run_CSVv2T", cat, 1);
         }
     }
 
@@ -1433,25 +1433,25 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         else if(isBetween60and120)  tmp_ptbin = "_60-120";        
         else if(isBetween120and320) tmp_ptbin = "_120-320";        
 
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2T",               nbjet_afterJetSel_ttbar_CSVv2_TWP  ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2M_SFapplied",     n_ttbar_applySF                    ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2M",               nbjet_afterJetSel_ttbar_CSVv2_MWP  ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2L",               nbjet_afterJetSel_ttbar_CSVv2_LWP  ,ww);
+        FillHistoTTbar("nbtag_all_afterJetSel_CSVv2T",               nbjet_afterJetSel_ttbar_CSVv2_TWP  ,ww);
+        FillHistoTTbar("nbtag_all_afterJetSel_CSVv2M_SFapplied",     n_ttbar_applySF                    ,ww);
+        FillHistoTTbar("nbtag_all_afterJetSel_CSVv2M",               nbjet_afterJetSel_ttbar_CSVv2_MWP  ,ww);
+        FillHistoTTbar("nbtag_all_afterJetSel_CSVv2L",               nbjet_afterJetSel_ttbar_CSVv2_LWP  ,ww);
 
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2T",              nbjet_afterJetSel_ttbar_cMVAv2_TWP ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2M",              nbjet_afterJetSel_ttbar_cMVAv2_MWP ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2L",              nbjet_afterJetSel_ttbar_cMVAv2_LWP ,ww);
+        FillHistoTTbar("nbtag_all_afterJetSel_cMVAv2T",              nbjet_afterJetSel_ttbar_cMVAv2_TWP ,ww);
+        FillHistoTTbar("nbtag_all_afterJetSel_cMVAv2M",              nbjet_afterJetSel_ttbar_cMVAv2_MWP ,ww);
+        FillHistoTTbar("nbtag_all_afterJetSel_cMVAv2L",              nbjet_afterJetSel_ttbar_cMVAv2_LWP ,ww);
 
         if(tmp_ptbin != "")
         {
 
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
         }
 
@@ -1459,144 +1459,144 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         if( n_ttbar_bgenjet == 2)
         {
 
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_2b_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_2b_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_2b_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_2b_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_2b_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_2b_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_bgenjet == 1 && n_ttbar_cgenjet == 1 )
         {
 
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_1b1c_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_1b1c_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_1b1c_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_1b1c_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_1b1c_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_1b1c_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_bgenjet == 1 && n_ttbar_lgenjet == 1 )
         {
 
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_1b1l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_1b1l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_1b1l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_1b1l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_1b1l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_1b1l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_cgenjet == 2)
         {
 
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_2c_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_2c_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_2c_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_2c_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_2c_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_2c_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_cgenjet == 1 && n_ttbar_lgenjet == 1 )
         {
 
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_1c1l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_1c1l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_1c1l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_1c1l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_1c1l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_1c1l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_lgenjet == 2 )
         {
 
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_2l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_2l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_2l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistoTTbar("nbtag_2l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistoTTbar("nbtag_2l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistoTTbar("nbtag_2l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2T",nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2M",nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2L",nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistoTTbar("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2T",nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistoTTbar("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2M",nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistoTTbar("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2L",nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
@@ -1648,7 +1648,7 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
 
 }
 
-void CommPlotProducer4ttbar::AddHisto(TString name, TString title, int nbins, float min, float max, TString syst)
+void CommPlotProducer4ttbar::AddHistoBtag(TString name, TString title, int nbins, float min, float max, TString syst)
 {
 
   TString syst_tmp = "";
@@ -1680,7 +1680,7 @@ void CommPlotProducer4ttbar::AddHisto(TString name, TString title, int nbins, fl
   
 }
 
-void CommPlotProducer4ttbar::AddHistottbar(TString name, TString title, int nbins, float min, float max)
+void CommPlotProducer4ttbar::AddHistoTTbar(TString name, TString title, int nbins, float min, float max)
 {
  
   TH1D* h = new TH1D(name, title, nbins, min, max);
@@ -1692,54 +1692,8 @@ void CommPlotProducer4ttbar::AddHistottbar(TString name, TString title, int nbin
   
 }
 
-void CommPlotProducer4ttbar::FillHisto_float(int flavour, bool isPU, int number, float value, double weight)
-{
-  
-  if (!isData)
-  {
-    if (isPU)                                       HistoBtag[number*5 +1]->Fill(value,weight);
-    else if (fabs(flavour)==5)                      HistoBtag[number*5 +0]->Fill(value,weight);
-    else if (fabs(flavour)==4)                      HistoBtag[number*5 +2]->Fill(value,weight); 
-    else if (fabs(flavour)< 4 || fabs(flavour)==21) HistoBtag[number*5 +3]->Fill(value,weight);
-    
-  }  
-  else                                              HistoBtag[number*5 +4]->Fill(value);
-  
-  
-}
-void CommPlotProducer4ttbar::FillHisto_int(int flavour, bool isPU, int number, int value, double weight)
-{
-  
-  if (!isData)
-  {
-    if (isPU)                                       HistoBtag[number*5 +1]->Fill(value,weight);
-    else if (fabs(flavour)==5)                      HistoBtag[number*5 +0]->Fill(value,weight);
-    else if (fabs(flavour)==4)                      HistoBtag[number*5 +2]->Fill(value,weight); 
-    else if (fabs(flavour)< 4 || fabs(flavour)==21) HistoBtag[number*5 +3]->Fill(value,weight);
-  }  
-  else                                              HistoBtag[number*5 +4]->Fill(value);
-  
-}
-
-
-void CommPlotProducer4ttbar::FillHisto_floatFromMap(TString name, int flavour, bool isPU, float value, double weight)
-{
-  
-  int number = HistoBtag_map[name.Data()] ;
-  if (!isData)
-  {
-    if (isPU)                                       HistoBtag[number*5 +1]->Fill(value,weight);
-    else if (fabs(flavour)==5)                      HistoBtag[number*5 +0]->Fill(value,weight);
-    else if (fabs(flavour)==4)                      HistoBtag[number*5 +2]->Fill(value,weight); 
-    else if (fabs(flavour)< 4 || fabs(flavour)==21) HistoBtag[number*5 +3]->Fill(value,weight);
-    
-  }  
-  else                                              HistoBtag[number*5 +4]->Fill(value);
-   
-}
-
-
-void CommPlotProducer4ttbar::FillHisto_intFromMap(TString name, int flavour, bool isPU, int value, double weight)
+template<typename varType>
+void CommPlotProducer4ttbar::FillHistoBtag(TString name, int flavour, bool isPU, varType value, double weight)
 {
   
   int number = HistoBtag_map[name.Data()] ;
@@ -1754,19 +1708,12 @@ void CommPlotProducer4ttbar::FillHisto_intFromMap(TString name, int flavour, boo
   
 }
 
-void CommPlotProducer4ttbar::FillHistottbar_floatFromMap(TString name, float value, double weight)
+template<typename varType>
+void CommPlotProducer4ttbar::FillHistoTTbar(TString name, varType value, double weight)
 {
   int number = HistoTTbar_map[name.Data()] ;
   HistoTTbar[number]->Fill(value,weight);
 }
-
-
-void CommPlotProducer4ttbar::FillHistottbar_intFromMap(TString name, int value, double weight)
-{
-  int number = HistoTTbar_map[name.Data()] ;
-  HistoTTbar[number]->Fill(value,weight);
-}
-
 
 //-----------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------2D PLOTS-----------------------------------------------//
@@ -1804,35 +1751,19 @@ min2, float max2, TString syst)
   
 }
 
-
-void CommPlotProducer4ttbar::FillHisto2D_int_floatFromMap(TString name, int flavour, bool isPU, int value, float value2, double weight)
-{
-   
-  int number = HistoBtag2D_map[name.Data()] ;
-  if (!isData)
-  {
-    if (isPU)                                       HistoBtag2D[number*5 +1]->Fill(value,value2,weight);
-    else if (fabs(flavour)==5)                      HistoBtag2D[number*5 +0]->Fill(value,value2,weight);
-    else if (fabs(flavour)==4)                      HistoBtag2D[number*5 +2]->Fill(value,value2,weight); 
-    else if (fabs(flavour)< 4 || fabs(flavour)==21) HistoBtag2D[number*5 +3]->Fill(value,value2,weight);
-    
-  }  
-  else                                              HistoBtag2D[number*5 +4]->Fill(value,value2);
-  
-}
-
-void CommPlotProducer4ttbar::FillHisto2D_float_floatFromMap(TString name, int flavour, bool isPU, float value, float value2, double weight)
+template<typename varType1, typename varType2>
+void CommPlotProducer4ttbar::FillHisto2D(TString name, int flavour, bool isPU, varType1 value1, varType2 value2, double weight)
 {
   
   int number = HistoBtag2D_map[name.Data()] ;
   if (!isData){
-    if (isPU)                                       HistoBtag2D[number*5 +1]->Fill(value,value2,weight);
-    else if (fabs(flavour)==5)                      HistoBtag2D[number*5 +0]->Fill(value,value2,weight);
-    else if (fabs(flavour)==4)                      HistoBtag2D[number*5 +2]->Fill(value,value2,weight); 
-    else if (fabs(flavour)< 4 || fabs(flavour)==21) HistoBtag2D[number*5 +3]->Fill(value,value2,weight);
+    if (isPU)                                       HistoBtag2D[number*5 +1]->Fill(value1,value2,weight);
+    else if (fabs(flavour)==5)                      HistoBtag2D[number*5 +0]->Fill(value1,value2,weight);
+    else if (fabs(flavour)==4)                      HistoBtag2D[number*5 +2]->Fill(value1,value2,weight); 
+    else if (fabs(flavour)< 4 || fabs(flavour)==21) HistoBtag2D[number*5 +3]->Fill(value1,value2,weight);
     
   }  
-  else                                              HistoBtag2D[number*5 +4]->Fill(value,value2);
+  else                                              HistoBtag2D[number*5 +4]->Fill(value1,value2);
   
 }
 
