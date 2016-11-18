@@ -1102,7 +1102,8 @@ void CommPlotProducer4ttbar::Init(TChain *tree)
    //pileup weights
    puWgtGr_ = 0, puWgtDownGr_ = 0, puWgtUpGr_ = 0;
    
-   TString puWgtUrl("${CMSSW_BASE}/src/RecoBTag/PerformanceMeasurements/test_ttbarSelector_Moriond16/BTagAnalyzerMacros/pileupWgts.root");
+   //TString puWgtUrl("${CMSSW_BASE}/src/RecoBTag/PerformanceMeasurements/test_ttbarSelector_Moriond16/BTagAnalyzerMacros/pileupWgts.root");
+   TString puWgtUrl("/afs/cern.ch/user/p/pchen/public/btaggingCommRun2/pileup/pileupWgts_Run2016G_Xsec69000.root");
    gSystem->ExpandPathName(puWgtUrl);
    TFile *fIn=TFile::Open(puWgtUrl);
    if(fIn)

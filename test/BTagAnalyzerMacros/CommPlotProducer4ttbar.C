@@ -81,7 +81,7 @@ void CommPlotProducer4ttbar::Loop(bool isdata, TString output_name, TH1F* wgtcou
   TH1D* nPV_mc                  = new TH1D("nPV_mc",                "nPV_mc",                50,-0.5,49.5 );
   TH1D* pt_hat                  = new TH1D("pt_hat",                "pt_hat",                80,   0,800  );
   TH1D* jet_pt_mc               = new TH1D("jet_pt_mc",  	    "jet_pt_mc", 	     80,   0,500  );
-  TH1D* totalGenEvts            = new TH1D("TotalGenEvts",          "",                      1,    0, 1);
+  TH1D* totalGenEvts            = new TH1D("TotalGenEvts",          "",                      1,    0, 1);  // For normaliztion to lumi
   
   // --------------------------------------Histograms declaration -----------------------------------------//
   if(!produceCTagTree){ 
@@ -583,7 +583,7 @@ void CommPlotProducer4ttbar::Loop(bool isdata, TString output_name, TH1F* wgtcou
   //----------------------------------------EVENT LOOP ---------------------------------------------------------------// 
   //------------------------------------------------------------------------------------------------------------------//  
  
-  std::cout<<"Running "<<nentries<<" events...." 
+  std::cout<<"Running "<<nentries<<" events...."; 
   for (Long64_t jentry=0; jentry<nentries;jentry++) 
   {
 
