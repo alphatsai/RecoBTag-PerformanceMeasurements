@@ -29,12 +29,6 @@ using namespace std;
 //------------------------------------------------------------------------------//
  //--------------------   Set cross sections  ---------------------------------//
   //--------------------------------------------------------------------------//
-void CommPlotProducer4ttbar::SetNorm(float xnorm) 
-{
-   x_section[0]=xnorm;
-}
-
-
 void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtcounter, TString syst)
 { 
  
@@ -86,273 +80,274 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
   TH1D* nPV_mc                  = new TH1D("nPV_mc",                "nPV_mc",                50,-0.5,49.5 );
   TH1D* pt_hat                  = new TH1D("pt_hat",                "pt_hat",                80,   0,800  );
   TH1D* jet_pt_mc               = new TH1D("jet_pt_mc",  	    "jet_pt_mc", 	     80,   0,500  );
+  TH1D* totalGenEvts            = new TH1D("TotalGenEvts",          "",                      1,    0, 1);
   
   // --------------------------------------Histograms declaration -----------------------------------------//
   if(!produceCTagTree){ 
-  AddHistottbar("nPV",            "number of PV",               50,-0.5,49.5, syst);
-  AddHistottbar("nPV_unweighted", "unweighted number of PV",    50,-0.5,49.5, syst);
-  AddHistottbar("met",            "MET",                        30,  0.,300., syst);
-  AddHistottbar("mll",            "M_{ll}",                     60,  0.,300., syst);
-  AddHistottbar("njet",           "number of jets",	        10,-0.5, 9.5, syst);
-  AddHistottbar("njet_pt30",      "number of jets pt30",        10,-0.5, 9.5, syst);
-  AddHistottbar("pt_e",           "P_{T}^{e}",                  50,  0.,200., syst);
-  AddHistottbar("pt_mu",          "P_{T}^{#mu}",                50,  0.,200., syst);
-  AddHistottbar("pt_jet",         "P_{T}^{leading jet}",        50,  0.,400., syst);
+  AddHistottbar("nPV",            "number of PV",               50,-0.5,49.5);
+  AddHistottbar("nPV_unweighted", "unweighted number of PV",    50,-0.5,49.5);
+  AddHistottbar("met",            "MET",                        30,  0.,300.);
+  AddHistottbar("mll",            "M_{ll}",                     60,  0.,300.);
+  AddHistottbar("njet",           "number of jets",	        10,-0.5, 9.5);
+  AddHistottbar("njet_pt30",      "number of jets pt30",        10,-0.5, 9.5);
+  AddHistottbar("pt_e",           "P_{T}^{e}",                  50,  0.,200.);
+  AddHistottbar("pt_mu",          "P_{T}^{#mu}",                50,  0.,200.);
+  AddHistottbar("pt_jet",         "P_{T}^{leading jet}",        50,  0.,400.);
 
   // HIP check (as function of run range for Run2016B)
-  AddHistottbar("nEvt_run",          "number of evt VS run",                  20,  0,  20, syst);
-  AddHistottbar("nEvt_run_CSVv2L",   "number of evt VS run(b-jet csvl)",      20,  0,  20, syst);
-  AddHistottbar("nEvt_run_CSVv2M",   "number of evt VS run(b-jet csvm)",      20,  0,  20, syst);
-  AddHistottbar("nEvt_run_CSVv2T",   "number of evt VS run(b-jet csvt)",      20,  0,  20, syst);
+  AddHistottbar("nEvt_run",          "number of evt VS run",                  20,  0,  20);
+  AddHistottbar("nEvt_run_CSVv2L",   "number of evt VS run(b-jet csvl)",      20,  0,  20);
+  AddHistottbar("nEvt_run_CSVv2M",   "number of evt VS run(b-jet csvm)",      20,  0,  20);
+  AddHistottbar("nEvt_run_CSVv2T",   "number of evt VS run(b-jet csvt)",      20,  0,  20);
 
-  AddHistottbar("nbtag_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
 
    
-  AddHistottbar("nbtag_all_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
     
-  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
      
-  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
                            
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
       
-  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_Inf60_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_60-120_afterJetSel_cMVAv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
                          
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_120-320_afterJetSel_cMVAv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
  
 
   
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2M_SFapplied","number of btag jets (medium WP)",  	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_afterJetSel_CSVv2M_SFapplied","number of btag jets (medium WP)",  	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_all_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
  
-  AddHistottbar("nbtag_2b_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
-
-  
-  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
-
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
-
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5 , syst   );
-
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_2b_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
   
-  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
+  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
+  AddHistottbar("nbtag_1b1c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
+
+  
+  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+
+  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
+
+  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
+  AddHistottbar("nbtag_1b1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
+
+  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
+  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
+  AddHistottbar("nbtag_1b1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
 
 
-  AddHistottbar("nbtag_2c_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_2c_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
     
-  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5);
+  AddHistottbar("nbtag_1c1l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",     6,-0.5,5. );
+  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",    6,-0.5,5. );
+  AddHistottbar("nbtag_1c1l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",     6,-0.5,5. );
 
 
-  AddHistottbar("nbtag_2l_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2l_afterJetSel_CSVv2T","number of btag jets (tight WP)",		     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_afterJetSel_CSVv2L","number of btag jets (loose WP)",		     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_Inf60_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   );
+  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2M","number of btag jets (medium WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_60-120_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5);
 
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5 , syst   );
-  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5 , syst   ); 
+  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2T","number of btag jets (tight WP)",	     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2M","number of btag jets (medium WP)",     6,-0.5,5.5);
+  AddHistottbar("nbtag_2l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5); 
 
   
   AddHisto("sv_deltaR_jet",      "sv_deltaR_jet",                                       50,0.,0.5  , syst  );
@@ -578,8 +573,17 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
  
   TRandom3 *theRand_ = new TRandom3(12345);  // used to apply btag efficiency (btag SF closure test)
   Long64_t nentries = fChain->GetEntriesFast();
-  
   Long64_t nbytes = 0, nb = 0;
+
+  //-----------------------------------
+  //is data or MC ?
+  //-----------------------------------
+  if ( datatype == 0) isData=true;
+  else                isData=false;
+
+  // Record total generated events for mc
+  //TH1D* totalGenEvts = new TH1D("TotalGenEvts","", 1, 0, 1);
+  if( !isData ) totalGenEvts->Fill(0.,wgtcounter->GetBinContent(1));
   
   //------------------------------------------------------------------------------------------------------------------//  
   //----------------------------------------EVENT LOOP ---------------------------------------------------------------// 
@@ -595,12 +599,6 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
 
     //if (ientry > 100000) break;
 
-    //-----------------------------------
-    //is data or MC ?
-    //-----------------------------------
-    if ( datatype == 0) isData=true;
-    else                isData=false;
-    
     if (isData) N_event_data_before_sel++;
     else        N_event_mc_before_sel++;
 
@@ -656,7 +654,7 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
     if(!computeWeights)  continue;
 
     // compute the evt weight
-    if(!isData) ww = thettbarselector_.evWgt*puWgtNom*x_section[0];
+    if(!isData) ww = thettbarselector_.evWgt*puWgtNom;
 
     if(     syst == "PU__minus") ww *= puWgtLo/puWgtNom;
     else if(syst == "PU__plus" ) ww *= puWgtHi/puWgtNom;
@@ -666,10 +664,10 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
     // To rescale PU reweighting with ratio of sum of weights (at the end)
     if(!isData)
     {
-        sumWeightWoPUreweighting        += thettbarselector_.evWgt*x_section[0];
-        sumWeightWithPUreweighting      += thettbarselector_.evWgt*puWgtNom*x_section[0];
-        sumWeightWithPUreweightingUp    += thettbarselector_.evWgt*puWgtLo*x_section[0];
-        sumWeightWithPUreweightingDown  += thettbarselector_.evWgt*puWgtHi*x_section[0];
+        sumWeightWoPUreweighting        += thettbarselector_.evWgt;
+        sumWeightWithPUreweighting      += thettbarselector_.evWgt*puWgtNom;
+        sumWeightWithPUreweightingUp    += thettbarselector_.evWgt*puWgtLo;
+        sumWeightWithPUreweightingDown  += thettbarselector_.evWgt*puWgtHi;
     }
 
     computeEvtWgtOnly = false;
@@ -712,12 +710,12 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
                 nPV_mc         ->Fill(nPV,ww);
         }
         if(!produceCTagTree){
-        FillHistottbar_intFromMap("nPV",                datatype, 0 ,nPV                                ,ww);
-        FillHistottbar_intFromMap("nPV_unweighted",     datatype, 0 ,nPV                                 ,1);
-        FillHistottbar_floatFromMap("met",              datatype, 0 ,thettbarselector_.met_             ,ww);
-        FillHistottbar_floatFromMap("mll",              datatype, 0 ,thettbarselector_.mll_             ,ww);
-        FillHistottbar_floatFromMap("pt_e",             datatype, 0 ,thettbarselector_.lept1_.Pt()      ,ww);
-        FillHistottbar_floatFromMap("pt_mu",            datatype, 0 ,thettbarselector_.lept2_.Pt()      ,ww);
+        FillHistottbar_intFromMap("nPV",                nPV                                ,ww);
+        FillHistottbar_intFromMap("nPV_unweighted",     nPV                                 ,1);
+        FillHistottbar_floatFromMap("met",              thettbarselector_.met_             ,ww);
+        FillHistottbar_floatFromMap("mll",              thettbarselector_.mll_             ,ww);
+        FillHistottbar_floatFromMap("pt_e",             thettbarselector_.lept1_.Pt()      ,ww);
+        FillHistottbar_floatFromMap("pt_mu",            thettbarselector_.lept2_.Pt()      ,ww);
         }
     }
 
@@ -1382,18 +1380,18 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
     } // End Loop on Jets
 
     if(!produceCTagTree){
-    if( nJets_pt30 >= 2 ) FillHistottbar_intFromMap("njet_pt30", datatype, 0 , nJets_pt30  , ww);
+    if( nJets_pt30 >= 2 ) FillHistottbar_intFromMap("njet_pt30", nJets_pt30  , ww);
  
     if(fillCommissioningHistograms)
     {
-        FillHistottbar_intFromMap("njet",               datatype, 0 ,thettbarselector_.theSelJetColl.size()  , ww);
-        FillHistottbar_intFromMap("nbtag_CSVv2T",       datatype, 0 ,nbjet_ttbar_CSVv2_TWP                   , ww);
-        FillHistottbar_intFromMap("nbtag_CSVv2M",       datatype, 0 ,nbjet_ttbar_CSVv2_MWP                   , ww);
-        FillHistottbar_intFromMap("nbtag_CSVv2L",       datatype, 0 ,nbjet_ttbar_CSVv2_LWP                   , ww);
-        FillHistottbar_intFromMap("nbtag_cMVAv2T",      datatype, 0 ,nbjet_ttbar_cMVAv2_TWP                  , ww);
-        FillHistottbar_intFromMap("nbtag_cMVAv2M",      datatype, 0 ,nbjet_ttbar_cMVAv2_MWP                  , ww);
-        FillHistottbar_intFromMap("nbtag_cMVAv2L",      datatype, 0 ,nbjet_ttbar_cMVAv2_LWP                  , ww);
-        FillHistottbar_floatFromMap("pt_jet",           datatype, 0 ,ptjet_ttbar                             , ww);
+        FillHistottbar_intFromMap("njet",           thettbarselector_.theSelJetColl.size()  , ww);
+        FillHistottbar_intFromMap("nbtag_CSVv2T",   nbjet_ttbar_CSVv2_TWP                   , ww);
+        FillHistottbar_intFromMap("nbtag_CSVv2M",   nbjet_ttbar_CSVv2_MWP                   , ww);
+        FillHistottbar_intFromMap("nbtag_CSVv2L",   nbjet_ttbar_CSVv2_LWP                   , ww);
+        FillHistottbar_intFromMap("nbtag_cMVAv2T",  nbjet_ttbar_cMVAv2_TWP                  , ww);
+        FillHistottbar_intFromMap("nbtag_cMVAv2M",  nbjet_ttbar_cMVAv2_MWP                  , ww);
+        FillHistottbar_intFromMap("nbtag_cMVAv2L",  nbjet_ttbar_cMVAv2_LWP                  , ww);
+        FillHistottbar_floatFromMap("pt_jet",       ptjet_ttbar                             , ww);
 
         // HIP check (as function of run range for Run2016B)
         if( isData && thettbarselector_.theSelJetColl.size() == 2 )//ALPHA
@@ -1419,10 +1417,10 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
             else if( Run < 275657 ) cat=17;
             else                    cat=18; // fill events for later run ranges
 
-            FillHistottbar_intFromMap("nEvt_run", datatype, 0, cat, 1);
-            if ( nbjet_ttbar_CSVv2_LWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2L", datatype, 0, cat, 1); 
-            if ( nbjet_ttbar_CSVv2_MWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2M", datatype, 0, cat, 1);
-            if ( nbjet_ttbar_CSVv2_TWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2T", datatype, 0, cat, 1);
+            FillHistottbar_intFromMap("nEvt_run", cat, 1);
+            if ( nbjet_ttbar_CSVv2_LWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2L", cat, 1); 
+            if ( nbjet_ttbar_CSVv2_MWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2M", cat, 1);
+            if ( nbjet_ttbar_CSVv2_TWP >= 2 ) FillHistottbar_intFromMap("nEvt_run_CSVv2T", cat, 1);
         }
     }
 
@@ -1435,25 +1433,25 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         else if(isBetween60and120)  tmp_ptbin = "_60-120";        
         else if(isBetween120and320) tmp_ptbin = "_120-320";        
 
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2T",               datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP  ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2M_SFapplied",     datatype, 0 ,n_ttbar_applySF                    ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2M",               datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP  ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2L",               datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP  ,ww);
+        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2T",               nbjet_afterJetSel_ttbar_CSVv2_TWP  ,ww);
+        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2M_SFapplied",     n_ttbar_applySF                    ,ww);
+        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2M",               nbjet_afterJetSel_ttbar_CSVv2_MWP  ,ww);
+        FillHistottbar_intFromMap("nbtag_all_afterJetSel_CSVv2L",               nbjet_afterJetSel_ttbar_CSVv2_LWP  ,ww);
 
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2T",              datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2M",              datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP ,ww);
-        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2L",              datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP ,ww);
+        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2T",              nbjet_afterJetSel_ttbar_cMVAv2_TWP ,ww);
+        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2M",              nbjet_afterJetSel_ttbar_cMVAv2_MWP ,ww);
+        FillHistottbar_intFromMap("nbtag_all_afterJetSel_cMVAv2L",              nbjet_afterJetSel_ttbar_cMVAv2_LWP ,ww);
 
         if(tmp_ptbin != "")
         {
 
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_all"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
         }
 
@@ -1461,144 +1459,144 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         if( n_ttbar_bgenjet == 2)
         {
 
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2b_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2b"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_bgenjet == 1 && n_ttbar_cgenjet == 1 )
         {
 
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1c_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1c"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_bgenjet == 1 && n_ttbar_lgenjet == 1 )
         {
 
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1b1l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1b1l"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_cgenjet == 2)
         {
 
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2c_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2c"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_cgenjet == 1 && n_ttbar_lgenjet == 1 )
         {
 
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_1c1l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_1c1l"+tmp_ptbin+"_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
         else if( n_ttbar_lgenjet == 2 )
         {
 
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2T", nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2M", nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                FillHistottbar_intFromMap("nbtag_2l_afterJetSel_cMVAv2L", nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 if(tmp_ptbin != "")
                 {
 
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2T", nbjet_afterJetSel_ttbar_CSVv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2M", nbjet_afterJetSel_ttbar_CSVv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_CSVv2L", nbjet_afterJetSel_ttbar_CSVv2_LWP     ,ww);
 
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2T",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2M",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
-                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2L",     datatype, 0 ,nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2T",nbjet_afterJetSel_ttbar_cMVAv2_TWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2M",nbjet_afterJetSel_ttbar_cMVAv2_MWP     ,ww);
+                        FillHistottbar_intFromMap("nbtag_2l"+tmp_ptbin+"_afterJetSel_cMVAv2L",nbjet_afterJetSel_ttbar_cMVAv2_LWP     ,ww);
 
                 }
         }
@@ -1638,7 +1636,14 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
   {
     if(!isData && sumWeightWithPUreweighting != 0) HistoBtag2D[i]->Scale(puScale);
     HistoBtag2D[i]->Write();
-  }  
+  } 
+  nPU_mc       ->Write();
+  nPU_data     ->Write();
+  nPV_mc       ->Write();
+  pt_hat       ->Write();
+  jet_pt_mc    ->Write();
+  totalGenEvts ->Write();
+ 
   myfile->Close();
 
 }
@@ -1675,36 +1680,12 @@ void CommPlotProducer4ttbar::AddHisto(TString name, TString title, int nbins, fl
   
 }
 
-void CommPlotProducer4ttbar::AddHistottbar(TString name, TString title, int nbins, float min, float max, TString syst)
+void CommPlotProducer4ttbar::AddHistottbar(TString name, TString title, int nbins, float min, float max)
 {
  
-  TString syst_tmp = "";
-  if(syst != "") syst_tmp = "_"+syst;
- 
-  TH1D* h_ttbar   = new TH1D(name+"_ttbar"+syst_tmp,    title+"_ttbar"+syst_tmp,        nbins,min,max);
-  TH1D* h_dy      = new TH1D(name+"_dy"+syst_tmp,       title+"_dy"+syst_tmp,           nbins,min,max);  
-  TH1D* h_st      = new TH1D(name+"_st"+syst_tmp,       title+"_st"+syst_tmp,           nbins,min,max);  
-  TH1D* h_ww      = new TH1D(name+"_ww"+syst_tmp,       title+"_ww"+syst_tmp,           nbins,min,max);  
-  TH1D* h_wz      = new TH1D(name+"_wz"+syst_tmp,       title+"_wz"+syst_tmp,           nbins,min,max);  
-  TH1D* h_zz      = new TH1D(name+"_zz"+syst_tmp,       title+"_zz"+syst_tmp,           nbins,min,max);  
-  TH1D* h_data    = new TH1D(name+"_data"+syst_tmp,     title+"_data"+syst_tmp,         nbins,min,max);
+  TH1D* h = new TH1D(name, title, nbins, min, max);
   
-  
-  h_ttbar     ->Sumw2();
-  h_dy        ->Sumw2();  
-  h_st        ->Sumw2(); 
-  h_ww        ->Sumw2();  
-  h_wz        ->Sumw2();  
-  h_zz        ->Sumw2();  
-  h_data      ->Sumw2();
-  
-  HistoTTbar.push_back(h_ttbar);
-  HistoTTbar.push_back(h_dy);  
-  HistoTTbar.push_back(h_st);  
-  HistoTTbar.push_back(h_ww);  
-  HistoTTbar.push_back(h_wz);  
-  HistoTTbar.push_back(h_zz);  
-  HistoTTbar.push_back(h_data);  
+  HistoTTbar.push_back(h);  
   HistoTTbar_map[name.Data()] = numb_histo2;
   
   numb_histo2++;
@@ -1773,39 +1754,17 @@ void CommPlotProducer4ttbar::FillHisto_intFromMap(TString name, int flavour, boo
   
 }
 
-void CommPlotProducer4ttbar::FillHistottbar_floatFromMap(TString name, int flavour, bool isPU, float value, double weight)
+void CommPlotProducer4ttbar::FillHistottbar_floatFromMap(TString name, float value, double weight)
 {
-  
   int number = HistoTTbar_map[name.Data()] ;
-  if (!isData){
-    if (flavour==1)                  HistoTTbar[number*7 +0]->Fill(value,weight);
-    else if (flavour==2)             HistoTTbar[number*7 +1]->Fill(value,weight);
-    else if (flavour==3)             HistoTTbar[number*7 +2]->Fill(value,weight); 
-    else if (flavour==4)             HistoTTbar[number*7 +3]->Fill(value,weight); 
-    else if (flavour==5)             HistoTTbar[number*7 +4]->Fill(value,weight); 
-    else if (flavour==6)             HistoTTbar[number*7 +5]->Fill(value,weight); 
-  }  
-  else                               HistoTTbar[number*7 +6]->Fill(value);
-  
-   
+  HistoTTbar[number]->Fill(value,weight);
 }
 
 
-void CommPlotProducer4ttbar::FillHistottbar_intFromMap(TString name, int flavour, bool isPU, int value, double weight)
+void CommPlotProducer4ttbar::FillHistottbar_intFromMap(TString name, int value, double weight)
 {
-  
   int number = HistoTTbar_map[name.Data()] ;
-  if (!isData)
-  {
-    if (flavour==1)                  HistoTTbar[number*7 +0]->Fill(value,weight);
-    else if (flavour==2)             HistoTTbar[number*7 +1]->Fill(value,weight);
-    else if (flavour==3)             HistoTTbar[number*7 +2]->Fill(value,weight); 
-    else if (flavour==4)             HistoTTbar[number*7 +3]->Fill(value,weight); 
-    else if (flavour==5)             HistoTTbar[number*7 +4]->Fill(value,weight); 
-    else if (flavour==6)             HistoTTbar[number*7 +5]->Fill(value,weight); 
-  }  
-  else                               HistoTTbar[number*7 +6]->Fill(value);
-  
+  HistoTTbar[number]->Fill(value,weight);
 }
 
 

@@ -82,8 +82,6 @@
     if( xsec[i] != 0 )
     {
         TH1F* inputWeight = (TH1F*)f->Get("ttbarselectionproducer/wgtcounter");
-        double wgtcounter = inputWeight->GetBinContent(1);
-        run->SetNorm(xsec[i]*luminosity/wgtcounter);  
         run->Loop( datatype[i], oname[i], inputWeight, syst);
     }
     else
@@ -188,8 +186,6 @@
     if( xsec[i] != 0 )
     {
         TH1F* inputWeight = (TH1F*)f->Get("ttbarselectionproducer/wgtcounter");
-        double wgtcounter = inputWeight->GetBinContent(1);
-        run->SetNorm(xsec[i]*luminosity/wgtcounter);  
         run->Loop( datatype[i], oname[i], inputWeight, syst);
     }
     else

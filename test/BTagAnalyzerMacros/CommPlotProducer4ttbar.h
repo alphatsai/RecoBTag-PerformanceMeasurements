@@ -49,9 +49,6 @@ public :
    std::map<std::string, int>   HistoTTbar_map; 
    std::map<std::string, int>   HistoBtag2D_map;
 
-   
-   double x_section[10]; 
-     
    int numb_histo;
    int numb_histo2D;   
    int numb_histo2;
@@ -686,17 +683,16 @@ public :
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
    virtual void     AddHisto(TString name, TString title,  int nbins, float min, float max, TString syst);
-   virtual void     AddHistottbar(TString name, TString title,  int nbins, float min, float max, TString syst);
+   virtual void     AddHistottbar(TString name, TString title,  int nbins, float min, float max);
    virtual void     AddHisto2D(TString name,TString title,int nbins,float min,float max,int nbins2,float min2,float max2, TString syst);   
    virtual void     FillHisto_int(int flavour, bool isGS, int number, int value, double weight);
    virtual void     FillHisto_float(int flavour, bool isGS, int number, float value, double weight);
    virtual void     FillHisto_floatFromMap(TString name, int flavour, bool isGS, float value, double weight);
-   virtual void     FillHistottbar_intFromMap(TString name, int flavour, bool isGS, int value, double weight);
-   virtual void     FillHistottbar_floatFromMap(TString name, int flavour, bool isGS, float value, double weight);
+   virtual void     FillHistottbar_intFromMap(TString name, int value, double weight=1);
+   virtual void     FillHistottbar_floatFromMap(TString name, float value, double weight=1);
    virtual void     FillHisto_intFromMap(TString name, int flavour, bool isGS, int value, double weight);
    virtual void     FillHisto2D_int_floatFromMap(TString name, int flavour, bool isGS, int value, float value2, double weight);
    virtual void     FillHisto2D_float_floatFromMap(TString name, int flavour, bool isGS, float value, float value2, double weight);
-   virtual void     SetNorm(float xnorm);
 
 //private :
    TGraph *puWgtGr_,*puWgtDownGr_,*puWgtUpGr_;
