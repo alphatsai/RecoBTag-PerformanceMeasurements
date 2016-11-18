@@ -29,12 +29,13 @@ using namespace std;
 //------------------------------------------------------------------------------//
  //--------------------   Set cross sections  ---------------------------------//
   //--------------------------------------------------------------------------//
-void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtcounter, TString syst)
+void CommPlotProducer4ttbar::Loop(bool isdata, TString output_name, TH1F* wgtcounter, TString syst, bool debug)
 { 
  
   if (syst != "") cout << "Running over " << syst << "..." << endl; 
   else            cout << "Running over nominal sample" << endl; 
 
+  isData = isdata;
  
   //---------------Configuration-----------------------------------------// 
   float EtaCut = 2.4; 
@@ -575,26 +576,20 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
   Long64_t nentries = fChain->GetEntriesFast();
   Long64_t nbytes = 0, nb = 0;
 
-  //-----------------------------------
-  //is data or MC ?
-  //-----------------------------------
-  if ( datatype == 0) isData=true;
-  else                isData=false;
-
   // Record total generated events for mc
-  //TH1D* totalGenEvts = new TH1D("TotalGenEvts","", 1, 0, 1);
   if( !isData ) totalGenEvts->Fill(0.,wgtcounter->GetBinContent(1));
   
   //------------------------------------------------------------------------------------------------------------------//  
   //----------------------------------------EVENT LOOP ---------------------------------------------------------------// 
   //------------------------------------------------------------------------------------------------------------------//  
-  
+ 
+  std::cout<<"Running "<<nentries<<" events...." 
   for (Long64_t jentry=0; jentry<nentries;jentry++) 
   {
 
     Long64_t ientry = LoadTree(jentry);
     if (ientry < 0) break;
-    if (ientry % 10 == 0) printProgressBar(ientry, nentries);
+    if (debug && ientry % 10 == 0) printProgressBar(ientry, nentries);
     nb = fChain->GetEntry(jentry);   nbytes += nb;
 
     //if (ientry > 100000) break;

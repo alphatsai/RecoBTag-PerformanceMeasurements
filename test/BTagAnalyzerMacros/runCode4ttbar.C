@@ -2,7 +2,7 @@
     //////////////////////////////////////////////
     //        Choose between BTag or CTag      //
     /////////////////////////////////////////////         
-    bool BTag = false; //false for CTag commissioning
+    bool BTag = true; //false for CTag commissioning
 
     // Options for CommPlotProducer4ttbar::Loop
     TString syst="";
@@ -12,8 +12,8 @@
     /////////////////////
     if(BTag){
     //set the range of ntuples to run on (iname[Nsamples])
-    const int j=3;
-    const int k=3;    
+    const int j=7;
+    const int k=7;    
 
     // Samples defination
     //Data13TeV_MuonEG_2016B
@@ -27,11 +27,6 @@
     //MC13TeV_ZZ
     //
     const int Nsamples=10;
-    float luminosity = 6260; // /pb see usage.txt 
-    //float luminosity = 2600; // /pb see usage.txt 
-    //float luminosity = 218.042; // /pb see usage.txt 
-    //float luminosity = 589.3; 
-    //float luminosity = 804.2; 
     TString iname[Nsamples] = { 
                                 //"Data13TeV_MuonEG_2016B",       // 0
                                 //"Data13TeV_MuonEG_2016B_589pb", // 0
@@ -62,12 +57,9 @@
  
     //float sf_dy=1.3; // in Run2015
     float sf_dy=1;
-    int datatype[Nsamples] = {0, 0, 1,     2,    2,     3,     3,      4,     5,    6 }; 
-    float xsec[Nsamples]   = {0, 0, 831.77, 18610*sf_dy, 6025*sf_dy, 35.85, 35.85, 118.7, 47.13, 16.5 };
+    bool isData[Nsamples] = {1, 1, 0, 0, 0, 0, 0, 0, 0, 0 }; 
 
-    //TString samplepath="root://eoscms.cern.ch//eos/cms/store/group/phys_btag/Commissioning/TTbar/Run2016/May2016_v0";
-    //TString samplepath="root://eoscms.cern.ch//eos/cms/store/group/phys_btag/Commissioning/TTbar/Run2016/May2016_v1";
-    TString samplepath="root://eoscms.cern.ch//eos/cms/store/group/phys_btag/Commissioning/TTbar/Run2016/July12_v0";
+    TString samplepath="root://eoscms.cern.ch//eos/cms/store/user/jtsai/btag/HIPMitigation/final/HIP";
     TString sampleroot="MergedJetTree.root";
 
     ///////////////////
@@ -79,14 +71,14 @@
     TChain* tree = (TChain*)f->Get("btagana/ttree");
     CommPlotProducer4ttbar *run = new CommPlotProducer4ttbar(tree,1,1,0);
 
-    if( xsec[i] != 0 )
+    if( !isData[i] )
     {
         TH1F* inputWeight = (TH1F*)f->Get("ttbarselectionproducer/wgtcounter");
-        run->Loop( datatype[i], oname[i], inputWeight, syst);
+        run->Loop( isData[i], oname[i], inputWeight, syst);
     }
     else
     {
-        run->Loop( datatype[i], oname[i], 0, syst);
+        run->Loop( isData[i], oname[i], 0, syst);
     }
     }//end for loop
 
@@ -100,7 +92,6 @@
     const int k=7;
 
     const int Nsamples=20;
-    float luminosity = 12878; // /pb see usage.txt 
     TString iname[Nsamples] = {
                                 "Data13TeV_Mu_2016B", //0
                                 "Data13TeV_Mu_2016C", //1
@@ -165,10 +156,9 @@
 
     //float sf_dy=1.3; // in Run2015
     float sf_dy=1; //https://indico.cern.ch/event/557018/contributions/2246861/attachments/1310556/1960899/btag_ttbar_sf_17-07-2016.pdf
-    int datatype[Nsamples] = {0, 0, 0, 1, 2, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
-    float xsec[Nsamples]   = {0, 0, 0, 831.77, 6024*sf_dy, 3.4, 35.6, 72.3, 35.6, 61524, 1652471.46, 437504.1, 106033.6648, 24720.71814, 8654.49315, 797.35269, 79.02553776, 25.09505908, 4.707368272, 1.62131692 };
+    bool isData[Nsamples] = {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-    //int datatype[Nsamples] = {0, 0, 0, 1, 2, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5 }; 
+    //int isData[Nsamples] = {0, 0, 0, 1, 2, 3, 3, 3, 3, 4, 5, 5, 5, 5, 5, 5 }; 
     //float xsec[Nsamples]   = {0, 0, 0, 831.77, 6024*sf_dy, 3.4, 35.6, 72.3, 35.6, 61524, 9928000, 2890800, 350000, 62964, 18810, 135 };
 
     TString samplepath="/eos/uscms/store/user/kovitang/July30_v0";
@@ -183,14 +173,14 @@
     TChain* tree = (TChain*)f->Get("btagana/ttree");
     CommPlotProducer4ttbar *run = new CommPlotProducer4ttbar(tree,0,0,1);
 
-    if( xsec[i] != 0 )
+    if( !isDate[i] )
     {
         TH1F* inputWeight = (TH1F*)f->Get("ttbarselectionproducer/wgtcounter");
-        run->Loop( datatype[i], oname[i], inputWeight, syst);
+        run->Loop( isData[i], oname[i], inputWeight, syst);
     }
     else
     {
-        run->Loop( datatype[i], oname[i], 0, syst);
+        run->Loop( isData[i], oname[i], 0, syst);
     }
     }//end for loop
 

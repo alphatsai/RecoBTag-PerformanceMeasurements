@@ -32,7 +32,6 @@ class CommPlotProducer4ttbar
 {
 public :
 
-
    bool isData;
    bool use_selected_tracks;
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
@@ -679,7 +678,7 @@ public :
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
    virtual void     Init(TChain *tree);
-   virtual void     Loop(int datatype, TString outputname, TH1F* wgtcounter, TString syst);
+   virtual void     Loop(bool isdata, TString outputname, TH1F* wgtcounter, TString syst, bool debug=false);
    virtual Bool_t   Notify();
 
    virtual void     Show(Long64_t entry = -1);
