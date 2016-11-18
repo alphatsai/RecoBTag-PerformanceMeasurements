@@ -35,7 +35,7 @@ void CommPlotProducer4ttbar::SetNorm(float xnorm)
 }
 
 
-void CommPlotProducer4ttbar::Loop(int datatype, int trig_data, float PtMin_Cut, float PtMax_Cut, TString output_name, TH1F* wgtcounter, TString syst)
+void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtcounter, TString syst)
 { 
  
   if (syst != "") cout << "Running over " << syst << "..." << endl; 
@@ -43,8 +43,6 @@ void CommPlotProducer4ttbar::Loop(int datatype, int trig_data, float PtMin_Cut, 
 
  
   //---------------Configuration-----------------------------------------// 
-  float PtMin  = PtMin_Cut;  
-  float PtMax  = PtMax_Cut;  
   float EtaCut = 2.4; 
   double pi=acos(-1);
   
@@ -87,7 +85,7 @@ void CommPlotProducer4ttbar::Loop(int datatype, int trig_data, float PtMin_Cut, 
   TH1D* nPU_data                = new TH1D("nPU_data",              "nPU_data",              50,-0.5,49.5 );
   TH1D* nPV_mc                  = new TH1D("nPV_mc",                "nPV_mc",                50,-0.5,49.5 );
   TH1D* pt_hat                  = new TH1D("pt_hat",                "pt_hat",                80,   0,800  );
-  TH1D* jet_pt_mc               = new TH1D("jet_pt_mc",  	    "jet_pt_mc", 	     80,   0,PtMax);
+  TH1D* jet_pt_mc               = new TH1D("jet_pt_mc",  	    "jet_pt_mc", 	     80,   0,500  );
   
   // --------------------------------------Histograms declaration -----------------------------------------//
   if(!produceCTagTree){ 
@@ -490,9 +488,9 @@ void CommPlotProducer4ttbar::Loop(int datatype, int trig_data, float PtMin_Cut, 
   } //end !produceCTagTree
  
   AddHisto("jet_multi"    ,"number of jets",                 20,        0,      20,   syst);
-  AddHisto("jet_pt_all"   ,"pT of all jets",                 PtMax/10,  0,      PtMax,syst);
+  AddHisto("jet_pt_all"   ,"pT of all jets",                 50,  0,    500, syst);
   AddHisto("genjet_pt_all"        ,"genpT of all jets",         50     ,  -0.5,    49.5,syst);
-  AddHisto("jet_pt_sv"    ,"pT of jets containing a SV",     PtMax/10,  0,      PtMax,syst);
+  AddHisto("jet_pt_sv"    ,"pT of jets containing a SV",     50,  0,    500, syst);
   AddHisto("jet_eta"      ,"eta of all jets",                50,        -2.5,   2.5,  syst);
   AddHisto("jet_phi"      ,"phi of all jets",                40,        -1.*pi, pi,   syst);
 

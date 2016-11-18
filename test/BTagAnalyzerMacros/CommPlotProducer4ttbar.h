@@ -682,7 +682,7 @@ public :
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
    virtual void     Init(TChain *tree);
-   virtual void     Loop(int datatype, int trig_data, float PtMin_Cut, float PtMax_Cut, TString outputname, TH1F* wgtcounter, TString syst);
+   virtual void     Loop(int datatype, TString outputname, TH1F* wgtcounter, TString syst);
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
    virtual void     AddHisto(TString name, TString title,  int nbins, float min, float max, TString syst);

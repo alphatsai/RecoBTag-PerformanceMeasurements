@@ -5,9 +5,6 @@
     bool BTag = false; //false for CTag commissioning
 
     // Options for CommPlotProducer4ttbar::Loop
-    int trig_data=3;
-    float PtMin_Cut=30;  // useless now 
-    float PtMax_Cut=500;
     TString syst="";
 
     //////////////////////
@@ -87,11 +84,11 @@
         TH1F* inputWeight = (TH1F*)f->Get("ttbarselectionproducer/wgtcounter");
         double wgtcounter = inputWeight->GetBinContent(1);
         run->SetNorm(xsec[i]*luminosity/wgtcounter);  
-        run->Loop( datatype[i], trig_data, PtMin_Cut, PtMax_Cut, oname[i], inputWeight, syst);
+        run->Loop( datatype[i], oname[i], inputWeight, syst);
     }
     else
     {
-        run->Loop( datatype[i], trig_data, PtMin_Cut, PtMax_Cut, oname[i], 0, syst);
+        run->Loop( datatype[i], oname[i], 0, syst);
     }
     }//end for loop
 
@@ -193,11 +190,11 @@
         TH1F* inputWeight = (TH1F*)f->Get("ttbarselectionproducer/wgtcounter");
         double wgtcounter = inputWeight->GetBinContent(1);
         run->SetNorm(xsec[i]*luminosity/wgtcounter);  
-        run->Loop( datatype[i], trig_data, PtMin_Cut, PtMax_Cut, oname[i], inputWeight, syst);
+        run->Loop( datatype[i], oname[i], inputWeight, syst);
     }
     else
     {
-        run->Loop( datatype[i], trig_data, PtMin_Cut, PtMax_Cut, oname[i], 0, syst);
+        run->Loop( datatype[i], oname[i], 0, syst);
     }
     }//end for loop
 
