@@ -683,9 +683,9 @@ public :
    virtual Bool_t   Notify();
 
    virtual void     Show(Long64_t entry = -1);
-   virtual void     AddHistoBtag(TString name, TString title,  int nbins, float min, float max, TString syst);
+   virtual void     AddHistoBtag(TString name, TString title,  int nbins, float min, float max);
    virtual void     AddHistoTTbar(TString name, TString title,  int nbins, float min, float max);
-   virtual void     AddHisto2D(TString name,TString title,int nbins,float min,float max,int nbins2,float min2,float max2, TString syst);  
+   virtual void     AddHisto2D(TString name,TString title,int nbins,float min,float max,int nbins2,float min2,float max2);  
  
    template<typename varType>
     void     FillHistoTTbar(TString name, varType value, double weight=1);

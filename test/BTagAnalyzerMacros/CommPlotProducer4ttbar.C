@@ -350,216 +350,216 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
   AddHistoTTbar("nbtag_2l_120-320_afterJetSel_CSVv2L","number of btag jets (loose WP)",	     6,-0.5,5.5); 
 
   
-  AddHistoBtag("sv_deltaR_jet",      "sv_deltaR_jet",                                       50,0.,0.5  , syst  );
-  AddHistoBtag("sv_deltaR_sumJet",   "SVvtxSumJetDeltaR",                                   50,0.,0.5 , syst   );
-  AddHistoBtag("sv_deltaR_sumDir",   "SVvtxSumVtxDirDeltaR",                                50,0.,0.5 , syst   );
-  AddHistoBtag("sv_en_ratio",        "Fractional energy",                                   50,0.,1.  , syst   );  
-  AddHistoBtag("sv_pt",              "Vtx p_{T}",                                           50,0.,100. , syst  );
-  AddHistoBtag("sv_eta",             "Vtx #eta",                                            50, -2.5, 2.5, syst);
-  AddHistoBtag("sv_phi",             "Vtx #phi",                                            40, -1.*pi,pi, syst);
-  AddHistoBtag("sv_flightSig2D",     "Flight distance significance 2D",                     50,0.,80.   , syst );
-  AddHistoBtag("sv_flight2D",        "Flight distance 2D",                                  50,0.,2.5   , syst );
-  AddHistoBtag("sv_flight3D",        "Flight distance 3D",                                  50,0.,15.   , syst );  
-  AddHistoBtag("sv_flight3DSig" ,    "flight distance significance 3D",	                50,0.,80.   , syst );
-  AddHistoBtag("sv_multi_0"	  ,      "number of secondary vertex",                          6,-0.5,5.5  , syst );
-  AddHistoBtag("sv_multi"	  ,      "number of secondary vertex",                          6,-0.5,5.5  , syst );
-  AddHistoBtag("sv_mass"	  ,      "invariant mass of the secondary vertex",              50,0.,8.    , syst );
-  AddHistoBtag("sv_chi2norm"  ,      "normalized chi2 of the secondary vertex",             50,0.,10.   , syst );
-  AddHistoBtag("sv_tot_charge",      "Total charge",                                                        21,-10.5,10.5, syst );
-  AddHistoBtag("svnTrk",	         "Track multiplicity : SVnVertexTracks (centered)",                     13, -0.5,12.5, syst );
-  AddHistoBtag("sv_flight3Derr",     "Flight distance error 3D",                                            50,   0.,0.2 , syst );
-  AddHistoBtag("sv_flight2Derr",     "Flight distance error 2D",                                            50,   0.,0.05, syst );
-  AddHistoBtag("sv_mass_3trk"	,"invariant mass of the secondary vertex with at least 3 SV tracks",    50,   0.,8.  , syst );
+  AddHistoBtag("sv_deltaR_jet",      "sv_deltaR_jet",                                       50,0.,0.5  );
+  AddHistoBtag("sv_deltaR_sumJet",   "SVvtxSumJetDeltaR",                                   50,0.,0.5  );
+  AddHistoBtag("sv_deltaR_sumDir",   "SVvtxSumVtxDirDeltaR",                                50,0.,0.5  );
+  AddHistoBtag("sv_en_ratio",        "Fractional energy",                                   50,0.,1.   );  
+  AddHistoBtag("sv_pt",              "Vtx p_{T}",                                           50,0.,100. );
+  AddHistoBtag("sv_eta",             "Vtx #eta",                                            50, -2.5, 2.5);
+  AddHistoBtag("sv_phi",             "Vtx #phi",                                            40, -1.*pi,pi);
+  AddHistoBtag("sv_flightSig2D",     "Flight distance significance 2D",                     50,0.,80.   );
+  AddHistoBtag("sv_flight2D",        "Flight distance 2D",                                  50,0.,2.5   );
+  AddHistoBtag("sv_flight3D",        "Flight distance 3D",                                  50,0.,15.   );  
+  AddHistoBtag("sv_flight3DSig" ,    "flight distance significance 3D",	                    50,0.,80.   );
+  AddHistoBtag("sv_multi_0"	  ,      "number of secondary vertex",                          6,-0.5,5.5 );
+  AddHistoBtag("sv_multi"	  ,      "number of secondary vertex",                          6,-0.5,5.5 );
+  AddHistoBtag("sv_mass"	  ,      "invariant mass of the secondary vertex",              50,0.,8.   );
+  AddHistoBtag("sv_chi2norm"  ,      "normalized chi2 of the secondary vertex",                50,0.,10.   );
+  AddHistoBtag("sv_tot_charge",      "Total charge",                                                        21,-10.5,10.5 );
+  AddHistoBtag("svnTrk",	         "Track multiplicity : SVnVertexTracks (centered)",                     13, -0.5,12.5);
+  AddHistoBtag("sv_flight3Derr",     "Flight distance error 3D",                                            50,   0.,0.2 );
+  AddHistoBtag("sv_flight2Derr",     "Flight distance error 2D",                                            50,   0.,0.05);
+  AddHistoBtag("sv_mass_3trk"	,"invariant mass of the secondary vertex with at least 3 SV tracks",    50,   0.,8. );
   
-  AddHistoBtag("track_multi"  ,      "number of tracks in the jets",                40,-0.5,39.5 , syst );
-  AddHistoBtag("trk_multi_sel"  ,    "number of selected tracks in the jets",       40,-0.5,39.5 , syst );
-  AddHistoBtag("track_chi2"   ,      "normalized chi2 of the tracks",               100,0.,30.   , syst );
-  AddHistoBtag("track_nHit" ,        "number of hits ",               35,-0.5, 34.5 , syst);
-  AddHistoBtag("track_HPix"   ,      "number of hits in the Pixel",                 10,-0.5, 9.5 , syst );
+  AddHistoBtag("track_multi"  ,      "number of tracks in the jets",                40,-0.5,39.5);
+  AddHistoBtag("trk_multi_sel"  ,    "number of selected tracks in the jets",       40,-0.5,39.5);
+  AddHistoBtag("track_chi2"   ,      "normalized chi2 of the tracks",               100,0.,30.  );
+  AddHistoBtag("track_nHit" ,        "number of hits ",               35,-0.5, 34.5 );
+  AddHistoBtag("track_HPix"   ,      "number of hits in the Pixel",                 10,-0.5, 9.5 );
   
-  AddHistoBtag("track_IPs"    ,      "3D IP significance of all tracks",	        100,-35.,35. , syst );
-  AddHistoBtag("track_IPs1tr" ,      "3D IP significance of the first track",       100,-35.,35. , syst );
-  AddHistoBtag("track_IPs2tr" ,      "3D IP significance of the second track",      100,-35.,35. , syst );
-  AddHistoBtag("track_IP"     ,      "3D IP of all tracks",	                        100,-0.1,0.1 , syst );
-  AddHistoBtag("track_IP1tr"  ,      "3D IP of the first track",                    100,-0.1,0.1 , syst );
-  AddHistoBtag("track_IP2tr"  ,      "3D IP of the second track",                   100,-0.1,0.1 , syst ); 
-  AddHistoBtag("track_IP2Ds"    ,    "2D IP significance of all tracks",	        100,-35.,35. , syst );
-  AddHistoBtag("track_IP2Ds1tr" ,    "2D IP significance of the first track",       100,-35.,35. , syst );
-  AddHistoBtag("track_IP2Ds2tr" ,    "2D IP significance of the second track",      100,-35.,35. , syst );
-  AddHistoBtag("track_IP2D"    ,     "2D IP of all tracks",	                        100,-0.1,0.1 , syst );
-  AddHistoBtag("track_IP2D1tr" ,     "2D IP of the first track",                    100,-0.1,0.1 , syst );
-  AddHistoBtag("track_IP2D2tr" ,     "2D IP of the second track",                   100,-0.1,0.1 , syst );
-  AddHistoBtag("track_IP2Derr1tr" ,  "2D IP error of the first track",              100,0,0.1    , syst );    
-  AddHistoBtag("track_IPerr1tr"   ,  "3D IP error of the first track",              100,0,0.1    , syst );  
-  AddHistoBtag("track_IP2Derr2tr" ,  "2D IP error of the second track",             100,0,0.1    , syst );    
-  AddHistoBtag("track_IPerr2tr"   ,  "3D IP error of the second track",             100,0,0.1    , syst ); 
-  AddHistoBtag("track_IP2Derr" ,     "2D IP error",                                 100,0,0.1    , syst );    
-  AddHistoBtag("track_IPerr"   ,     "3D IP error",                                 100,0,0.1    , syst ); 
-  AddHistoBtag("track_IPs3tr" ,      "3D IP significance of the third track",       100,-35.,35. , syst );
-  AddHistoBtag("track_IP3tr"  ,      "3D IP of the third track",                    100,-0.1,0.1 , syst );
-  AddHistoBtag("track_IPerr3tr"   ,  "3D IP error of the third track",              100,0,0.1    , syst ); 
-  AddHistoBtag("track_IP2Ds3tr" ,    "2D IP significance of the second track",      100,-35.,35. , syst );
-  AddHistoBtag("track_IP2D3tr" ,     "2D IP of the third track",                    100,-0.1,0.1 , syst );
-  AddHistoBtag("track_IP2Derr3tr" ,  "2D IP error of the third track",              100,0,0.1    , syst );   
+  AddHistoBtag("track_IPs"    ,      "3D IP significance of all tracks",	        100,-35.,35.);
+  AddHistoBtag("track_IPs1tr" ,      "3D IP significance of the first track",       100,-35.,35.);
+  AddHistoBtag("track_IPs2tr" ,      "3D IP significance of the second track",      100,-35.,35.);
+  AddHistoBtag("track_IP"     ,      "3D IP of all tracks",	                        100,-0.1,0.1);
+  AddHistoBtag("track_IP1tr"  ,      "3D IP of the first track",                    100,-0.1,0.1);
+  AddHistoBtag("track_IP2tr"  ,      "3D IP of the second track",                   100,-0.1,0.1); 
+  AddHistoBtag("track_IP2Ds"    ,    "2D IP significance of all tracks",	        100,-35.,35.);
+  AddHistoBtag("track_IP2Ds1tr" ,    "2D IP significance of the first track",       100,-35.,35.);
+  AddHistoBtag("track_IP2Ds2tr" ,    "2D IP significance of the second track",      100,-35.,35.);
+  AddHistoBtag("track_IP2D"    ,     "2D IP of all tracks",	                        100,-0.1,0.1);
+  AddHistoBtag("track_IP2D1tr" ,     "2D IP of the first track",                    100,-0.1,0.1);
+  AddHistoBtag("track_IP2D2tr" ,     "2D IP of the second track",                   100,-0.1,0.1);
+  AddHistoBtag("track_IP2Derr1tr" ,  "2D IP error of the first track",              100,0,0.1   );    
+  AddHistoBtag("track_IPerr1tr"   ,  "3D IP error of the first track",              100,0,0.1   );  
+  AddHistoBtag("track_IP2Derr2tr" ,  "2D IP error of the second track",             100,0,0.1   );    
+  AddHistoBtag("track_IPerr2tr"   ,  "3D IP error of the second track",             100,0,0.1   ); 
+  AddHistoBtag("track_IP2Derr" ,     "2D IP error",                                 100,0,0.1   );    
+  AddHistoBtag("track_IPerr"   ,     "3D IP error",                                 100,0,0.1   ); 
+  AddHistoBtag("track_IPs3tr" ,      "3D IP significance of the third track",       100,-35.,35.);
+  AddHistoBtag("track_IP3tr"  ,      "3D IP of the third track",                    100,-0.1,0.1);
+  AddHistoBtag("track_IPerr3tr"   ,  "3D IP error of the third track",              100,0,0.1   ); 
+  AddHistoBtag("track_IP2Ds3tr" ,    "2D IP significance of the second track",      100,-35.,35.);
+  AddHistoBtag("track_IP2D3tr" ,     "2D IP of the third track",                    100,-0.1,0.1);
+  AddHistoBtag("track_IP2Derr3tr" ,  "2D IP error of the third track",              100,0,0.1   );   
    
-  AddHistoBtag("track_len"     ,     "decay length",		                100,0,25.    , syst );
-  AddHistoBtag("track_dist"    ,     "distance to the jet axis",                    100,0.,0.3   , syst );
-  AddHistoBtag("track_dz"     ,      "transverse IP",                               100,-20.,20. , syst );  
-  AddHistoBtag("track_isfromSV",     "Track is from SV",                            2,-0.5, 1.5  , syst );  
-  AddHistoBtag("track_pt"	  ,      "pT of all the tracks",	                80,0.,200.   , syst );
-  AddHistoBtag("track_chi2_cut"     ,"normalized chi2 ",  	                        100,0.,30.   , syst );
-  AddHistoBtag("track_nHit_cut"     ,"number of hits  ",                            35,-0.5, 34.5, syst );
-  AddHistoBtag("track_HPix_cut"     ,"number of hits in the Pixel ",                10,-0.5, 9.5 , syst );
-  AddHistoBtag("track_len_cut"      ,"decay length ",		                100,0,25.    , syst );
-  AddHistoBtag("track_dist_cut"     ,"distance to the jet axis ",                   100,0.,0.3   , syst );
-  AddHistoBtag("track_dz_cut"       ,"transverse IP ",		                100,-20., 20., syst );  
-  AddHistoBtag("track_pt_cut"       ,"pT ",	                                        80,0.,200.   , syst );
-  AddHistoBtag("track_IP2D_cut"     ,"IP2D ",	                                100,-0.1,0.1 , syst );
+  AddHistoBtag("track_len"     ,     "decay length",		                100,0,25.    );
+  AddHistoBtag("track_dist"    ,     "distance to the jet axis",                    100,0.,0.3  );
+  AddHistoBtag("track_dz"     ,      "transverse IP",                               100,-20.,20.);  
+  AddHistoBtag("track_isfromSV",     "Track is from SV",                            2,-0.5, 1.5 );  
+  AddHistoBtag("track_pt"	  ,      "pT of all the tracks",	                80,0.,200. );
+  AddHistoBtag("track_chi2_cut"     ,"normalized chi2 ",  	                        100,0.,30. );
+  AddHistoBtag("track_nHit_cut"     ,"number of hits  ",                            35,-0.5, 34.5);
+  AddHistoBtag("track_HPix_cut"     ,"number of hits in the Pixel ",                10,-0.5, 9.5 );
+  AddHistoBtag("track_len_cut"      ,"decay length ",		                100,0,25.   );
+  AddHistoBtag("track_dist_cut"     ,"distance to the jet axis ",                   100,0.,0.3);
+  AddHistoBtag("track_dz_cut"       ,"transverse IP ",		                100,-20., 20.);  
+  AddHistoBtag("track_pt_cut"       ,"pT ",	                                        80,0.,200.);
+  AddHistoBtag("track_IP2D_cut"     ,"IP2D ",	                                100,-0.1,0.1);
    
-  AddHistoBtag("TCHE_extended1"	  ,"TCHE_extended1",				70, -30.,30. , syst );
-  AddHistoBtag("TCHP_extended1"	  ,"TCHP_extended1",				70, -30.,30. , syst );
-  AddHistoBtag("TCHE_extended2"	  ,"TCHE_extended2",				100,-30.,30. , syst );
-  AddHistoBtag("TCHP_extended2"	  ,"TCHP_extended2",				100,-30.,30. , syst );
-  AddHistoBtag("discri_ssche0",	   "SSVHE Discriminator",                       80, -1., 7.  , syst ); 
-  AddHistoBtag("discri_sschp0",	   "SSVHP Discriminator",                       80, -1., 7.  , syst ); 
+  AddHistoBtag("TCHE_extended1"	  ,"TCHE_extended1",				70, -30.,30.);
+  AddHistoBtag("TCHP_extended1"	  ,"TCHP_extended1",				70, -30.,30.);
+  AddHistoBtag("TCHE_extended2"	  ,"TCHE_extended2",				100,-30.,30.);
+  AddHistoBtag("TCHP_extended2"	  ,"TCHP_extended2",				100,-30.,30.);
+  AddHistoBtag("discri_ssche0",	   "SSVHE Discriminator",                       80, -1., 7. ); 
+  AddHistoBtag("discri_sschp0",	   "SSVHP Discriminator",                       80, -1., 7. ); 
    
-  AddHistoBtag("TCHE"	  ,"TCHE",				     50,0.,30. , syst);
-  AddHistoBtag("TCHP"	  ,"TCHP",				     50,0.,30. , syst);  
-  AddHistoBtag("JP" 	  ,"JP",				     30,0.,1.5 , syst);
-  AddHistoBtag("JBP"	  ,"JBP",				     25,0.,4.  , syst);
-  AddHistoBtag("SSV"	  ,"SSVHE",				     70,0.,7.  , syst);
-  AddHistoBtag("SSVHP"	  ,"SSVHP",				     70,0.,7.  , syst);
-  AddHistoBtag("CSV"	  ,"CSV",				     50,0.,1.  , syst);
-  AddHistoBtag("CSVv2"	  ,"CSVv2",				     50,0.,1.  , syst);
-  AddHistoBtag("CSVv2_pu"	  ,"CSVv2_pu",				     50,0.,1.  , syst);
-  AddHistoBtag("cMVAv2"	  ,"cMVAv2",				     50,-1.,1. , syst);
-  AddHistoBtag("CvsB"     ,"CvsB",                                       50,-1.,1. , syst);
-  AddHistoBtag("CvsL"     ,"CvsL",                                       50,-1.,1. , syst);
+  AddHistoBtag("TCHE"	  ,"TCHE",				     50,0.,30. );
+  AddHistoBtag("TCHP"	  ,"TCHP",				     50,0.,30. );  
+  AddHistoBtag("JP" 	  ,"JP",				     30,0.,1.5 );
+  AddHistoBtag("JBP"	  ,"JBP",				     25,0.,4.  );
+  AddHistoBtag("SSV"	  ,"SSVHE",				     70,0.,7.  );
+  AddHistoBtag("SSVHP"	  ,"SSVHP",				     70,0.,7.  );
+  AddHistoBtag("CSV"	  ,"CSV",				     50,0.,1.  );
+  AddHistoBtag("CSVv2"	  ,"CSVv2",				     50,0.,1.  );
+  AddHistoBtag("CSVv2pu"	  ,"CSVv2pu",				     50,0.,1.  );
+  AddHistoBtag("cMVAv2"	  ,"cMVAv2",				     50,-1.,1. );
+  AddHistoBtag("CvsB"     ,"CvsB",                                       50,-1.,1. );
+  AddHistoBtag("CvsL"     ,"CvsL",                                       50,-1.,1. );
 
-  AddHistoBtag("SoftMu"       ,"SoftMu",                                 50,0.,1.  , syst);
-  AddHistoBtag("SoftEl"       ,"SoftEl",                                 50,0.,1.  , syst);
+  AddHistoBtag("SoftMu"       ,"SoftMu",                                 50,0.,1.  );
+  AddHistoBtag("SoftEl"       ,"SoftEl",                                 50,0.,1.  );
   
-  AddHistoBtag("pfmuon_multi",      "number of pfmuons",	        7,    -0.5, 6.5, syst );
-  AddHistoBtag("pfmuon_goodquality","quality of pfmuons",           3,    -0.5, 2.5, syst );
-  AddHistoBtag("pfmuon_pt",		"pfmuon p_{T}",  	        50,      0, 100, syst );
-  AddHistoBtag("pfmuon_eta",   	"pfmuon #eta",  	        50,   -2.5, 2.5, syst );  
-  AddHistoBtag("pfmuon_phi",        "pfmuon #phi",                  40, -1.*pi,  pi, syst );
-  AddHistoBtag("pfmuon_Sip",	"3D IP significance of pfmuon", 50,    -35,  35, syst );
-  AddHistoBtag("pfmuon_ptrel",      "pT rel. of the muon",	        50,      0,   5, syst );
-  AddHistoBtag("pfmuon_ratio",      "ratio of pfmuon",              50,      0,   2, syst );  
-  AddHistoBtag("pfmuon_ratiorel",   "ratioRel of pfmuon",           50,      0,0.05, syst );  
-  AddHistoBtag("pfmuon_deltar",	"#DeltaR(pfmuon,jet)",          50,      0, 0.5, syst );
+  AddHistoBtag("pfmuon_multi",      "number of pfmuons",	        7,    -0.5, 6.5);
+  AddHistoBtag("pfmuon_goodquality","quality of pfmuons",           3,    -0.5, 2.5 );
+  AddHistoBtag("pfmuon_pt",		"pfmuon p_{T}",  	        50,      0, 100 );
+  AddHistoBtag("pfmuon_eta",   	"pfmuon #eta",  	        50,   -2.5, 2.5 );  
+  AddHistoBtag("pfmuon_phi",        "pfmuon #phi",                  40, -1.*pi,  pi );
+  AddHistoBtag("pfmuon_Sip",	"3D IP significance of pfmuon", 50,    -35,  35 );
+  AddHistoBtag("pfmuon_ptrel",      "pT rel. of the muon",	        50,      0,   5 );
+  AddHistoBtag("pfmuon_ratio",      "ratio of pfmuon",              50,      0,   2);  
+  AddHistoBtag("pfmuon_ratiorel",   "ratioRel of pfmuon",           50,      0,0.05 );  
+  AddHistoBtag("pfmuon_deltar",	"#DeltaR(pfmuon,jet)",          50,      0, 0.5 );
   
-  AddHistoBtag("pfelectron_multi",  "number of pfelectron",	        7,    -0.5, 6.5, syst );
-  AddHistoBtag("pfelectron_pt",	"pfelectron p_{T}",  	        50,      0, 100, syst );
-  AddHistoBtag("pfelectron_eta",   	"pfelectron #eta",  	        50,   -2.5, 2.5, syst );  
-  AddHistoBtag("pfelectron_phi",    "pfelectron #phi",              40, -1.*pi,  pi, syst );
-  AddHistoBtag("pfelectron_ptrel",  "pT rel. of the pfelectron",	50,      0,   5, syst );
-  AddHistoBtag("pfelectron_ratio",  "ratio of pfelectron",          50,      0,   2, syst );  
-  AddHistoBtag("pfelectron_ratiorel","ratioRel of pfelectron",      50,      0,0.05, syst );  
-  AddHistoBtag("pfelectron_deltar",	"#DeltaR(pfelectron,jet)",      50,      0, 0.5, syst );  
+  AddHistoBtag("pfelectron_multi",  "number of pfelectron",	        7,    -0.5, 6.5 );
+  AddHistoBtag("pfelectron_pt",	"pfelectron p_{T}",  	        50,      0, 100 );
+  AddHistoBtag("pfelectron_eta",   	"pfelectron #eta",  	        50,   -2.5, 2.5 );  
+  AddHistoBtag("pfelectron_phi",    "pfelectron #phi",              40, -1.*pi,  pi );
+  AddHistoBtag("pfelectron_ptrel",  "pT rel. of the pfelectron",	50,      0,   5 );
+  AddHistoBtag("pfelectron_ratio",  "ratio of pfelectron",          50,      0,   2 );  
+  AddHistoBtag("pfelectron_ratiorel","ratioRel of pfelectron",      50,      0,0.05 );  
+  AddHistoBtag("pfelectron_deltar",	"#DeltaR(pfelectron,jet)",      50,      0, 0.5 );  
 
   
-  AddHisto2D("seltrack_vs_jetpt", "sel track multiplicity vs jet pt",         30,60,1000, 100,-0.5,99.5,syst );
-  AddHisto2D("sv_mass_vs_flightDist3D", " SVMass vs SV 3D flight distance ",  100,0, 10,100,0,6,        syst );			
-  AddHisto2D("avg_sv_mass_vs_jetpt","Avg SVMass vs jet pt",                   30,60,1000, 100,0,6,      syst );
-  AddHisto2D("sv_deltar_jet_vs_jetpt","SVJetDeltaR vs jet pt",                25,60,300, 50,0.,0.5,     syst );  
-  AddHisto2D("sv_deltar_sum_jet_vs_jetpt","SVvtxSumJetDeltaR vs jet pt",      25,60,300, 50,0.,0.5,     syst );
-  AddHisto2D("sv_deltar_sum_dir_vs_jetpt","SVvtxSumVtxDirDeltaR vs jet pt",   25,60,300, 50,0.,0.5,     syst ); 
+  AddHisto2D("seltrack_vs_jetpt", "sel track multiplicity vs jet pt",         30,60,1000, 100,-0.5,99.5 );
+  AddHisto2D("sv_mass_vs_flightDist3D", " SVMass vs SV 3D flight distance ",  100,0, 10,100,0,6        );			
+  AddHisto2D("avg_sv_mass_vs_jetpt","Avg SVMass vs jet pt",                   30,60,1000, 100,0,6      );
+  AddHisto2D("sv_deltar_jet_vs_jetpt","SVJetDeltaR vs jet pt",                25,60,300, 50,0.,0.5     );  
+  AddHisto2D("sv_deltar_sum_jet_vs_jetpt","SVvtxSumJetDeltaR vs jet pt",      25,60,300, 50,0.,0.5     );
+  AddHisto2D("sv_deltar_sum_dir_vs_jetpt","SVvtxSumVtxDirDeltaR vs jet pt",   25,60,300, 50,0.,0.5     ); 
 
-  AddHistoBtag("tagvarCSV_vertexCategory",          "vertex category",                      3, -0.5, 2.5, syst );
-  AddHistoBtag("tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm",       nSVbins, -35.,35. , syst );
-  AddHistoBtag("tagvarCSV_trackEtaRel",             "Track etaRel",                        40,   0.,8.  , syst );
-  AddHistoBtag("tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio",              40,   0.,1.5 , syst );
-  AddHistoBtag("tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r",               40,   0.,0.5 , syst );
+  AddHistoBtag("tagvarCSV_vertexCategory",          "vertex category",                      3, -0.5, 2.5 );
+  AddHistoBtag("tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm",       nSVbins, -35.,35.  );
+  AddHistoBtag("tagvarCSV_trackEtaRel",             "Track etaRel",                        40,   0.,8.   );
+  AddHistoBtag("tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio",              40,   0.,1.5  );
+  AddHistoBtag("tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r",               40,   0.,0.5  );
 
-  AddHistoBtag("tagvarCSV_vertexmass_cat0",         "SV mass",                        nSVbins,   0.,8.  , syst );
-  AddHistoBtag("tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks)", nSVbins,   0.,8.  , syst );
-  AddHistoBtag("tagvarCSV_vertexNTracks_cat0",      "# SV tracks",                         13, -0.5,12.5, syst );
-  AddHistoBtag("tagvarCSV_energyratio",             "Fractional energy",              nSVbins,   0.,1.  , syst );
-  AddHistoBtag("tagvarCSV_trackSip3dSig",           "3D IP significance",          nTrackbins, -35.,35. , syst );
-  AddHistoBtag("tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D",nSVbins,   0.,80. , syst );
-  AddHistoBtag("tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) ",                nSVbins,   0.,0.4 , syst );
+  AddHistoBtag("tagvarCSV_vertexmass_cat0",         "SV mass",                        nSVbins,   0.,8.  );
+  AddHistoBtag("tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks)", nSVbins,   0.,8.  );
+  AddHistoBtag("tagvarCSV_vertexNTracks_cat0",      "# SV tracks",                         13, -0.5,12.5);
+  AddHistoBtag("tagvarCSV_energyratio",             "Fractional energy",              nSVbins,   0.,1.  );
+  AddHistoBtag("tagvarCSV_trackSip3dSig",           "3D IP significance",          nTrackbins, -35.,35. );
+  AddHistoBtag("tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D",nSVbins,   0.,80. );
+  AddHistoBtag("tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) ",                nSVbins,   0.,0.4 );
   } //end !produceCTagTree
  
-  AddHistoBtag("jet_multi"    ,"number of jets",                 20,        0,      20,   syst);
-  AddHistoBtag("jet_pt_all"   ,"pT of all jets",                 50,  0,    500, syst);
-  AddHistoBtag("genjet_pt_all"        ,"genpT of all jets",         50     ,  -0.5,    49.5,syst);
-  AddHistoBtag("jet_pt_sv"    ,"pT of jets containing a SV",     50,  0,    500, syst);
-  AddHistoBtag("jet_eta"      ,"eta of all jets",                50,        -2.5,   2.5,  syst);
-  AddHistoBtag("jet_phi"      ,"phi of all jets",                40,        -1.*pi, pi,   syst);
+  AddHistoBtag("jet_multi"    ,"number of jets",                 20,        0,      20);
+  AddHistoBtag("jet_pt_all"   ,"pT of all jets",                 50,  0,    500);
+  AddHistoBtag("genjet_pt_all"        ,"genpT of all jets",         50     ,  -0.5,    49.5);
+  AddHistoBtag("jet_pt_sv"    ,"pT of jets containing a SV",     50,  0,    500);
+  AddHistoBtag("jet_eta"      ,"eta of all jets",                50,        -2.5,   2.5);
+  AddHistoBtag("jet_phi"      ,"phi of all jets",                40,        -1.*pi, pi);
 
   //CTag Comm//
   if(produceCTagTree){
-  AddHistoBtag("CTag_tagvarCSV_vertexCategory",          "vertex category CSV",                      3, -0.5, 2.5, syst );
-  AddHistoBtag("CTag_tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm CSV",       nSVbins, -35.,35. , syst );
-  AddHistoBtag("CTag_tagvarCSV_trackEtaRel",             "Track etaRel CSV",                        40,   0.,8.  , syst );
-  AddHistoBtag("CTag_tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio CSV",              40,   0.,1.5 , syst );
-  AddHistoBtag("CTag_tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r CSV",               40,   0.,0.5 , syst );
+  AddHistoBtag("CTag_tagvarCSV_vertexCategory",          "vertex category CSV",                      3, -0.5, 2.5 );
+  AddHistoBtag("CTag_tagvarCSV_Sig2dAboveCharm",         "IP significance 2D charm CSV",       nSVbins, -35.,35.  );
+  AddHistoBtag("CTag_tagvarCSV_trackEtaRel",             "Track etaRel CSV",                        40,   0.,8.   );
+  AddHistoBtag("CTag_tagvarCSV_trackSumJetEtRatio",      "Track  SumJet ET ratio CSV",              40,   0.,1.5  );
+  AddHistoBtag("CTag_tagvarCSV_trackSumJetDeltaR",       "Track  SumJet Delta r CSV",               40,   0.,0.5  );
 
-  AddHistoBtag("CTag_tagvarCSV_vertexmass_cat0",         "SV mass CSV",                        nSVbins,   0.,8.  , syst );
-  AddHistoBtag("CTag_tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks) CSV", nSVbins,   0.,8.  , syst );
-  AddHistoBtag("CTag_tagvarCSV_vertexNTracks_cat0",      "# SV tracks CSV",                         13, -0.5,12.5, syst );
-  AddHistoBtag("CTag_tagvarCSV_energyratio",             "Fractional energy CSV",              nSVbins,   0.,1.  , syst );
-  AddHistoBtag("CTag_tagvarCSV_trackSip3dSig",           "3D IP significance CSV",          nTrackbins, -35.,35. , syst );
-  AddHistoBtag("CTag_tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D CSV",nSVbins,   0.,80. , syst );
-  AddHistoBtag("CTag_tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) CSV",                nSVbins,   0.,0.4 , syst );
+  AddHistoBtag("CTag_tagvarCSV_vertexmass_cat0",         "SV mass CSV",                        nSVbins,   0.,8.   );
+  AddHistoBtag("CTag_tagvarCSV_vertexmass3trk_cat0",     "SV mass (at least 3 SV tracks) CSV", nSVbins,   0.,8.   );
+  AddHistoBtag("CTag_tagvarCSV_vertexNTracks_cat0",      "# SV tracks CSV",                         13, -0.5,12.5 );
+  AddHistoBtag("CTag_tagvarCSV_energyratio",             "Fractional energy CSV",              nSVbins,   0.,1.   );
+  AddHistoBtag("CTag_tagvarCSV_trackSip3dSig",           "3D IP significance CSV",          nTrackbins, -35.,35.  );
+  AddHistoBtag("CTag_tagvarCSV_2DsigFlightDist_cat0",    "Flight distance significance 2D CSV",nSVbins,   0.,80.  );
+  AddHistoBtag("CTag_tagvarCSV_vertexJetDeltaR_cat0",    "DeltaR(SV,jet) CSV",                nSVbins,   0.,0.4 );
 
-  AddHistoBtag("JP"           ,"JP",                                     30,0.,1.5 , syst);
-  AddHistoBtag("CSVv2"        ,"CSVv2",                                  50,0.,1.  , syst);
-  AddHistoBtag("CSVv2_pu"     ,"CSVv2_pu",                               50,0.,1.  , syst);
-  AddHistoBtag("cMVAv2"       ,"cMVAv2",                                 50,-1.,1. , syst);
+  AddHistoBtag("JP"           ,"JP",                                     30,0.,1.5 );
+  AddHistoBtag("CSVv2"        ,"CSVv2",                                  50,0.,1.  );
+  AddHistoBtag("CSVv2pu"     ,"CSVv2pu",                               50,0.,1.  );
+  AddHistoBtag("cMVAv2"       ,"cMVAv2",                                 50,-1.,1. );
 
-  AddHistoBtag("CvsB"         ,"CvsB",                                   50,-1.,1. , syst);
-  AddHistoBtag("CvsBN"        ,"CvsBN",                                  50,-1.,1. , syst);
-  AddHistoBtag("CvsBP"        ,"CvsBP",                                  50,-1.,1. , syst);
-  AddHistoBtag("CvsL"         ,"CvsL",                                   50,-1.,1. , syst);
-  AddHistoBtag("CvsLN"        ,"CvsLN",                                  50,-1.,1. , syst);
-  AddHistoBtag("CvsLP"        ,"CvsLP",                                  50,-1.,1. , syst);
-  AddHistoBtag("CTag_jetNTracks"	        ,"CTag_jetNTracks",	 	40,-0.5,39.5 , syst );
-  AddHistoBtag("CTag_jetNTracksEtaRel"      ,"CTag_jetNTracksEtaRel",	40,-0.5,39.5 , syst );
-  AddHistoBtag("CTag_jetNLeptons"           ,"CTag_jetNLeptons",		7,-0.5, 6.5, syst );
-  AddHistoBtag("CTag_trackSumJetEtRatio"    ,"CTag_trackSumJetEtRatio",     40,   0.,1.5 , syst );
-  AddHistoBtag("CTag_trackSumJetDeltaR"     ,"CTag_trackSumJetDeltaR",	40,   0.,0.3 , syst );
-  AddHistoBtag("CTag_trackSip2dSigAboveCharm","CTag_trackSip2dSigAboveCharm",50, -35,35, syst );
-  AddHistoBtag("CTag_trackSip3dSigAboveCharm","CTag_trackSip3dSigAboveCharm",50, -35,35, syst );
-  AddHistoBtag("CTag_vertexCategory"	,"CTag_vertexCategory",		3, -0.5, 2.5, syst );
-  AddHistoBtag("CTag_jetNSecondaryVertices" ,"CTag_jetNSecondaryVertices",	6,-0.5,5.5  , syst );
-  AddHistoBtag("CTag_vertexMass"		,"CTag_vertexMass",		nSVbins,   0.,8.  , syst );
-  AddHistoBtag("CTag_vertexNTracks"		,"CTag_vertexNTracks",		13, -0.5,12.5, syst );
-  AddHistoBtag("CTag_vertexEnergyRatio"	,"CTag_vertexEnergyRatio",	nSVbins,   0.,1.  , syst );
-  AddHistoBtag("CTag_vertexJetDeltaR"	,"CTag_vertexJetDeltaR",	nSVbins,   0.,0.4 , syst );
-  AddHistoBtag("CTag_flightDistance2dSig"   ,"CTag_flightDistance2dSig",	nSVbins,   0.,80. , syst );
-  AddHistoBtag("CTag_flightDistance3dSig"   ,"CTag_flightDistance3dSig",    nSVbins,   0.,80. , syst );
-  AddHistoBtag("CTag_massVertexEnergyFraction","CTag_massVertexEnergyFraction", 50, 0, 1, syst );  
-  AddHistoBtag("CTag_vertexBoostOverSqrtJetPt","CTag_vertexBoostOverSqrtJetPt", 50, 0, 1, syst );
-  AddHistoBtag("CTag_vertexLeptonCategory"  ,"CTag_vertexLeptonCategory",   7,-0.5, 6.5, syst );
-  AddHistoBtag("CTag_trackPtRel"  ,"CTag_trackPtRel", 40, 0 ,10  , syst );
-  AddHistoBtag("CTag_trackPPar"  ,"CTag_trackPPar", 40, 0, 200  , syst );
-  AddHistoBtag("CTag_trackDeltaR"  ,"CTag_trackDeltaR", 40, 0, 0.4  , syst );
-  AddHistoBtag("CTag_trackPtRatio"  ,"CTag_trackPtRatio", 30, 0, 0.3  , syst );
-  AddHistoBtag("CTag_trackPParRatio"  ,"CTag_trackPParRatio", 40, 0.95, 1  , syst );
-  AddHistoBtag("CTag_trackSip2dSig"  ,"CTag_trackSip2dSig", 40, -30, 30  , syst );
-  AddHistoBtag("CTag_trackSip3dSig"  ,"CTag_trackSip3dSig", 40, -30, 30  , syst );
-  AddHistoBtag("CTag_trackDecayLenVal"  ,"CTag_trackDecayLenVal", 40, 0, 5  , syst );
-  AddHistoBtag("CTag_trackJetDistVal"  ,"CTag_trackJetDistVal", 40, -0.07, 0  , syst );
-  AddHistoBtag("CTag_trackEtaRel"  ,"CTag_trackEtaRel", 40, 0, 8  , syst );
-  AddHistoBtag("CTag_leptonPtRel"  ,"CTag_leptonPtRel", 40, 0 ,6  , syst );
-  AddHistoBtag("CTag_leptonSip3d"  ,"CTag_leptonSip3d", 50, -1, 1  , syst );
-  AddHistoBtag("CTag_leptonDeltaR"  ,"CTag_leptonDeltaR", 40 , 0, 0.4  , syst );
-  AddHistoBtag("CTag_leptonRatioRel"  ,"CTag_leptonRatioRel", 40, 0 , 0.02  , syst );
-  AddHistoBtag("CTag_leptonEtaRel"  ,"CTag_leptonEtaRel", 40, 0 , 0.1  , syst );
-  AddHistoBtag("CTag_leptonRatio"  ,"CTag_leptonRatio", 40 , 0 ,1  , syst );
+  AddHistoBtag("CvsB"         ,"CvsB",                                   50,-1.,1. );
+  AddHistoBtag("CvsBN"        ,"CvsBN",                                  50,-1.,1. );
+  AddHistoBtag("CvsBP"        ,"CvsBP",                                  50,-1.,1. );
+  AddHistoBtag("CvsL"         ,"CvsL",                                   50,-1.,1. );
+  AddHistoBtag("CvsLN"        ,"CvsLN",                                  50,-1.,1. );
+  AddHistoBtag("CvsLP"        ,"CvsLP",                                  50,-1.,1. );
+  AddHistoBtag("CTag_jetNTracks"	        ,"CTag_jetNTracks",	 	40,-0.5,39.5 );
+  AddHistoBtag("CTag_jetNTracksEtaRel"      ,"CTag_jetNTracksEtaRel",	40,-0.5,39.5  );
+  AddHistoBtag("CTag_jetNLeptons"           ,"CTag_jetNLeptons",		7,-0.5, 6.5 );
+  AddHistoBtag("CTag_trackSumJetEtRatio"    ,"CTag_trackSumJetEtRatio",     40,   0.,1.5 );
+  AddHistoBtag("CTag_trackSumJetDeltaR"     ,"CTag_trackSumJetDeltaR",	40,   0.,0.3  );
+  AddHistoBtag("CTag_trackSip2dSigAboveCharm","CTag_trackSip2dSigAboveCharm",50, -35,35 );
+  AddHistoBtag("CTag_trackSip3dSigAboveCharm","CTag_trackSip3dSigAboveCharm",50, -35,35 );
+  AddHistoBtag("CTag_vertexCategory"	,"CTag_vertexCategory",		3, -0.5, 2.5 );
+  AddHistoBtag("CTag_jetNSecondaryVertices" ,"CTag_jetNSecondaryVertices",	6,-0.5,5.5 );
+  AddHistoBtag("CTag_vertexMass"		,"CTag_vertexMass",		nSVbins,   0.,8. );
+  AddHistoBtag("CTag_vertexNTracks"		,"CTag_vertexNTracks",		13, -0.5,12.5 );
+  AddHistoBtag("CTag_vertexEnergyRatio"	,"CTag_vertexEnergyRatio",	nSVbins,   0.,1.  );
+  AddHistoBtag("CTag_vertexJetDeltaR"	,"CTag_vertexJetDeltaR",	nSVbins,   0.,0.4 );
+  AddHistoBtag("CTag_flightDistance2dSig"   ,"CTag_flightDistance2dSig",	nSVbins,   0.,80. );
+  AddHistoBtag("CTag_flightDistance3dSig"   ,"CTag_flightDistance3dSig",    nSVbins,   0.,80.  );
+  AddHistoBtag("CTag_massVertexEnergyFraction","CTag_massVertexEnergyFraction", 50, 0, 1 );  
+  AddHistoBtag("CTag_vertexBoostOverSqrtJetPt","CTag_vertexBoostOverSqrtJetPt", 50, 0, 1 );
+  AddHistoBtag("CTag_vertexLeptonCategory"  ,"CTag_vertexLeptonCategory",   7,-0.5, 6.5 );
+  AddHistoBtag("CTag_trackPtRel"  ,"CTag_trackPtRel", 40, 0 ,10   );
+  AddHistoBtag("CTag_trackPPar"  ,"CTag_trackPPar", 40, 0, 200   );
+  AddHistoBtag("CTag_trackDeltaR"  ,"CTag_trackDeltaR", 40, 0, 0.4   );
+  AddHistoBtag("CTag_trackPtRatio"  ,"CTag_trackPtRatio", 30, 0, 0.3   );
+  AddHistoBtag("CTag_trackPParRatio"  ,"CTag_trackPParRatio", 40, 0.95, 1   );
+  AddHistoBtag("CTag_trackSip2dSig"  ,"CTag_trackSip2dSig", 40, -30, 30   );
+  AddHistoBtag("CTag_trackSip3dSig"  ,"CTag_trackSip3dSig", 40, -30, 30   );
+  AddHistoBtag("CTag_trackDecayLenVal"  ,"CTag_trackDecayLenVal", 40, 0, 5   );
+  AddHistoBtag("CTag_trackJetDistVal"  ,"CTag_trackJetDistVal", 40, -0.07, 0   );
+  AddHistoBtag("CTag_trackEtaRel"  ,"CTag_trackEtaRel", 40, 0, 8   );
+  AddHistoBtag("CTag_leptonPtRel"  ,"CTag_leptonPtRel", 40, 0 ,6   );
+  AddHistoBtag("CTag_leptonSip3d"  ,"CTag_leptonSip3d", 50, -1, 1   );
+  AddHistoBtag("CTag_leptonDeltaR"  ,"CTag_leptonDeltaR", 40 , 0, 0.4   );
+  AddHistoBtag("CTag_leptonRatioRel"  ,"CTag_leptonRatioRel", 40, 0 , 0.02   );
+  AddHistoBtag("CTag_leptonEtaRel"  ,"CTag_leptonEtaRel", 40, 0 , 0.1   );
+  AddHistoBtag("CTag_leptonRatio"  ,"CTag_leptonRatio", 40 , 0 ,1   );
   //With CTag_vertexCategory==0 //
-  AddHistoBtag("CTag_jetNSecondaryVertices_Vcat0" ,"CTag_jetNSecondaryVertices_Vcat0",  6,-0.5,5.5  , syst );
-  AddHistoBtag("CTag_vertexMass_Vcat0"            ,"CTag_vertexMass_Vcat0",             nSVbins,   0.,8.  , syst );
-  AddHistoBtag("CTag_vertexNTracks_Vcat0"         ,"CTag_vertexNTracks_Vcat0",          13, -0.5,12.5, syst );
-  AddHistoBtag("CTag_vertexEnergyRatio_Vcat0"     ,"CTag_vertexEnergyRatio_Vcat0",      nSVbins,   0.,1.  , syst );
-  AddHistoBtag("CTag_vertexJetDeltaR_Vcat0"       ,"CTag_vertexJetDeltaR_Vcat0",        nSVbins,   0.,0.4 , syst );
-  AddHistoBtag("CTag_flightDistance2dSig_Vcat0"   ,"CTag_flightDistance2dSig_Vcat0",    nSVbins,   0.,80. , syst );
-  AddHistoBtag("CTag_flightDistance3dSig_Vcat0"   ,"CTag_flightDistance3dSig_Vcat0",    nSVbins,   0.,80. , syst );
-  AddHistoBtag("CTag_massVertexEnergyFraction_Vcat0","CTag_massVertexEnergyFraction_Vcat0", 50, 0, 1, syst );
-  AddHistoBtag("CTag_vertexBoostOverSqrtJetPt_Vcat0","CTag_vertexBoostOverSqrtJetPt_Vcat0", 50, 0, 1, syst );
+  AddHistoBtag("CTag_jetNSecondaryVertices_Vcat0" ,"CTag_jetNSecondaryVertices_Vcat0",  6,-0.5,5.5   );
+  AddHistoBtag("CTag_vertexMass_Vcat0"            ,"CTag_vertexMass_Vcat0",             nSVbins,   0.,8.   );
+  AddHistoBtag("CTag_vertexNTracks_Vcat0"         ,"CTag_vertexNTracks_Vcat0",          13, -0.5,12.5 );
+  AddHistoBtag("CTag_vertexEnergyRatio_Vcat0"     ,"CTag_vertexEnergyRatio_Vcat0",      nSVbins,   0.,1.   );
+  AddHistoBtag("CTag_vertexJetDeltaR_Vcat0"       ,"CTag_vertexJetDeltaR_Vcat0",        nSVbins,   0.,0.4  );
+  AddHistoBtag("CTag_flightDistance2dSig_Vcat0"   ,"CTag_flightDistance2dSig_Vcat0",    nSVbins,   0.,80.  );
+  AddHistoBtag("CTag_flightDistance3dSig_Vcat0"   ,"CTag_flightDistance3dSig_Vcat0",    nSVbins,   0.,80.  );
+  AddHistoBtag("CTag_massVertexEnergyFraction_Vcat0","CTag_massVertexEnergyFraction_Vcat0", 50, 0, 1 );
+  AddHistoBtag("CTag_vertexBoostOverSqrtJetPt_Vcat0","CTag_vertexBoostOverSqrtJetPt_Vcat0", 50, 0, 1 );
   }
 
  
@@ -886,7 +886,7 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
         FillHistoBtag("jet_pt_all",                 flav, isPU ,ptjet                                  , ww);
         FillHistoBtag("genjet_pt_all",              flav, isPU ,Jet_genpt[newJetIndex]                 , ww);
         
-        if(isPU) FillHistoBtag("CSVv2_pu",          flav, isPU ,csv_v2                                 , ww);
+        if(isPU) FillHistoBtag("CSVv2pu",          flav, isPU ,csv_v2                                 , ww);
         if(!produceCTagTree){
         if (nSV > 0)FillHistoBtag("jet_pt_sv",      flav, isPU ,ptjet                                  , ww);
         }
@@ -1648,29 +1648,23 @@ void CommPlotProducer4ttbar::Loop(int datatype, TString output_name, TH1F* wgtco
 
 }
 
-void CommPlotProducer4ttbar::AddHistoBtag(TString name, TString title, int nbins, float min, float max, TString syst)
+void CommPlotProducer4ttbar::AddHistoBtag(TString name, TString title, int nbins, float min, float max)
 {
 
-  TString syst_tmp = "";
-  if(syst != "") syst_tmp = "_"+syst;
- 
-  TH1D* h_b      = new TH1D(name+"_b"+syst_tmp,         title+"_b"+syst_tmp,            nbins,min,max);
-  TH1D* h_pu     = new TH1D(name+"_pu"+syst_tmp,        title+"_pu"+syst_tmp,           nbins,min,max);
-  //TH1D* h_bfromg = new TH1D(name+"_bfromg"+syst_tmp,    title+"_bfromg"+syst_tmp,       nbins,min,max);  
-  TH1D* h_c      = new TH1D(name+"_c"+syst_tmp,         title+"_c"+syst_tmp,            nbins,min,max);  
-  TH1D* h_l      = new TH1D(name+"_l"+syst_tmp,         title+"_l"+syst_tmp,            nbins,min,max);
-  TH1D* h_data   = new TH1D(name+"_data"+syst_tmp,      title+"_data"+syst_tmp,         nbins,min,max);
+  TH1D* h_b      = new TH1D(name+"_b",         title+"_b",    nbins,min,max);
+  TH1D* h_pu     = new TH1D(name+"_pu",        title+"_pu",   nbins,min,max);
+  TH1D* h_c      = new TH1D(name+"_c",         title+"_c",    nbins,min,max);  
+  TH1D* h_l      = new TH1D(name+"_l",         title+"_l",    nbins,min,max);
+  TH1D* h_data   = new TH1D(name,              title+"_data", nbins,min,max);
   
   h_b        ->Sumw2();
   h_pu       ->Sumw2(); 
-  //h_bfromg   ->Sumw2();  
   h_c        ->Sumw2();  
   h_l        ->Sumw2(); 
   h_data     ->Sumw2();
   
   HistoBtag.push_back(h_b);
   HistoBtag.push_back(h_pu);  
-  //HistoBtag.push_back(h_bfromg);  
   HistoBtag.push_back(h_c);  
   HistoBtag.push_back(h_l);  
   HistoBtag.push_back(h_data);  
@@ -1718,31 +1712,24 @@ void CommPlotProducer4ttbar::FillHistoTTbar(TString name, varType value, double 
 //-----------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------2D PLOTS-----------------------------------------------//
 //-----------------------------------------------------------------------------------------------------------------//
-void CommPlotProducer4ttbar::AddHisto2D(TString name, TString title, int nbins, float min, float max, int nbins2, float
-min2, float max2, TString syst)
+void CommPlotProducer4ttbar::AddHisto2D(TString name, TString title, int nbins, float min, float max, int nbins2, float min2, float max2)
 {
  
-  TString syst_tmp = "";
-  if(syst != "") syst_tmp = "_"+syst;
- 
-  TH2D* h_b      = new TH2D(name+"_b"+syst_tmp,         title+"_b"+syst_tmp,            nbins,min,max,nbins2,min2,max2);
-  TH2D* h_pu     = new TH2D(name+"_pu"+syst_tmp,        title+"_pu"+syst_tmp,           nbins,min,max,nbins2,min2,max2);
-  //TH2D* h_bfromg = new TH2D(name+"_bfromg"+syst_tmp,    title+"_bfromg"+syst_tmp,       nbins,min,max,nbins2,min2,max2);  
-  TH2D* h_c      = new TH2D(name+"_c"+syst_tmp,         title+"_c"+syst_tmp,            nbins,min,max,nbins2,min2,max2);  
-  TH2D* h_l      = new TH2D(name+"_l"+syst_tmp,         title+"_l"+syst_tmp,            nbins,min,max,nbins2,min2,max2);
-  TH2D* h_data   = new TH2D(name+"_data"+syst_tmp,      title+"_data"+syst_tmp,         nbins,min,max,nbins2,min2,max2);
+  TH2D* h_b      = new TH2D(name+"_b",  title+"_b",            nbins,min,max,nbins2,min2,max2);
+  TH2D* h_pu     = new TH2D(name+"_pu", title+"_pu",           nbins,min,max,nbins2,min2,max2);
+  TH2D* h_c      = new TH2D(name+"_c",  title+"_c",            nbins,min,max,nbins2,min2,max2);  
+  TH2D* h_l      = new TH2D(name+"_l",  title+"_l",            nbins,min,max,nbins2,min2,max2);
+  TH2D* h_data   = new TH2D(name,       title+"_data",         nbins,min,max,nbins2,min2,max2);
   
   
   h_b        ->Sumw2();
   h_pu       ->Sumw2(); 
-  //h_bfromg   ->Sumw2();  
   h_c        ->Sumw2();  
   h_l        ->Sumw2(); 
   h_data     ->Sumw2();
   
   HistoBtag2D.push_back(h_b);
   HistoBtag2D.push_back(h_pu);  
-  //HistoBtag2D.push_back(h_bfromg);  
   HistoBtag2D.push_back(h_c);  
   HistoBtag2D.push_back(h_l);  
   HistoBtag2D.push_back(h_data);  
