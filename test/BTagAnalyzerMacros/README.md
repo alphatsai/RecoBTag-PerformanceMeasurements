@@ -1,4 +1,3 @@
-
 1. To run the ttbar analysis in order to produce commissioning plots or performance to compute SF: 
 
 ```
