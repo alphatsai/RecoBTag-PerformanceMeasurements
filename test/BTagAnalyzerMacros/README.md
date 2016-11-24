@@ -1,5 +1,5 @@
 
-To run the ttbar analysis in order to produce commissioning plots or performance to compute SF: 
+* To run the ttbar analysis in order to produce commissioning plots or performance to compute SF: 
 
 root -l 
 
@@ -7,14 +7,21 @@ gROOT->ProcessLine(".L ../TTbarSelector.C+");
 gROOT->ProcessLine(".L CommPlotProducer4ttbar.C++");
 .x runCode4ttbar.C+
 
-To draw plots, 
+* To merge all root files and do the nomaliztion for MC to lumi
+1. Move all for root files to a directory (e.g. myDir)
+2. Edit your data list with the format as "datasetListForMergingBTag.txt"
+''' 
+mergeDatasets.py -w myDir -d datasetListForMergingBTag.txt -f output_all
+''' 
+
+* To draw plots, 
 
 root -l 
 
 gROOT->ProcessLine(".L DrawCommPlot4ttbar.C++");
 
 
-In BTV-15-001:
+* In BTV-15-001 
 
 Draw("track_IPs"    ,      "3D IP significance of tracks",1);
 Draw("sv_flight3DSig","SV 3D flight distance significance",1);
@@ -30,7 +37,7 @@ Draw("cMVAv2","cMVAv2 Discriminator",1);
 DrawTTbar("nbtag_all_afterJetSel_CSVv2M_SFapplied","number of b-tagged jets (CSVv2M)",0);
 DrawTTbar("nbtag_all_afterJetSel_CSVv2M","number of b-tagged jets (CSVv2M)",0);
 
-In AN-16-036:
+* In AN-16-036 
 
 Draw("jet_pt_all"   ,"Jet pT",1);
 Draw("jet_eta"      ,"Jet eta", 0);
