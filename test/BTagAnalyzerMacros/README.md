@@ -1,25 +1,21 @@
 
 * To run the ttbar analysis in order to produce commissioning plots or performance to compute SF: 
 
-root -l 
-
+> `root -l `
+> `
 gROOT->ProcessLine(".L ../TTbarSelector.C+");
 gROOT->ProcessLine(".L CommPlotProducer4ttbar.C++");
 .x runCode4ttbar.C+
+`
 
 * To merge all root files and do the nomaliztion for MC to lumi
-1. Move all for root files to a directory (e.g. myDir)
-2. Edit your data list with the format as "datasetListForMergingBTag.txt"
-''' 
-mergeDatasets.py -w myDir -d datasetListForMergingBTag.txt -f output_all
-''' 
+> 1. Move all for root files to a directory (e.g. myDir)
+> 2. Edit your data list with the format as "datasetListForMergingBTag.txt"
+> ` mergeDatasets.py -w myDir -d datasetListForMergingBTag.txt -f output_all`
 
 * To draw plots, 
-
-root -l 
-
-gROOT->ProcessLine(".L DrawCommPlot4ttbar.C++");
-
+> `root -l `
+> `gROOT->ProcessLine(".L DrawCommPlot4ttbar.C++");`
 
 * In BTV-15-001 
 
