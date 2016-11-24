@@ -8,14 +8,14 @@ gROOT->ProcessLine(".L CommPlotProducer4ttbar.C++");
 .x runCode4ttbar.C+
 ```
 
-2. To merge all root files and do the nomaliztion for MC to lumi
+1. To merge all root files and do the nomaliztion for MC to lumi
 > * Move all for root files to a directory (e.g. myDir)
 > * Edit your data list with the format as "datasetListForMergingBTag.txt"
 ``` 
 mergeDatasets.py -w myDir -d datasetListForMergingBTag.txt -f output_all
 ```
 
-3. To draw plots, 
+1. To draw plots, 
 ```
 root -l 
 gROOT->ProcessLine(".L DrawCommPlot4ttbar.C++");
