@@ -1,0 +1,51 @@
+######## Data card for merge ########
+## Example format:
+##
+##  Merged_name: 
+##  Dataset1_name xs (in pb, for data set to -1)
+##  Dataset2_name xs (in pb, for data set to -1)
+##
+#####################################
+
+## myNote:
+## RunBCD 12054
+## RunG 7544
+## RunF 7159
+## RunH 8681
+
+## Merge for data
+data:
+output_dataB_mueg -1
+output_dataC_mueg -1
+output_dataD_mueg -1
+
+## Merge for MC
+ttbar: L=12054
+output_ttbar 831.77
+
+dy: L=12054
+output_dy1 18610 
+output_dy2 6025
+
+st: L=12054
+output_st1 35.85
+output_st2 35.85
+
+ww: L=12054
+output_ww 118.7
+
+wz: L=12054
+output_wz 47.13
+
+zz: L=12054
+output_zz 16.5
+
+mc: L=12054
+output_ttbar 831.77
+output_dy1 18610 
+output_dy2 6025
+output_st1 35.85
+output_st2 35.85
+output_ww 118.7
+output_wz 47.13
+output_zz 16.5
